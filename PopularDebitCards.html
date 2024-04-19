@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="#">
+    <title>卡卡頌 CardCardSone</title>
+</head>
+
+<body>
+
+  <div class="header-container">
+    <header class="header">
+      <link rel="stylesheet" href="./PopularDebitCards.css">
+      <div class="logo"><a href="#">卡卡頌 CardCardSone</a></div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="active-nav-item nav-link">卡片介紹▾</a>
+            <div class="active-nav-underline"></div>
+            <ul class="dropdown-menu">
+              <li><a href="PopularCreditCards.html">熱門信用卡</a></li>
+              <li><a href="PopularDebitCards.html">熱門金融卡</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">卡片比較</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">最新消息</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">意見信箱</a></li> 
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+<section class="popular-credit-cards">
+  <h2 class="section-title">熱門金融卡</h2>
+  <section class="filter-options">
+      <button class="btn" data-tag="繳稅優惠" onclick="showTab(this)">繳稅優惠</button>
+      <button class="btn" deta-tag="現金回饋" onclick="showTab(this)">現金回饋</button>
+      <button class="btn" deta-tag="網購" onclick="showTab(this)">網購</button> 
+      <button class="btn" deta-tag="行動支付" onclick="showTab(this)">行動支付</button>
+      <button class="btn" deta-tag="影音娛樂" onclick="showTab(this)">影音娛樂</button>
+      <button class="btn" deta-tag="美食外送" onclick="showTab(this)">美食外送</button>
+      <button class="btn" deta-tag="生活繳費" onclick="showTab(this)">生活繳費</button>
+      <button class="btn" deta-tag="超商量販" onclick="showTab(this)">超商量販</button>
+      <button class="btn" deta-tag="百貨購物" onclick="showTab(this)">百貨購物</button>
+      <button class="btn" deta-tag="海外消費" onclick="showTab(this)">海外消費</button>
+      <button class="btn" deta-tag="旅遊訂房" onclick="showTab(this)">旅遊訂房</button>
+
+  </section>
+<section class="card-container">
+    <article class="card">
+      <div class="card-content">
+        <img src="./image/CreditCards/hsbc-diamond.png" alt="匯豐 匯鑽卡" class="card-image" />
+        <div class="card-details">
+          <div class="card-tags">
+            <span class="card-tag">現金回饋</span>
+            <span class="card-tag">行動支付</span>
+          </div>
+          <div class="card-description">
+            <h2 class="card-title">匯豐 匯鑽卡</h2>
+            <p class="card-subtitle">網購/ 影音娛樂/ 美食外送 指定通路最高 6% 回饋</p>
+            <p class="card-subtitle">OPEN POINT 錢包 30點 OPEN POINT回饋</p>
+            <p class="card-subtitle">ICash Pay指定通路消費享10%回饋</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-content">
+        <img src="./image/CreditCards/taishin-gogo.png" alt="台新 @GoGo 卡" class="card-image" />
+        <div class="card-details">
+          <div class="card-tags">
+            <span class="card-tag">現金回饋</span>
+            <span class="card-tag">網購</span>
+            <span class="card-tag">行動支付</span>
+          </div>
+          <div class="card-description">
+            <h2 class="card-title">台新 @GoGo 卡</h2>
+            <p class="card-subtitle">精選網購、行動支付Go給力 最高 3.8%！</p>
+            <p class="card-subtitle">出行禮賓服務機場接送優惠</p>
+            <p class="card-subtitle">Richart 新戶回饋最高6.8%</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/hsbc-cash.png" alt="滙豐 現金回饋御璽卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <span class="card-tag">現金回饋</span>
+            <span class="card-tag">影音娛樂</span>
+            <span class="card-tag">保費回饋</span>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">滙豐 現金回饋御璽卡</h2>
+            <p class="card-subtitle">海外2.22% 國內1.22%，現金回饋無上限！</p>
+            <p class="card-subtitle">OPEN POINT 錢包 30點 OPEN POINT回饋</p>
+            <p class="card-subtitle">攜手Visa贏得2024年巴黎奧運之旅！</p>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/sinopac-green.png" alt="永豐 現金回饋 Green 卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">繳稅優惠</div>
+            <div class="card-tag">現金回饋</div>
+            <div class="card-tag">生活繳費</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">永豐 現金回饋 Green 卡</h2>
+            <p class="card-subtitle">精選國內綠色通路最高5%現金回饋</p>
+            <p class="card-subtitle">大咖繳費稅最高10%回饋</p>
+            <p class="card-subtitle">辦卡刷就幫你種1棵樹</p>
+            </div>
+        </div>
+        </div>
+    </article>
+  
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/taishin-giving.png" alt="台新 玫瑰Giving卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">現金回饋</div>
+            <div class="card-tag">美食外送</div>
+            <div class="card-tag">生活繳費</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">台新 玫瑰Giving卡</h2>
+            <p class="card-subtitle">國內節 / 假日 & 國外最高 3% 回饋</p>
+            <p class="card-subtitle">平日消費滿額享 2 次居家清潔服務</p>
+            <p class="card-subtitle">FunNow 米其林餐廳最高85折</p>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/cub-cube-Visa.png" alt="國泰世華 CUBE 卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">海外消費</div>
+            <div class="card-tag">超商量販</div>
+            <div class="card-tag">百貨購物</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">國泰世華 CUBE 卡</h2>
+            <p class="card-subtitle">5 大權益天天切換，指定消費 3% 起，回饋無上限</p>
+            <p class="card-subtitle">登入CUBE APP領取優惠券，回饋再加碼</p>
+            <p class="card-subtitle">一般消費享 0.3 % 小樹點(信用卡)，回饋無上限</p>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/union-jiho.png" alt="聯邦 吉鶴卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">現金回饋</div>
+            <div class="card-tag">美食外送</div>
+            <div class="card-tag">海外消費</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">聯邦 吉鶴卡</h2>
+            <p class="card-subtitle">國內消費最高2.5%回饋</p>
+            <p class="card-subtitle">日本Apple Pay消費 最高4.5%回饋</p>
+            <p class="card-subtitle">國內日系名店最高6.5%回饋</p>
+            </div>
+        </div>
+        </div>
+    </article>
+  
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/fubon-J.png" alt="富邦 J 卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">海外消費</div>
+            <div class="card-tag">網購</div>
+            <div class="card-tag">行動支付</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">富邦 J 卡</h2>
+            <p class="card-subtitle">揪友辦卡 推薦獎金無上限</p>
+            <p class="card-subtitle">日韓旅遊刷J卡 最高10%回饋</p>
+            <p class="card-subtitle">新戶辦J卡 限時享最高2%回饋</p>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/taishin-flygo.png" alt="台新 FlyGo卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">現金回饋</div>
+            <div class="card-tag">旅遊訂房</div>
+            <div class="card-tag">海外消費</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">台新 FlyGo卡</h2>
+            <p class="card-subtitle">精選航空、交通、旅遊最高 5%</p>
+            <p class="card-subtitle">海外消費 最高 3% 無上限</p>
+            <p class="card-subtitle">分期減擔繳 最高分12期0利率</p>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/first-icash-new.png" alt="第一銀行 icash 聯名卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">超商量販</div>
+            <div class="card-tag">保費回饋</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">第一銀行 icash 聯名卡</h2>
+            <p class="card-subtitle">新戶數位申辦最高贈750元</p>
+            <p class="card-subtitle">新卡友遊日韓8%現金回饋</p>
+            <p class="card-subtitle">統一超商/指定餐飲10% OPEN POINT</p>
+            </div>
+        </div>
+        </div>
+    </article>
+  
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/sinopac-insurance.png" alt="永豐 保倍卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">現金回饋</div>
+            <div class="card-tag">保費回饋</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">永豐 保倍卡</h2>
+            <p class="card-subtitle">扣繳保費最高贈【百貨即享券5,000元】</p>
+            <p class="card-subtitle">新卡扣繳保費【加碼1%】最高享2.2%現金回饋</p>
+            <p class="card-subtitle">扣繳任一保費享【1.2%回饋無上限】或【最高12期分期】</p>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="card-content">
+        <img src="./image/CreditCards/first-green.png" alt="第一銀行 Living Green 綠活卡" class="card-image" />
+        <div class="card-details">
+            <div class="card-tags">
+            <div class="card-tag">現金回饋</div>
+            <div class="card-tag">海外消費</div>
+            </div>
+            <div class="card-description">
+            <h2 class="card-title">第一銀行 Living Green 綠活卡</h2>
+            <p class="card-subtitle">新戶數位申辦最高贈750元</p>
+            <p class="card-subtitle">減碳樂活最高10%現金回饋</p>
+            <p class="card-subtitle">自動加值/臺鐵/高鐵5%回饋</p>
+            </div>
+        </div>
+        </div>
+    </article>
+</section>
+
+
+<footer>
+
+</footer>
+  <script src="PopularDebitCards.js"></script>
+</body>
+
+</html>
+
