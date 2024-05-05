@@ -1,0 +1,43 @@
+{
+  "cards": [
+    {
+      "name": "匯豐 匯鑽卡",
+      "bankname": "匯豐銀行",
+      "imagePath": "../image/CreditCards/hsbc-diamond.png",
+      "基本回饋": "2%",
+      "加碼回饋": "Up to 5%",
+      "海外消費": "No foreign transaction fee",
+      "旅遊保險": "Yes",
+      "跨行手續費": "$0",
+      "首刷禮": "Gift voucher",
+      "年費": "$100",
+      "卡片特色": "Cashback rewards"
+    },
+    {
+      "name": "台新 @GoGo 卡",
+      "bankname": "台新銀行",
+      "imagePath": "../image/CreditCards/taishin-gogo.png",
+      "基本回饋": "1.5%",
+      "加碼回饋": "Up to 3%",
+      "海外消費": "2.5% foreign transaction fee",
+      "旅遊保險": "No",
+      "跨行手續費": "$5",
+      "首刷禮": "Travel points",
+      "年費": "$75",
+      "卡片特色": "Airmiles rewards"
+    },
+    {
+      "name": "第一銀行 Living Green 綠活卡",
+      "bankname": "第一銀行",
+      "imagePath": "../image/CreditCards/first-green.png",
+      "基本回饋": "3%",
+      "加碼回饋": "Up to 4%",
+      "海外消費": "1.5% foreign transaction fee",
+      "旅遊保險": "Yes",
+      "跨行手續費": "$0",
+      "首刷禮": "Cashback",
+      "年費": "$120",
+      "卡片特色": "Points rewards"
+    }
+  ]
+}

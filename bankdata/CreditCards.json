@@ -1,0 +1,53 @@
+{
+  "cards": [
+    {
+      "name": "匯豐 匯鑽卡",
+      "bankname": "匯豐銀行",
+      "imagePath": "../image/CreditCards/hsbc-diamond.png",
+      "tags": ["現金回饋", "行動支付"],
+      "簡介": [
+          "網購/ 影音娛樂/ 美食外送  指定通路最高 6% 回饋",
+          "OPEN POINT 錢包 30點 OPEN POINT回饋",
+          "ICash Pay指定通路消費享10%回饋"
+      ],
+      "link": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/"
+    },
+    {
+      "name": "台新 @GoGo 卡",
+      "bankname": "台新銀行",
+      "imagePath": "../image/CreditCards/taishin-gogo.png",
+      "tags": ["現金回饋", "網購", "行動支付"],
+      "簡介": [
+          "精選網購、行動支付Go給力 最高 3.8%！",
+          "出行禮賓服務機場接送優惠",
+          "Richart 新戶回饋最高6.8%"
+      ],
+      "link": "https://richart.tw/TSDIB_RichartWeb/discount/discount-details?discount=128&utm_source=google&utm_medium=gsm&utm_campaign=richart_alwayson_creditcard_20240401&gad_source=1&gclid=Cj0KCQjw_qexBhCoARIsAFgBlevKd4vxQhGm-F1Gd8Eb5OGgC03IRLkNGOH4sGZxw8IB1e_0BalRUz8aAgVNEALw_wcB"
+    },
+    {
+      "name": "第一銀行 Living Green 綠活卡",
+      "bankname": "第一銀行",
+      "imagePath": "../image/CreditCards/first-green.png",
+      "tags": ["現金回饋", "海外消費"],
+      "簡介": [
+          "新戶數位申辦最高贈750元",
+          "減碳樂活最高10%現金回饋",
+          "自動加值/臺鐵/高鐵5%回饋"
+      ],
+      "link": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685690"
+    },
+    {
+      "name": "匯豐 匯鑽卡",
+      "bankname": "匯豐銀行",
+      "imagePath": "../image/CreditCards/hsbc-diamond.png",
+      "tags": ["現金回饋", "行動支付"],
+      "簡介": [
+          "網購/ 影音娛樂/ 美食外送  指定通路最高 6% 回饋",
+          "OPEN POINT 錢包 30點 OPEN POINT回饋",
+          "ICash Pay指定通路消費享10%回饋"
+      ],
+      "link": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/"
+    }
+]
+}
+  
