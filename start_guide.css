@@ -1,0 +1,260 @@
+/* 頁頭 */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    }
+  .header {
+      background-color: #8f5b4c;
+      display: flex;
+      width: 100%;
+      gap: 16px;
+      font-weight: 600;
+      padding-inline-start: 5%;
+      padding-inline-end: 3%;
+      box-sizing: border-box;
+      justify-content: space-between; 
+      align-items: center; 
+    }
+  
+  .logo a,
+  .logo-font a {
+    color: #171a1f;
+    flex-grow: 1;
+    margin: auto 0;
+    font-family:Arial, sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .logo a:hover,
+  .logo-font a:hover {
+    text-decoration: none; /* 在滑鼠懸停時保持沒有底線 */
+  }
+  
+  .nav {
+    justify-content: center;
+    display: flex;
+    gap: 0;
+    font-size: 20px;
+    color: #fff;
+    white-space: nowrap;
+    line-height: 162.5%;
+    text-decoration: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    line-height: 5%;
+    padding: 25px 12px;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    position: relative;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0;
+    top: 77%;
+    left: 0;
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu li {
+    list-style-type: none;
+  }
+  
+  .dropdown-menu li a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #ffde99; /* 滑鼠懸停時背景顏色 */
+  }
+  
+  .active-nav-item {
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: #ffde99;
+    align-items: center; 
+  }
+  
+  
+  .active-nav-link {
+    font-family: Inter, sans-serif;
+  }
+  
+  .active-nav-underline {
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 80%; 
+    height: 2px;
+    background-color: #ffde99;
+    
+  }
+  
+  .nav-credit-card {
+    font-family: Inter, sans-serif;
+    justify-content: center;
+    padding: 30px 8px;
+    font-size: 18px;
+  }
+    
+  .section-title {
+    margin: 0 30px;
+    display: flex;
+    background-color: #ffffff; 
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 100px;
+    width: 100%;
+    height: 0;
+    
+  }
+  
+  .section-description {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    background-color: #ffffff; 
+    flex-direction: column;
+    margin-top: 10px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400;
+    
+  }
+
+  .section-description2 {
+    color: #ce7c0a;
+    margin: 0 auto;
+    text-align: left;
+    display: block;
+    background-color: #ffffff; 
+    flex-direction: column;
+    margin-top: 10px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400;
+    
+  }
+
+  .section-description2 img {
+    /* 讓圖片高度自動調整以保持比例 */
+    height: auto;
+    /* 設置圖片寬度為父元素寬度 */
+    width: 80%;
+    /* 讓圖片在容器內置中 */
+    display: block;
+    margin: 0 auto;
+}
+
+  
+  /* 首頁滾動條 */
+  .credit_articles {
+    margin: 0 auto;
+    text-align: left;
+    display: block;
+    background-color: #faf5f5; 
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .credit_articles p {
+    text-indent: 2em; /* 設置段落首行縮進 */
+    line-height: 1.5; /* 設置行高 */
+}
+  .credit_articles img {
+    /* 讓圖片高度自動調整以保持比例 */
+    height: auto;
+    /* 設置圖片寬度為父元素寬度 */
+    width: 80%;
+    /* 讓圖片在容器內置中 */
+    display: block;
+    margin: 0 auto;
+}
+
+  .credit_articles p:last-of-type {
+    text-indent: 0; /* 移除段落的縮進 */
+}
+
+.debit_articles {
+  margin: 0 auto;
+  text-align: left;
+  display: block;
+  background-color: #faf5f5; 
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 10px;
+  width: 80%;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.debit_articles p {
+  text-indent: 2em; /* 設置段落首行縮進 */
+  line-height: 1.5; /* 設置行高 */
+}
+
+  .article-container {
+    position: flex;
+  }
+  
+  article {
+    display: none;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  article.active {
+    display: block;
+  }
+  
+  
+  
+  /* 頁尾 */
+  .container-footer {
+    background-color: #8f5b4c;
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    /* font-weight: 600; */
+    padding-inline-start: 5%;
+    padding-inline-end: 3%;
+    box-sizing: border-box;
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+  .container-footer {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
