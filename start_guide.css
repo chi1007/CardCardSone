@@ -162,6 +162,8 @@
     
   }
 
+  
+
   .section-description2 img {
     /* 讓圖片高度自動調整以保持比例 */
     height: auto;
@@ -172,6 +174,23 @@
     margin: 0 auto;
 }
 
+.section-description3 {
+  margin: 0 auto;
+  text-align: left;
+  display: block;
+  background-color: #ffffff; 
+  flex-direction: column;
+  margin-top: 10px;
+  width: 80%;
+  font-size: 20px;
+  font-weight: 400;
+
+}
+
+.section-description3 p {
+  text-indent: 2em; /* 設置段落首行縮進 */
+  line-height: 1.5; /* 設置行高 */
+}
   
   /* 首頁滾動條 */
   .credit_articles {
@@ -186,6 +205,7 @@
     font-size: 20px;
     font-weight: 400;
   }
+  
   
   .credit_articles p {
     text-indent: 2em; /* 設置段落首行縮進 */
