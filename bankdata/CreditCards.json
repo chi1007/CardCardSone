@@ -3,7 +3,7 @@
     {
       "name": "匯豐 匯鑽卡",
       "bankname": "匯豐銀行",
-      "imagePath": "../image/CreditCards/hsbc-diamond.png",
+      "imagePath": "../static/image/CreditCards/hsbc-diamond.png",
       "tags": ["現金回饋", "行動支付"],
       "簡介": [
           "網購/ 影音娛樂/ 美食外送  指定通路最高 6% 回饋",
@@ -15,7 +15,7 @@
     {
       "name": "台新 @GoGo 卡",
       "bankname": "台新銀行",
-      "imagePath": "../image/CreditCards/taishin-gogo.png",
+      "imagePath": "../static/image/CreditCards/taishin-gogo.png",
       "tags": ["現金回饋", "網購", "行動支付"],
       "簡介": [
           "精選網購、行動支付Go給力 最高 3.8%！",
@@ -27,7 +27,7 @@
     {
       "name": "第一銀行 Living Green 綠活卡",
       "bankname": "第一銀行",
-      "imagePath": "../image/CreditCards/first-green.png",
+      "imagePath": "../static/image/CreditCards/first-green.png",
       "tags": ["現金回饋", "海外消費"],
       "簡介": [
           "新戶數位申辦最高贈750元",
@@ -39,7 +39,7 @@
     {
       "name": "台新 FlyGo卡",
       "bankname": "台新銀行",
-      "imagePath": "../image/CreditCards/taishin-flygo.png",
+      "imagePath": "../static/image/CreditCards/taishin-flygo.png",
       "tags": ["現金回饋", "旅遊訂房","海外消費"],
       "簡介": [
           "精選航空、交通、旅遊最高 5%",

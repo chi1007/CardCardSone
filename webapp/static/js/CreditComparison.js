@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   app.use(express.static(path.join(__dirname, 'public')));
   
   // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('/bankdata/CreditCards.json', (req, res) => {
+  app.get('../../bankdata/CreditCards.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'CreditCards.json'));
   });
   
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadBankData() {
-    fetch('/bankdata/CreditCards.json')
+    fetch('../../bankdata/CreditCards.json')
         .then(response => response.json())
         .then(data => {
             cardData = data.cards;
@@ -138,7 +138,7 @@ function updateSelectedImages(cards) {
                 selectedImageTitles[i].textContent = card.name;
             }
         } else {
-            img.src = './image/icon/none.png';
+            img.src = '../static/image/icon/none.png';
             img.alt = 'Placeholder';
             selectedImageTitles[i].textContent = '';
         }

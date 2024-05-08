@@ -3,7 +3,7 @@
     {
       "name": "匯豐 匯鑽卡",
       "bankname": "匯豐銀行",
-      "imagePath": "../image/CreditCards/hsbc-diamond.png",
+      "imagePath": "../static/image/CreditCards/hsbc-diamond.png",
       "基本回饋": "2%",
       "加碼回饋": "Up to 5%",
       "海外消費": "No foreign transaction fee",
@@ -16,7 +16,7 @@
     {
       "name": "台新 @GoGo 卡",
       "bankname": "台新銀行",
-      "imagePath": "../image/CreditCards/taishin-gogo.png",
+      "imagePath": "../static/image/CreditCards/taishin-gogo.png",
       "基本回饋": "1.5%",
       "加碼回饋": "Up to 3%",
       "海外消費": "2.5% foreign transaction fee",
@@ -29,7 +29,7 @@
     {
       "name": "第一銀行 Living Green 綠活卡",
       "bankname": "第一銀行",
-      "imagePath": "../image/CreditCards/first-green.png",
+      "imagePath": "../static/image/CreditCards/first-green.png",
       "基本回饋": "3%",
       "加碼回饋": "Up to 4%",
       "海外消費": "1.5% foreign transaction fee",
@@ -42,7 +42,7 @@
     {
       "name": "台新 FlyGo卡",
       "bankname": "台新銀行",
-      "imagePath": "../image/CreditCards/taishin-flygo.png",
+      "imagePath": "../static/image/CreditCards/taishin-flygo.png",
       "基本回饋": "3.3%",
       "加碼回饋": "Up to 4.1%",
       "海外消費": "1.6% foreign transaction fee",

@@ -17,7 +17,7 @@ app.use((req, res, next) => {
   app.use(express.static(path.join(__dirname, 'public')));
   
   // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('/bankdata/CreditCardComparison.json', (req, res) => {
+  app.get('../../bankdata/CreditCardComparison.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'CreditCardComparison.json'));
   });
   
@@ -46,7 +46,7 @@ var cardData = [];
 
 
 function loadBankData() {
-    fetch('/bankdata/CreditCardComparison.json')
+    fetch('../../bankdata/CreditCardComparison.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
