@@ -37,16 +37,16 @@
       "link": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685690"
     },
     {
-      "name": "匯豐 匯鑽卡",
-      "bankname": "匯豐銀行",
-      "imagePath": "../image/CreditCards/hsbc-diamond.png",
-      "tags": ["現金回饋", "行動支付"],
+      "name": "台新 FlyGo卡",
+      "bankname": "台新銀行",
+      "imagePath": "../image/CreditCards/taishin-flygo.png",
+      "tags": ["現金回饋", "旅遊訂房","海外消費"],
       "簡介": [
-          "網購/ 影音娛樂/ 美食外送  指定通路最高 6% 回饋",
-          "OPEN POINT 錢包 30點 OPEN POINT回饋",
-          "ICash Pay指定通路消費享10%回饋"
+          "精選航空、交通、旅遊最高 5%",
+          "海外消費 最高 3% 無上限",
+          "分期減擔繳 最高分12期0利率"
       ],
-      "link": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/"
+      "link": "https://www.taishinbank.com.tw/eServiceA/CreditCardAP/apply/index.jsp?pc=104"
     }
 ]
 }

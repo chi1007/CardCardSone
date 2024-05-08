@@ -38,6 +38,19 @@
       "首刷禮": "Cashback",
       "年費": "$120",
       "卡片特色": "Points rewards"
+    },
+    {
+      "name": "台新 FlyGo卡",
+      "bankname": "台新銀行",
+      "imagePath": "../image/CreditCards/taishin-flygo.png",
+      "基本回饋": "3.3%",
+      "加碼回饋": "Up to 4.1%",
+      "海外消費": "1.6% foreign transaction fee",
+      "旅遊保險": "Yes",
+      "跨行手續費": "$0",
+      "首刷禮": "Cashback",
+      "年費": "$123",
+      "卡片特色": "Points rewards"
     }
   ]
 }
