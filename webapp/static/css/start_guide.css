@@ -177,7 +177,7 @@
 .section-description3 {
   margin: 0 auto;
   text-align: left;
-  display: block;
+  display: block; /*元素将显示为块级元素，即宽度将填满父元素的整个宽度，而不是与其他元素共享水平空间*/
   background-color: #ffffff; 
   flex-direction: column;
   margin-top: 10px;
@@ -192,21 +192,39 @@
   line-height: 1.5; /* 設置行高 */
 }
 
+
 .image-container {
   display: flex; /* 使用弹性盒子布局 */
   justify-content: space-between; /* 图片在容器中水平均匀分布 */
-  margin: 0 auto;  /*外边距，0表示上下外边距为0，auto表示左右外边距自动计算以实现水平居中*/
-  display: block;
+  margin: 0 auto;
+  display: block; /*元素将显示为块级元素，即宽度将填满父元素的整个宽度，而不是与其他元素共享水平空间*/
   background-color: #ffffff; 
-  margin-top: 10px;   /*上外边距*/
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 70px;
   width: 80%;
 }
 
 .image-container img {
-  max-width: 30%; /* 图片的最大宽度为容器宽度的30% */
   height: auto; /* 保持图片的纵横比 */
+  max-width: 33%; 
 }
 
+.pros_cons_container {
+  display: flex; /* 使用弹性盒子布局 */
+  justify-content: center; /* 弹性项目在主轴上居中对齐 */
+  width: 80%;
+  margin: 0 auto; /* margin 元素的外边距。0 auto 表示上下外边距为 0，左右外边距自动计算以实现水平居中。浏览器会自动计算左右外边距，使得元素水平居中显示在其父容器中 */
+  margin-bottom: 35px;
+}
+
+.box {
+  flex: 1; /* 设置弹性项目平均占据剩余空间 */
+  padding: 20px; /* 设置内边距 */
+  text-align: left;
+  background-color:#faf5f5;
+  margin: 0 10px; /* 左右间距为 10px */
+}
   
   /* 首頁滾動條 */
   .credit_articles {
@@ -274,8 +292,55 @@
     display: block;
   }
   
-  
-  
+  .credit_apply_articles {
+    margin: 0 auto;
+    text-align: left;
+    display: block;
+    background-color: #faf5f5; 
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .credit_apply_articles p {
+    text-indent: 2em; /* 設置段落首行縮進 */
+    line-height: 1.5; /* 設置行高 */
+}
+
+.credit_apply_articles p:first-child,
+.credit_apply_articles p:last-child {
+    text-indent: 0; /* 移除第一行和最后一行段落的缩进 */
+}
+
+  .credit_articles_img {
+    position: relative; /* 设置相对定位 */
+    margin: 0 auto;
+    display: flex;
+    background-color: #faf5f5; 
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.credit_articles_img .text {
+    flex: 1;
+    text-align: left;
+}
+
+.credit_articles_img img {
+    position: absolute; /* 设置绝对定位 */
+    top: 0;
+    right: 0; /* 图片位于父元素的右上角 */
+    max-height: 100%; /* 限制图片高度 */
+    max-width: 50%; /* 限制图片宽度 */
+}
+
   /* 頁尾 */
   .container-footer {
     background-color: #8f5b4c;
