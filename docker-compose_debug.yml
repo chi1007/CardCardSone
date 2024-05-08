@@ -1,0 +1,94 @@
+version: "3"
+
+services:
+  flask_debug:
+    image: webapp-flask-debug
+    build:
+      context: .
+      dockerfile: ./env/flask/Dockerfile_debug
+    environment:
+      - FLASK_ENV
+      - FLASK_APP=app.py
+      - DEBUGGER=True
+      - FLASK_ENV=development 
+    ports:
+      - 5000:5000
+      - 10001:10001
+    volumes:
+      - ./webapp:/app
+      - /etc/localtime:/etc/localtime:ro
+    working_dir: /app
+    networks:
+      flask_init:
+    # restart: always
+
+  nginx:
+    image: webapp-nginx
+    build:
+      context: .
+      dockerfile: ./env/nginx/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - flask_debug
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./env/nginx/www:/var/www
+      # - /etc/letsencrypt:/etc/letsencrypt
+      # - /var/log/letsencrypt:/var/log/letsencrypt
+      # - /root/letsencrypt/lib:/var/lib/letsencrypt
+    networks:
+      flask_init:
+    # restart: always
+
+  mysql:
+    image: webapp-mysql
+    build:
+      context: .
+      dockerfile: ./env/mysql/Dockerfile
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./env/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
+      - /etc/localtime:/etc/localtime:ro
+    # - mysql_data:/var/lib/mysql/data
+    networks:
+      flask_init:
+  # restart: always
+
+  # celery:
+  #   image: webapp-celery
+  #   build:
+  #     context: celeryapp
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - ./webapp:/app
+  #   ports:
+  #     - "5555:5555"
+  #   working_dir: /app
+  #   command: celery worker -l info -A blueprints.contact.tasks --broker=redis://:devpassword@redis:6379/0
+  #   networks:
+  #     flask_init:
+  #   # restart: always
+
+  # redis:
+  #   image: redis:latest
+  #   volumes:
+  #     - "redis:/var/lib/redis/data"
+  #   ports:
+  #     - "6379:6379"
+  #   command: redis-server --requirepass devpassword
+  #   networks:
+  #     flask_init:
+  #  # restart: always
+
+volumes:
+  mysql:
+  # redis:
+
+networks:
+  flask_init:

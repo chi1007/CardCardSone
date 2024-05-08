@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  flask:
+    #image: cardcardsone-flask
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #environment:
+     # - GITHUB_TOKEN=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
+    ports:
+      - "8000:8000"
+    
+  
+  

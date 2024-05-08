@@ -1,0 +1,29 @@
+Flask==1.0.2
+uWSGI==2.0.17.1
+
+# Forms.
+Flask-WTF==0.14.3
+WTForms-Components==0.9.7
+
+# Data and workers.
+# psycopg2==2.6.1
+PyMySQL==0.9.3
+Flask-SQLAlchemy==2.1
+
+
+
+# Extensions.
+flask-debugtoolbar==0.10.1
+Flask-Mail==0.9.1
+Flask-Login==0.3.2
+pytz
+
+
+# Testing and static analysis.
+pytest==2.9.1
+pytest-cov==2.2.1
+flake8==2.5.4
+debugpy
+
+# CLI.
+Click==6.4
