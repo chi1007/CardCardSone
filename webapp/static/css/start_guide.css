@@ -182,8 +182,8 @@
   flex-direction: column;
   margin-top: 10px;
   width: 80%;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 20px;  /*字体大小*/
+  font-weight: 400;   /*字體粗細*/
 
 }
 
@@ -191,6 +191,22 @@
   text-indent: 2em; /* 設置段落首行縮進 */
   line-height: 1.5; /* 設置行高 */
 }
+
+.image-container {
+  display: flex; /* 使用弹性盒子布局 */
+  justify-content: space-between; /* 图片在容器中水平均匀分布 */
+  margin: 0 auto;  /*外边距，0表示上下外边距为0，auto表示左右外边距自动计算以实现水平居中*/
+  display: block;
+  background-color: #ffffff; 
+  margin-top: 10px;   /*上外边距*/
+  width: 80%;
+}
+
+.image-container img {
+  max-width: 30%; /* 图片的最大宽度为容器宽度的30% */
+  height: auto; /* 保持图片的纵横比 */
+}
+
   
   /* 首頁滾動條 */
   .credit_articles {
