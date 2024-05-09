@@ -156,6 +156,35 @@ selectedCards.forEach((cardName, i) => {
     }
 });
 
+function updateDisplay() {
+    const selectedCardsLength = selectedCards.length; // selectedCards 是一個包含已選卡片名稱的數組
+    const cardContainers = document.querySelectorAll('.card-container');
+
+    cardContainers.forEach((container, index) => {
+        if (index < selectedCardsLength) {
+            container.style.display = 'block'; // 顯示容器
+        } else {
+            container.style.display = 'none'; // 隱藏容器
+        }
+    });
+}
+
+// 调用此函数在页面加载时和用户每次更改选择时
+updateDisplay();
+
+// 在用戶選擇卡片後更新顯示
+function handleCheckboxChange(checkbox) {
+    // 現有的選擇處理代碼...
+
+    updateDisplay(); // 更新顯示
+}
+
+// 在頁面加載時根據cookie或URL參數設置初始卡片選擇
+document.addEventListener('DOMContentLoaded', function () {
+    loadBankData();
+    updateDisplay(); // 初始更新顯示
+});
+
 
 
 

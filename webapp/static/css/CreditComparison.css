@@ -180,7 +180,7 @@
 
     
   .decorative-button {
-    width: 110px;
+    width: 125px;
     background-color: #f8dbb9;
     border-radius: 17px;
     height: 41px;
@@ -260,13 +260,17 @@
   }
   
   #comparison-table th:nth-child(2) { 
-    width: 28%;
+    width: 21%;
+  }
+
+  #comparison-table th:nth-child(3) { 
+    width: 21%;
   }
   
   .card-icon {
     flex-direction: column;
     line-height: normal;
-    width: calc(34%);
+    width: calc(50%);
     margin-bottom: 0px;
   }
 
