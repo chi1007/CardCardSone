@@ -1,3 +1,7 @@
+body {
+  background-color: #fbf3ea; /* 淺灰色的背景色 */
+}
+
 /* 頁頭 */
 .header-container {
   position: fixed;
@@ -6,7 +10,7 @@
   width: 100%;
   }
 .header {
-    background-color: #8f5b4c;
+    background-color: #d8b291;
     display: flex;
     width: 100%;
     gap: 16px;
@@ -20,7 +24,7 @@
 
 .logo a,
 .logo-font a {
-  color: #171a1f;
+  color: #654327;
   flex-grow: 1;
   margin: auto 0;
   font-family:Arial, sans-serif;
@@ -96,8 +100,9 @@
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  color: #ffde99;
-  align-items: center; 
+  color: #8f5b4c;
+  align-items: center;
+  font-weight: bold;
 }
 
 
@@ -111,8 +116,8 @@
   left: 50%; 
   transform: translateX(-50%);
   width: 80%; 
-  height: 2px;
-  background-color: #ffde99;
+  height: 3px;
+  background-color: #8f5b4c;
   
 }
 
@@ -168,7 +173,7 @@
 
 /* 按下標籤 */ 
 .filter-options .btn.active {
-  background-color: #e5d8d7;
+  background-color: #d8b29161;
   border: 1px solid rgba(169, 127, 123, 1);
   border-radius: 22px;
   font-family: Inter, sans-serif;
@@ -183,7 +188,7 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   margin: 12px 20px 0;
   padding: 0 1px;
 }
@@ -217,7 +222,7 @@
   font-family: Inter, sans-serif;
   justify-content: center;
   border-radius: 22px;
-  background-color: #a97f7b;
+  background-color: #a8795f;
   padding: 15px 16px;
 }
 
@@ -261,14 +266,16 @@
   width: calc(100% + 16px); /* 調整寬度，彌補左右各 8px 的外邊距 */
   margin: 0 -8px -8px -8px; /* 左右負邊距彌補 body 預設的外邊距，下方負邊距使底部貼邊 */
   margin-top: 47px;
-  background: #1e130c;
-  background: -webkit-linear-gradient(to left, #9a8478, #1e130c);
-  background: linear-gradient(to left, #9a8478, #1e130c); 
-  color: rgb(255, 255, 255);
+  background: #eacda3;
+  background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+  background: linear-gradient(to right, #d6ae7b, #eacda3);
+  
+  color: rgb(95, 95, 95);
   text-decoration: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 0 3%; /* 保留內邊距 */
   box-sizing: border-box;
+  font-weight: bold;
 }
