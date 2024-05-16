@@ -4,6 +4,7 @@ body {
   
 /* 頁頭 */
 .header-container {
+    z-index: 1000; 
     position: fixed;
     top: 0;
     left: 0;
