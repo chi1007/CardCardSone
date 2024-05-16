@@ -2,14 +2,60 @@ version: "3"
 
 services:
   flask:
-    #image: cardcardsone-flask
+    image: cardcardsone-flask
+    container_name: cardcardsone-flask-container
     build:
       context: .
-      dockerfile: Dockerfile
-    #environment:
-     # - GITHUB_TOKEN=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
+      dockerfile: ./env/flask/Dockerfile
     ports:
-      - "8000:8000"
+      - "8000:8000" # only for other containers
+    volumes:
+      - ./webapp:/app
+    working_dir: /app
+    networks:
+      - flask_init
+
+  nginx:
+    image: cardcardsone-nginx
+    container_name: cardcardsone-nginx-container
+    build:
+      context: .
+      dockerfile: ./env/nginx/Dockerfile
+    ports:
+      - "80:80" # http
+      - "443:443" # https
+    depends_on:
+      - flask
+    volumes:
+      - ./env/nginx/www:/var/www
+      # - /etc/letsencrypt:/etc/letsencrypt
+      # - /var/log/letsencrypt:/var/log/letsencrypt
+      # - /root/letsencrypt/lib:/var/lib/letsencrypt
+    networks:
+      - flask_init
+
+  mysql:
+    image: cardcardsone-mysql
+    container_name: cardcardsone-mysql-container
+    build:
+      context: .
+      dockerfile: ./env/mysql/Dockerfile
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./env/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
+    networks:
+      - flask_init
+
+volumes:
+  mysql:
+
+networks:
+  flask_init:
+
     
   
   
