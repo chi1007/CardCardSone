@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="#">
+    <link rel="icon" href="../static/image/icon/Croissant1.png">
     <title>卡卡頌 CardCardSone</title>
-    <link rel="stylesheet" href="../static/css/CreditCardComparison.css">
+    <link rel="stylesheet" href="../static/css/CardComparison.css">
+    <link rel="stylesheet" href="../static/css/common.css">
 </head>
 
 <body onload="loadBankData()">
 
   <div class="header-container">
     <header class="header">
-      <div class="logo"><a href="CreditCard_home.html">卡卡頌 CardCardSone</a></div>
+      <div class="logo">
+        <img src="../static/image/icon/Croissant1.png " alt="icon" width="50" height="50">
+        <a href="CreditCard_home.html">卡卡頌 CardCardSone</a>
+      </div>
       <nav>
         <ul class="nav">
           <li class="nav-item">
@@ -20,6 +24,7 @@
             <ul class="dropdown-menu">
               <li><a href="PopularCreditCards.html">熱門信用卡</a></li>
               <li><a href="PopularDebitCards.html">熱門金融卡</a></li>
+              <li><a href="start_guide.html">小白指南</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -43,32 +48,33 @@
 </section>
 
 <section class="card-container">
-    <div class="content-wrapper">
-        <div class="card">
-            <img src="#" alt="Card 1" class="card-image" id="cardImage1">
-            <h3 class="card-title" id="cardTitle1"></h3>
-            <div class="dropdown-container">
-                <select class="card-select" id="cardSelect1"></select>
-            </div>
-        </div>
-        <div class="card">
-            <img src="#" alt="Card 2" class="card-image" id="cardImage2">
-            <h3 class="card-title" id="cardTitle2"></h3>
-            <div class="dropdown-container">
-                <select class="card-select" id="cardSelect2"></select>
-            </div>
-        </div>
-        <div class="card">
-            <img src="#" alt="Card 3" class="card-image" id="cardImage3">
-            <h3 class="card-title" id="cardTitle3"></h3>
-            <div class="dropdown-container">
-                <select class="card-select" id="cardSelect3"></select>
-            </div>
-        </div>
+  <div class="content-wrapper">
+    <div class="card">
+      <img src="#" alt="Card 1" class="card-image" id="cardImage1">
+      <h3 class="card-title" id="cardTitle1"></h3>
+      <div class="dropdown-container">
+        <select class="card-select" id="cardSelect1"></select>
+      </div>
     </div>
+    <div class="card">
+      <img src="#" alt="Card 2" class="card-image" id="cardImage2">
+      <h3 class="card-title" id="cardTitle2"></h3>
+      <div class="dropdown-container">
+        <select class="card-select" id="cardSelect2"></select>
+      </div>
+    </div>
+    <div id="card-column-3" class="card">
+      <img src="#" alt="Card 3" class="card-image" id="cardImage3">
+      <h3 class="card-title" id="cardTitle3"></h3>
+      <div class="dropdown-container">
+        <select class="card-select" id="cardSelect3"></select>
+      </div>
+    </div>
+    <button id="toggle-button" class="decorative-icon" onclick="toggleCardDisplay()">↷</button>
+  </div>
 </section>
 <table id="comparison-table">
-  <thead>
+  <thead id="comparison-thead">
       <tr>
           <th>銀行名稱</th>
           <th id="bankName1"></th>
@@ -78,62 +84,111 @@
   </thead>
   <tbody id="comparison-body">
       <tr>
-          <td>基本回饋</td>
+          <th>基本回饋</th>
           <td id="basicReward1"></td>
           <td id="basicReward2"></td>
           <td id="basicReward3"></td>
       </tr>
       <tr>
-          <td>加碼回饋</td>
+          <th>加碼回饋</th>
           <td id="additionalReward1"></td>
           <td id="additionalReward2"></td>
           <td id="additionalReward3"></td>
       </tr>
       <tr>
-          <td>海外消費</td>
+          <th>海外消費</th>
           <td id="overseasSpending1"></td>
           <td id="overseasSpending2"></td>
           <td id="overseasSpending3"></td>
       </tr>
-    <tr>
-      <td>旅遊保險</td>
-      <td id="travelInsurance1"></td>
-      <td id="travelInsurance2"></td>
-      <td id="travelInsurance3"></td>
-    </tr>
-    <tr>
-      <td>跨行手續費</td>
-      <td id="interbankFee1"></td>
-      <td id="interbankFee2"></td>
-      <td id="interbankFee3"></td>
-    </tr>
-    <tr>
-      <td>首刷禮</td>
-      <td id="firstPurchaseGift1"></td>
-      <td id="firstPurchaseGift2"></td>
-      <td id="firstPurchaseGift3"></td>
-    </tr>
-    <tr>
-      <td>年費</td>
-      <td id="annualFee1"></td>
-      <td id="annualFee2"></td>
-      <td id="annualFee3"></td>
-    </tr>
-    <tr>
-      <td>卡片特色</td>
-      <td id="cardFeatures1"></td>
-      <td id="cardFeatures2"></td>
-      <td id="cardFeatures3"></td>
-    </tr>
+      <tr>
+          <th>年費</th>
+          <td id="annualFee1"></td>
+          <td id="annualFee2"></td>
+          <td id="annualFee3"></td>
+      </tr>
+      <tr>
+          <th>卡片特色</th>
+          <td id="cardFeatures1"></td>
+          <td id="cardFeatures2"></td>
+          <td id="cardFeatures3"></td>
+      </tr>
+      <tr>
+          <th>跨行優惠</th>
+          <td id="crossBankOffers1"></td>
+          <td id="crossBankOffers2"></td>
+          <td id="crossBankOffers3"></td>
+      </tr>
+      <tr>
+          <th>網購優惠</th>
+          <td id="onlineShoppingDiscounts1"></td>
+          <td id="onlineShoppingDiscounts2"></td>
+          <td id="onlineShoppingDiscounts3"></td>
+      </tr>
+      <tr>
+          <th>行動支付</th>
+          <td id="mobilePayment1"></td>
+          <td id="mobilePayment2"></td>
+          <td id="mobilePayment3"></td>
+      </tr>
+      <tr>
+          <th>通勤交通</th>
+          <td id="commuteExpenses1"></td>
+          <td id="commuteExpenses2"></td>
+          <td id="commuteExpenses3"></td>
+      </tr>
+      <tr>
+          <th>生活繳費</th>
+          <td id="utilitiesPayment1"></td>
+          <td id="utilitiesPayment2"></td>
+          <td id="utilitiesPayment3"></td>
+      </tr>
+      <tr>
+          <th>餐飲外送</th>
+          <td id="foodDelivery1"></td>
+          <td id="foodDelivery2"></td>
+          <td id="foodDelivery3"></td>
+      </tr>
+      <tr>
+          <th>影音娛樂</th>
+          <td id="entertainment1"></td>
+          <td id="entertainment2"></td>
+          <td id="entertainment3"></td>
+      </tr>
+      <tr>
+          <th>旅遊訂房</th>
+          <td id="traveBooking1"></td>
+          <td id="traveBooking2"></td>
+          <td id="traveBooking3"></td>
+      </tr>
+      <tr>
+          <th>量販百貨</th>
+          <td id="departmentStores1"></td>
+          <td id="departmentStores2"></td>
+          <td id="departmentStores3"></td>
+      </tr>
+      <tr>
+          <th>新戶優惠</th>
+          <td id="newUserOffer1"></td>
+          <td id="newUserOffer2"></td>
+          <td id="newUserOffer3"></td>
+      </tr>
+      <tr>
+        <th>官方連結</th>
+        <td id="websiteLink1"></td>
+        <td id="websiteLink2"></td>
+        <td id="websiteLink3"></td>
+      </tr>
   </tbody>
 </table>
 
+
 <footer class="container-footer">
 
-  <p>© 2024 卡卡頌 | <a href="#" style="color:#8f5b4c;">隱私政策</a> | <a href="#" style="color:#8f5b4c;">使用條款</a></p>
-  <p>地址：台北市和平東路一段155號三樓</p> 
+  <p>© 2024 卡卡頌 | <a href="#" style="color:#ffde99;">隱私政策</a> | <a href="#" style="color:#ffde99;">使用條款</a></p>
+  <p>地址：台北市和平東路一段155號三樓</p>
   <p>電話：(02) 1234-5678</p>
-  <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#8f5b4c;">cardcardsone@gmail.com</p>
+  <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#ffde99;">cardcardsone@gmail.com</p>
 
 </footer>
   <script src="../static/js/CreditCardComparison.js"></script>

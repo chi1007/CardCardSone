@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   app.use(express.static(path.join(__dirname, 'public')));
   
   // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('../../bankdata/CreditCards.json', (req, res) => {
+  app.get('bankdata/CreditCards.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'CreditCards.json'));
   });
   

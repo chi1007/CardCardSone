@@ -1,12 +1,16 @@
+body {
+    background-color: #fbf3ea;
+  }
+  
 /* 頁頭 */
 .header-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    }
+}
 .header {
-    background-color: #8f5b4c;
+    background-color: #d8b291;
     display: flex;
     width: 100%;
     gap: 16px;
@@ -20,7 +24,7 @@
 
 .logo a,
 .logo-font a {
-    color: #171a1f;
+    color: #ffffff;
     flex-grow: 1;
     margin: auto 0;
     font-family:Arial, sans-serif;
@@ -96,8 +100,9 @@
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    color: #ffde99;
-    align-items: center; 
+    color: #8f5b4c;
+    align-items: center;
+    font-weight: bold;
 }
 
 
@@ -111,9 +116,9 @@
     left: 50%; 
     transform: translateX(-50%);
     width: 80%; 
-    height: 2px;
-    background-color: #ffde99;
-    
+    height: 3px;
+    background-color: #8f5b4c;
+
 }
 
 .nav-credit-card {
@@ -122,126 +127,16 @@
     padding: 30px 8px;
     font-size: 18px;
 }
-    
-
-  /* 標題&標籤 */
-
-.section-newstitle {
-    color: #727272;
-    font: 25px/100% Epilogue, sans-serif;
-    margin: 0 30px;
-    /* display: flex; */
-    background-color: #ffffff; 
-    text-align: center;
-    flex-direction: column;
-    padding: 0px;
-    margin-top: 100px;
-    width: 100%;
-}
-
-.search-bar {
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.search-bar input {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-
-/*  main 主要內容區樣式 */
-main {
-max-width: 960px;
-margin: 0 auto;
-padding: 20px;
-}
-
-section {
-margin-bottom: 40px;
-}
-
-/* 新聞區塊樣式 */
-.news-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-}
-
-.news-item {
-width: 30%;
-margin-bottom: 20px;
-text-align: center;
-}
-
-.news-item img {
-max-width: 100%;
-height: auto;
-}
-
-/* 書籍區塊樣式 */
-.book-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-}
-
-.book-item {
-width: 30%;
-margin-bottom: 20px;
-text-align: center;
-}
-
-.book-item img {
-max-width: 100%;
-height: auto;
-}
-
-.book-item h3 a {
-color: #333;
-text-decoration: none;
-}
-
-.book-item h3 a:hover {
-text-decoration: underline;
-}
-
-/* 頁尾樣式 */
-footer {
-background-color: #333;
-color: #fff;
-text-align: center;
-padding: 10px;
-}
-
-
-
-/* 頁碼 */
-.pagination a {
-    color: #8f5b4c;
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid #794536;
-    margin: 0 4px;
-    align-items: center;
-}
-
-.pagination a:hover {
-    background-color: #8f5b4c;
-    color: #fff;
-}
-
 
 /* 頁尾 */
+
 .container-footer {
     width: calc(100% + 16px); /* 調整寬度，彌補左右各 8px 的外邊距 */
     margin: 0 -8px -8px -8px; /* 左右負邊距彌補 body 預設的外邊距，下方負邊距使底部貼邊 */
     margin-top: 47px;
     background: #1e130c;
     background: -webkit-linear-gradient(to left, #9a8478, #1e130c);
-    background: linear-gradient(to left, #9a8478, #1e130c); 
+    background: linear-gradient(to left, #9a8478, #1e130c);
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: flex;
@@ -249,8 +144,5 @@ padding: 10px;
     align-items: center;
     padding: 0 3%; /* 保留內邊距 */
     box-sizing: border-box;
+    font-weight: bold;
 }
-
-    
-    
-    

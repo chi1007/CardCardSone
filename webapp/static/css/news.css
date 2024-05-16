@@ -1,0 +1,110 @@
+/* 標題&標籤 */
+
+.section-newstitle {
+    color: #727272;
+    font: 25px/100% Epilogue, sans-serif;
+    background-color: #fbf3ea; 
+    text-align: center;
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.search-bar {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.search-bar input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/*  main 主要內容區樣式 */
+main {
+max-width: 960px;
+margin: 0 auto;
+padding: 20px;
+}
+
+section {
+margin-bottom: 40px;
+}
+
+/* 新聞區塊樣式 */
+.news-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.news-item {
+width: 30%;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.news-item img {
+max-width: 100%;
+height: auto;
+}
+
+/* 書籍區塊樣式 */
+.book-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.book-item {
+width: 30%;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.book-item img {
+max-width: 100%;
+height: auto;
+}
+
+.book-item h3 a {
+color: #333;
+text-decoration: none;
+}
+
+.book-item h3 a:hover {
+text-decoration: underline;
+}
+
+/* 頁尾樣式 */
+footer {
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 10px;
+}
+
+
+
+/* 頁碼 */
+.pagination a {
+    color: #8f5b4c;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #794536;
+    margin: 0 4px;
+    align-items: center;
+}
+
+.pagination a:hover {
+    background-color: #8f5b4c;
+    color: #fff;
+}
+
+    
+    
+    

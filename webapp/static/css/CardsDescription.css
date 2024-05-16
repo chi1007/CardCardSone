@@ -1,0 +1,111 @@
+ /* 標題 */
+
+.cards-description {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0px;
+    margin-top: 146px;
+    width: 100%;
+  }
+  
+  .section-title {
+    color: #727272;
+    font: 700 64px/131% Epilogue, sans-serif;
+    margin: 0 30px;
+  }
+
+/* 內容 */
+
+
+ h3 {
+    font-family: Epilogue, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: rgba(86, 94, 108, 1);
+    margin-bottom: 10px;
+}
+
+.card-introduction {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.card-image {
+    display: block;
+    margin: 10px auto;
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-details td {
+    width: 50%; 
+    border-bottom: 1px solid #ccc; 
+    font-size: 20px; 
+}
+
+.card-details th, .card-details td {
+    vertical-align: top;
+    padding: 8px;
+    
+}
+
+.card-details th {
+    width: 20%; 
+}
+
+.card-details table {
+    width: 88%; 
+    margin: 0 auto; /* 將表格置中 */
+}
+
+.card-description {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.card-description h2 {
+    color: #333;
+}
+
+
+.card-description p {
+  font-family: Epilogue, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: rgb(50 53 62);
+}
+
+.btn-primary {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+    user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #fff;
+  background-color: #a8795f;
+  border-color: #59382a;
+  font-weight: bold;
+  text-decoration: none; 
+}
+.btn-primary:hover {
+  color: #a8795f;
+  background-color: #f8dbb9;
+  border-color: #654327;
+  font-weight: bold;
+  text-decoration: none; 
+}

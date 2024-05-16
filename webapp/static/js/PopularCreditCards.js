@@ -30,7 +30,6 @@ app.use((req, res, next) => {
 
 // 全局變量初始化
 var cardData = [];
-var selectedCards = [];  // 確保這裡是全局作用域定義的
 
 document.addEventListener('DOMContentLoaded', function () {
     loadBankData();

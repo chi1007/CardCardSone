@@ -1,0 +1,76 @@
+/* 標題&標籤 */
+
+.section-mailtitle {
+    color: #727272;
+    font: 25px/100% Epilogue, sans-serif;
+    display: flex;
+    background-color: #fbf3ea; 
+    text-align: center;
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 100px;
+    width: 100%;
+}
+
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight:bold
+}
+
+.input[type="text"],
+.input[type="email"],
+.textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #825245;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight:bold
+}
+
+.button:hover {
+    background-color: #f4ceb4;
+    color: #5e3d34;
+    font-weight:bold
+}
+
+/* #response {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+} */
+
+
+/* 内嵌分隔線 */
+.hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+
+.container contact center {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0px;
+    margin-top: 146px;
+    width: 100%;
+}
