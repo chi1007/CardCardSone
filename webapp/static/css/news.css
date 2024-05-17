@@ -35,7 +35,7 @@ section {
 margin-bottom: 40px;
 }
 
-/* 新聞區塊樣式 */
+/* 信用卡最新資訊區塊 */
 .news-container {
 display: flex;
 flex-wrap: wrap;
@@ -48,12 +48,37 @@ margin-bottom: 20px;
 text-align: center;
 }
 
-.news-item img {
-max-width: 100%;
-height: auto;
+.news-item h3{
+color: #333; /* 標題顏色 */
 }
 
-/* 書籍區塊樣式 */
+.news-item p {
+color: #666; /* 文字顏色 */
+/* font-size: 20px;  */
+text-align: justify
+}
+
+.news-item a {
+text-decoration: none;
+color: var(--fg-color);
+cursor: default;
+}
+
+.news-item a:hover {
+text-decoration: none !important; /* 滑鼠懸停時移除底線 */
+color:#378482
+/* color:#8f5b4c */
+}
+
+.news-item img {
+width: 100%;
+height: 150px;
+}
+
+
+
+
+/* 精選文章區塊 */
 .book-container {
 display: flex;
 flex-wrap: wrap;
@@ -66,9 +91,33 @@ margin-bottom: 20px;
 text-align: center;
 }
 
+
+.book-item h3{
+color: #333; /* 標題顏色 */
+}
+
+.book-item p {
+color: #666; /* 文字顏色 */
+/* font-size: 20px;  */
+text-align: justify;
+}
+
+
+.book-item a {
+text-decoration: none;
+color: var(--fg-color);
+cursor: default;
+}
+
+.book-item a:hover {
+text-decoration: none !important; /* 滑鼠懸停時移除底線 */
+color:#378482
+}
+
 .book-item img {
-max-width: 100%;
-height: auto;
+width: 100%;
+height: 150px; /* 設置統一最小高度 */
+/* object-fit: cover; */
 }
 
 .book-item h3 a {
