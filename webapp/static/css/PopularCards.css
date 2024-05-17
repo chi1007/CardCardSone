@@ -13,19 +13,33 @@
   margin: 0 30px;
 }
 
-.filter-options {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  background-color: rgba(0, 0, 0, 0);
-  color: #a97f7b;
-  font-size: 16px;
-  font-weight: 400;
-  gap: 3px;
-  line-height: 16%;
-  margin-top: 27px;
-  white-space: nowrap;
-}
+  .filter-options {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: #a97f7b;
+    font-size: 16px;
+    font-weight: 400;
+    gap: 3px;
+    line-height: 16%;
+    margin-top: 27px;
+    white-space: nowrap;
+  }
+
+  .filter-options button {
+    background-color: transparent; /* 按鈕的背景顏色 */
+    color: inherit; /* 繼承父级的文字顏色 */
+    border: 2px solid transparent; /* 透明邊框 */
+    padding: 5px 10px; 
+    transition: all 0.3s ease; 
+  }
+  
+  .filter-options button:hover {
+    background-color: #caa28d;
+    color: white; 
+    border-color: white;
+  }
 
 /* 未按下標籤 */
 .filter-options .btn {
@@ -64,15 +78,39 @@
 .card-image {
   width: 70%;
   height: auto;
+  transition: transform 0.3s ease; /* 添加過渡效果 */
+}
+
+.card-image:hover {
+  transform: scale(1.05); /* 滑鼠懸停時放大圖片 */
 }
 
 .card {
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: calc( 32% - 20px); 
-  margin-left: 31px; 
-  margin-bottom: 0px; 
+  width: calc(32% - 20px);
+  margin-left: 31px;
+  margin-bottom: 0px;
+  position: relative; /* 定位內部描述框 */
+}
+
+.card-description {
+  position: absolute;
+  bottom: 52%; 
+  left: 23%; 
+  width: 30%; 
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.856);
+  color: black; 
+  text-align: center;
+  border-radius: 5px; 
+  opacity: 0; /* 默認不顯示 */
+  transition: opacity 0.3s ease; 
+}
+
+.card:hover .card-description {
+  opacity: 1; /* 鼠标悬停时显示 */
 }
 
 .card-tags {

@@ -89,17 +89,18 @@ function createCardElement(card) {
     article.classList.add('card');
 
     const cardContent = `
-        <div class="card-content">
+    <div class="card-content">
         <img src="${card.imagePath}" alt="${card.name}" class="card-image" onclick="selectCard('${card.name}')" />
-            <div class="card-details">
-                <div class="card-tags">${card.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}</div>
-                <div class="card-description">
-                    <h2 class="card-title">${card.name}</h2>
-                    ${card.簡介.map(line => `<p class="card-subtitle">${line}</p>`).join('')}
-                </div>
+        <div class="card-description">卡片詳細描述</div>
+        <div class="card-details">
+            <div class="card-tags">${card.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}</div>
+            <div class="card-description-full">
+                <h2 class="card-title">${card.name}</h2>
+                ${card.簡介.map(line => `<p class="card-subtitle">${line}</p>`).join('')}
             </div>
         </div>
-    `;
+    </div>`;
+    
     article.innerHTML = cardContent;
     return article;
 }
