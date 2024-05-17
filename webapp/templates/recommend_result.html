@@ -18,12 +18,9 @@
     <ul>
         {% for card, dist in closest_cards %}
         <li>{{ card }} (距離: {{ dist }})</li>
+        <li>{{ usercards_info[card] }}</li>
         {% endfor %}
-
-        {% for card, info in usercards_info.items() %}
-        <li>{{ card }} ({{ info }})</li>
-        {% endfor %}
-
+        
 <table>
     <tr class="title">
 
