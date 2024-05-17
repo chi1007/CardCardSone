@@ -174,8 +174,6 @@ function toggleCardDisplay() {
     const bankNameHeader3 = document.getElementById('bankName3');
     const rows = document.getElementById('comparison-body').querySelectorAll('tr');
     const toggleButton = document.getElementById('toggle-button');
-    const selectedCardNames = getCookie('selectedCards');
-    const selectedCards = selectedCardNames ? selectedCardNames.split(',') : [];
 
     if (cardColumn3.style.display === 'none' || cardColumn3.style.display === '') {
         cardColumn3.style.display = 'block';

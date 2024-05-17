@@ -34,15 +34,24 @@ app.listen(port, () => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadCreditCardData();
+    processUrlParams();
 });
 
-function loadCreditCardData() {
+function processUrlParams() {  
+    // 獲取 URL 參數
+    const urlParams = new URLSearchParams(window.location.search);
+    const cardName = urlParams.get('cardName');
+
+    // 如果沒有找到卡片名稱參數,則退出函數
+    if (!cardName) {
+        console.error('Card name parameter not found in URL.');
+        return;
+    }
+
     // 同時加載兩個 JSON 文件
     Promise.all([
         fetch('/bankdata/CreditCardComparison.json').then(response => response.json()),
         fetch('/bankdata/creditcard_desc.json').then(response => response.json())
-
     ]).then(data => {
         const cardsInfo = data[0]; // 第一個 JSON 文件數據
         const cardsDesc = data[1]; // 第二個 JSON 文件數據
@@ -50,17 +59,17 @@ function loadCreditCardData() {
         const cardsContainer = document.getElementById('cards-container');
         cardsContainer.innerHTML = ''; // 清空現有内容
 
-        // 循環處理每張卡的信息和描述
-        cardsInfo.forEach(card => {
-            const cardDesc = cardsDesc.find(desc => desc.name === card.name);
-            console.log("Matching description for card:", card.name, cardDesc);
-            if (!cardDesc) {
-                console.error("Description not found for card:", card.name);
-                return; // 如果没有找到描述，則跳過這張卡片
-            }
+        // 找到與 URL 參數中的卡片名稱匹配的卡片信息和描述
+        const card = cardsInfo.find(card => card.name === cardName);
+        const cardDesc = cardsDesc.find(desc => desc.name === cardName);
+
+        // 如果找到匹配的卡片,則創建卡片元素並添加到容器中
+        if (card && cardDesc) {
             const cardElement = createCardElement(card, cardDesc);
             cardsContainer.appendChild(cardElement);
-        });
+        } else {
+            console.error(`Card '${cardName}' not found in data.`);
+        }
     }).catch(error => {
         console.error('Failed to load card data:', error);
     });
@@ -99,11 +108,11 @@ function createCardElement(card, cardDesc) {
         th.textContent = translateFeature(feature);
         const td = document.createElement('td');
     
-        // 检查是否为'Website'特性，并为其创建一个按钮
+        // 檢查是否為'Website'特性，並未其創建一個按鈕
         if (feature === 'Website') {
             const websiteButton = document.createElement('button');
             websiteButton.textContent = 'Link';
-            websiteButton.className = 'btn btn-primary'; // 添加Bootstrap样式
+            websiteButton.className = 'btn btn-primary'; // 添加Bootstrap樣式
             websiteButton.onclick = function() { window.open(card[feature], '_blank'); };
             td.appendChild(websiteButton);
         } else {
@@ -113,9 +122,9 @@ function createCardElement(card, cardDesc) {
         featureRow.appendChild(th);
         featureRow.appendChild(td);
     
-        if (index < 9) { // 左边的九个特性
+        if (index < 9) { // 表格左邊 放9項
             leftColumn.appendChild(featureRow);
-        } else { // 右边的特性
+        } else { // 表格右邊 
             rightColumn.appendChild(featureRow);
         }
     });

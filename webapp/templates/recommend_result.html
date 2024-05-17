@@ -1,0 +1,45 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推薦結果</title>
+    <style>
+        .title {
+            font-size: 15px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>推薦結果</h1>
+    <h2>以下是最適合您的卡片：</h2>
+    <ul>
+        {% for card, dist in closest_cards %}
+        <li>{{ card }} (距離: {{ dist }})</li>
+        {% endfor %}
+
+        {% for card, info in usercards_info.items() %}
+        <li>{{ card }} ({{ info }})</li>
+        {% endfor %}
+
+<table>
+    <tr class="title">
+
+        <th>說明項目</th>
+        <th>卡片1</th>
+        <th>卡片2</th>
+        <th>卡片3</th>
+    </tr>
+    <tr>
+        <td>優惠項目</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+    </tr>
+    <!-- Add more rows as needed -->
+</table>
+    </ul>
+</body>
+</html>

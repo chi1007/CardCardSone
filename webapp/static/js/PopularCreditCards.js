@@ -90,7 +90,7 @@ function createCardElement(card) {
 
     const cardContent = `
         <div class="card-content">
-            <img src="${card.imagePath}" alt="${card.name}" class="card-image" />
+        <img src="${card.imagePath}" alt="${card.name}" class="card-image" onclick="selectCard('${card.name}')" />
             <div class="card-details">
                 <div class="card-tags">${card.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}</div>
                 <div class="card-description">
@@ -175,30 +175,12 @@ function createCardElements(cards) {
   });
 }
 
-function createCardElement(card) {
-    const article = document.createElement('article');
-    article.classList.add('card');
+function openInNewTab(url) {
+  window.open(url, '_blank');
+}
 
-    // 確保 tags 和 intro 存在並且是數組
-    const tags = Array.isArray(card.tags) ? card.tags : [];
-    const intro = Array.isArray(card.簡介) ? card.簡介 : []; 
-
-    const cardContent = `
-        <div class="card-content">
-            <img src="${card.imagePath}" alt="${card.name}" class="card-image" />
-            <div class="card-details">
-                <div class="card-tags">
-                    ${tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}
-                </div>
-                <div class="card-description">
-                    <h2 class="card-title">${card.name}</h2>
-                    ${intro.map(line => `<p class="card-subtitle">${line}</p>`).join('')}
-                </div>
-            </div>
-        </div>
-    `;
-
-    article.innerHTML = cardContent;
-    return article;
+function selectCard(cardName) {
+  const url = `CardsDescription.html?cardName=${encodeURIComponent(cardName)}`;
+  openInNewTab(url);
 }
 
