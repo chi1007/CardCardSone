@@ -135,8 +135,6 @@ body {
     width: calc(100% + 16px); /* 調整寬度，彌補左右各 8px 的外邊距 */
     margin: 0 -8px -8px -8px; /* 左右負邊距彌補 body 預設的外邊距，下方負邊距使底部貼邊 */
     margin-top: 47px;
-    background: #1e130c;
-    background: -webkit-linear-gradient(to left, #9a8478, #1e130c);
     background: linear-gradient(to left, #9a8478, #1e130c);
     color: rgb(255, 255, 255);
     text-decoration: none;

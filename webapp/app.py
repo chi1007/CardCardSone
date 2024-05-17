@@ -41,6 +41,8 @@ def showpage(page_name):
         return render_template('CreditCardComparison.html', css_file=css_file, js_file=js_file)
     elif page_name == 'guide':
         return render_template('start_guide.html', css_file=css_file, js_file=js_file)
+    elif page_name == 'question':
+        return render_template('preference_question.html', css_file=css_file, js_file=js_file)
     else:
         return render_template('CreditCard_home.html', css_file=css_file, js_file=js_file)
 
