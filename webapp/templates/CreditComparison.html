@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/image/icon/Croissant1.png">
+    <link rel="icon" href="{{ url_for('static', filename='image/icon/Croissant1.png') }}">
     <title>卡卡頌 CardCardSone</title>
-    <link rel="stylesheet" href="../static/css/Comparison.css">
-    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Comparison.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
 </head>
 
 <body onload="loadBankData()">
@@ -14,30 +14,30 @@
   <div class="header-container">
     <header class="header">
       <div class="logo">
-        <img src="../static/image/icon/Croissant1.png" alt="icon" width="50" height="50">
-        <a href="CreditCard_home.html">卡卡頌 CardCardSone</a>
+        <img src="{{ url_for('static', filename='image/icon/Croissant1.png') }}" alt="icon" width="50" height="50">
+        <a href="/">卡卡頌 CardCardSone</a>
       </div>
       <nav>
         <ul class="nav">
           <li class="nav-item">
             <a href="#" class="nav-link">卡片介紹▾</a>
             <ul class="dropdown-menu">
-              <li><a href="PopularCreditCards.html">熱門信用卡</a></li>
-              <li><a href="PopularDebitCards.html">熱門金融卡</a></li>
-              <li><a href="start_guide.html">小白指南</a></li>
+              <li><a href="/PopularCreditCards">熱門信用卡</a></li>
+              <li><a href="/PopularDebitCards">熱門金融卡</a></li>
+              <li><a href="/guide">小白指南</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="active-nav-item nav-link">卡片比較▾</a>
             <div class="active-nav-underline"></div>
             <ul class="dropdown-menu">
-              <li><a href="CreditComparison.html">信用卡比較</a></li>
+              <li><a href="/comparison">信用卡比較</a></li>
               <li><a href="#">金融卡比較</a></li>
             </ul>
           </li>
 
-          <li class="nav-item"><a href="CreditCard_news.html" class="nav-link">最新消息</a></li>
-          <li class="nav-item"><a href="CreditCard_mail.html" class="nav-link">意見信箱</a></li> 
+          <li class="nav-item"><a href="/news" class="nav-link">最新消息</a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link">意見信箱</a></li> 
         </ul>
       </nav>
     </header>
@@ -50,15 +50,15 @@
 <section class="card-container">
   <div class="content-wrapper">
       <div class="card">
-          <img src="../static/image/icon/none.png" alt="Card 1" class="card-image" id="cardImage1">
+          <img src="{{ url_for('static', filename='image/icon/none.png') }}" alt="Card 1" class="card-image" id="cardImage1">
           <div id="cardTitle1" class="card-title"></div>
       </div>
       <div class="card">
-          <img src="../static/image/icon/none.png" alt="Card 2" class="card-image" id="cardImage2">
+          <img src="{{ url_for('static', filename='image/icon/none.png') }}" alt="Card 2" class="card-image" id="cardImage2">
           <div id="cardTitle2" class="card-title"></div>
       </div>
       <div class="card">
-          <img src="../static/image/icon/none.png" alt="Card 3" class="card-image" id="cardImage3">
+          <img src="{{ url_for('static', filename='image/icon/none.png') }}" alt="Card 3" class="card-image" id="cardImage3">
           <div id="cardTitle3" class="card-title"></div>
       </div>
   </div>
@@ -88,7 +88,7 @@
   <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#ffde99;">cardcardsone@gmail.com</p>
 
 </footer>
-  <script src="../static/js/CreditComparison.js"></script>
+  <script src="{{ url_for('static', filename='js/CreditComparison.js') }}"></script>
 </body>
 
 </html>

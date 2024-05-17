@@ -1,7 +1,7 @@
 // 載入 express 模組 port根據live server環境變數 http://localhost:{port}
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5500; // 使用環境變量或默認值
+const port = process.env.PORT || 5000; // 使用環境變量或默認值
 const path = require('path');
 
 // 跨域設置，應該在其他中間件前設置
@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   app.use(express.static(path.join(__dirname, 'public')));
   
   // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('../../bankdata/CreditCards.json', (req, res) => {
+  app.get('/bankdata/CreditCards.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'bankdata', 'CreditCards.json'));
 });
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadBankData() {
-    fetch('../../bankdata/CreditCards.json')
+    fetch('/bankdata/CreditCards.json')
         .then(response => response.json())
         .then(data => {
             cardData = data.cards;
@@ -180,7 +180,7 @@ function openInNewTab(url) {
 }
 
 function selectCard(cardName) {
-  const url = `CardsDescription.html?cardName=${encodeURIComponent(cardName)}`;
+  const url = `/description?cardName=${encodeURIComponent(cardName)}`;
   openInNewTab(url);
 }
 
