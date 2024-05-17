@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/image/icon/Croissant1.png">
+    <link rel="icon" href="{{ url_for('static', filename='image/icon/Croissant1.png') }}">
     <title>卡卡頌 CardCardSone</title>
-    <link rel="stylesheet" href="../static/css/home.css">
-    <link rel="stylesheet" href="../static/css/common.css">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
 </head>
 
 <body>
@@ -15,28 +14,28 @@
     <div class="header-container">
       <header class="header">
         <div class="logo">
-          <img src="../static/image/icon/Croissant1.png " alt="icon" width="50" height="50">
-          <a href="CreditCard_home.html">卡卡頌 CardCardSone</a>
+          <img src="{{ url_for('static', filename='image/icon/Croissant1.png') }}" alt="icon" width="50" height="50">
+          <a href="/">卡卡頌 CardCardSone</a>
         </div>
         <nav>
           <ul class="nav">
             <li class="nav-item">
               <a href="#" class="nav-link">卡片介紹▾</a>
               <ul class="dropdown-menu">
-                <li><a href="PopularCreditCards.html">熱門信用卡</a></li>
-                <li><a href="PopularDebitCards.html">熱門金融卡</a></li>
-                <li><a href="start_guide.html">小白指南</a></li>
+                <li><a href="/PopularCreditCards">熱門信用卡</a></li>
+                <li><a href="/PopularDebitCards">熱門金融卡</a></li>
+                <li><a href="/guide">小白指南</a></li>
               </ul>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">卡片比較▾</a>
               <ul class="dropdown-menu">
-                <li><a href="CreditComparison.html">信用卡比較</a></li>
+                <li><a href="/comparison">信用卡比較</a></li>
                 <li><a href="#">金融卡比較</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a href="CreditCard_news.html" class="nav-link">最新消息</a></li>
-            <li class="nav-item"><a href="CreditCard_mail.html" class="nav-link">意見信箱</a></li> 
+            <li class="nav-item"><a href="/news" class="nav-link">最新消息</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">意見信箱</a></li> 
           </ul>
         </nav>
       </header>
@@ -65,19 +64,19 @@
       </div>
 
       <article class="article-container active">
-      <img src="../static/image/image_Home/信用卡.jpg" class="article-img" alt="信用卡">
+      <img src="{{ url_for('static', filename='image/image_Home/信用卡.jpg') }}" class="article-img" alt="信用卡">
       <h3>信用卡小知識</h3>
       <p>只要你懂卡，卡就會幫你</p>
       </article>
 
       <article class="article-container">
-      <img src="../static/image/image_Home/信用卡2.jpg" class="article-img" alt="信用卡2">
+      <img src="{{ url_for('static', filename='image/image_Home/信用卡2.jpg') }}" class="article-img" alt="信用卡2">
       <h3>2024必備神卡</h3>
       <p>刷刷刷~刷不停~~</p>
       </article>
 
       <article class="article-container">
-      <img src="../static/image/image_Home/信用卡5.jpg" class="article-img" alt="信用卡5">
+      <img src="{{ url_for('static', filename='image/image_Home/信用卡5.jpg') }}" class="article-img" alt="信用卡5">
       <h3>卡奴的日子</h3>
       <p>關於我和債變成家人的那件事</p>
       </article>
@@ -88,7 +87,7 @@
     <div class="web-content">
       <div class="web-block bg1">
         <a href="CreditCardComparison.html" class="web-image-section">
-          <img class="small-img" src="../static/image/image_Home/信用卡比較.jpg" alt="圖片描述">
+          <img class="small-img" src="{{ url_for('static', filename='image/image_Home/信用卡比較.jpg') }}" alt="圖片描述">
         </a>
         <div class="web-text-section align-left">
           <h2><a href="CreditCardComparison.html">信用卡／簽帳金融卡比較分析</a></h2>
@@ -101,20 +100,20 @@
   
       <div class="web-block bg2">
         <div class="web-text-section align-center">
-          <h2><a href="start_guide.html">信用卡小白指南</a></h2>
-          <p><a href="start_guide.html">若你是從未申辦過信用卡的新手，面對市場眾多類型及功能的卡片，是否會擔心該如何開始進行選擇呢？<br>別擔心！以下是一個信用卡小白指南，讓你能夠更了解信用卡和簽帳金融卡，同時也能從中找到最符合自己需求的第一張卡!
+          <h2><a href="/guide">信用卡小白指南</a></h2>
+          <p><a href="/guide">若你是從未申辦過信用卡的新手，面對市場眾多類型及功能的卡片，是否會擔心該如何開始進行選擇呢？<br>別擔心！以下是一個信用卡小白指南，讓你能夠更了解信用卡和簽帳金融卡，同時也能從中找到最符合自己需求的第一張卡!
             <br>
             <br>
                   <span class="arrow-container"><span class="arrow"></span> <span class="arrow"></span> <span class="arrow"></span></span></a></p>
         </div>
-        <a href="start_guide.html" class="web-image-section">
-          <img class="small-img" src="../static/image/image_Home/信用卡小白指南.jpg" alt="信用卡小白指南">
+        <a href="/guide" class="web-image-section">
+          <img class="small-img" src="{{ url_for('static', filename='image/image_Home/信用卡小白指南.jpg') }}" alt="信用卡小白指南">
         </a>
       </div>
   
       <div class="web-block bg3">
         <a href="#" class="web-image-section">
-          <img class="small-img" src="../static/image/image_Home/個人消費習慣分析.jpg" alt="個人消費習慣分析">
+          <img class="small-img" src="{{ url_for('static', filename='image/image_Home/個人消費習慣分析.jpg') }}" alt="個人消費習慣分析">
         </a>
         <div class="web-text-section align-right">
           <h2><a href="#">個人習慣分析與選卡推薦</a></h2>
@@ -132,7 +131,7 @@
 
     <footer class="container-footer">
 
-      <script src="../static/js/CreditCard_home.js"></script>
+      <script src="{{ url_for('static', filename='js/CreditCard_home.js') }}"></script>
   
       <p>© 2024 卡卡頌 | <a href="#" style="color:#ffde99;">隱私政策</a> | <a href="#" style="color:#ffde99;">使用條款</a></p>
       <p>地址：台北市和平東路一段155號三樓</p>

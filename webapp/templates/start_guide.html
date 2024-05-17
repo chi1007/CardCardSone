@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/image/icon/Croissant1.png">
+    <link rel="icon" href="{{ url_for('static', filename='image/icon/Croissant1.png') }}">
     <title>卡卡頌 CardCardSone</title>
-    <link rel="stylesheet" href="../static/css/start_guide.css">
-    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/start_guide.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
 </head>
 
 <body>
 
     <div class="header-container">
       <header class="header">
-        <link rel="stylesheet" href="../static/css/start_guide.css">
         <div class="logo">
-          <img src="../static/image/icon/Croissant1.png " alt="icon" width="50" height="50">
-          <a href="CreditCard_home.html">卡卡頌 CardCardSone</a>
+          <img src="{{ url_for('static', filename='image/icon/Croissant1.png') }}" alt="icon" width="50" height="50">
+          <a href="/">卡卡頌 CardCardSone</a>
         </div>
         <nav>
           <ul class="nav">
@@ -24,20 +23,20 @@
               <a href="#" class="active-nav-item nav-link">卡片介紹▾</a>
               <div class="active-nav-underline"></div>
               <ul class="dropdown-menu">
-                <li><a href="PopularCreditCards.html">熱門信用卡</a></li>
-                <li><a href="PopularDebitCards.html">熱門金融卡</a></li>
-                <li><a href="start_guide.html">小白指南</a></li>
+                <li><a href="/PopularCreditCards">熱門信用卡</a></li>
+                <li><a href="/PopularDebitCards">熱門金融卡</a></li>
+                <li><a href="/guide">小白指南</a></li>
               </ul>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">卡片比較▾</a>
               <ul class="dropdown-menu">
-                <li><a href="CreditComparison.html">信用卡比較</a></li>
+                <li><a href="/comparison">信用卡比較</a></li>
                 <li><a href="#">金融卡比較</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a href="CreditCard_news.html" class="nav-link">最新消息</a></li>
-            <li class="nav-item"><a href="CreditCard_mail.html" class="nav-link">意見信箱</a></li> 
+            <li class="nav-item"><a href="/news" class="nav-link">最新消息</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">意見信箱</a></li> 
           </ul>
         </nav>
       </header>
@@ -58,7 +57,7 @@
                 <p>
                   信用卡允許持卡人在接受信用卡的商家消費時，能預先向銀行借入資金來支付費用。信用卡的本質，就是以持卡人自身的「信用」為擔保，向銀行「借錢消費」。因此信用卡持卡人需要在一段時間內(通常是以月結算，如每月的5號)結清這段時間內累積的消費金額，並加上任何信用卡消費時產生的額外費用(如跨國交易手續費)。一般來說，信用卡會以塑膠或金屬的卡面來製作，並且具備以下的元素：
                 </p>
-                <img src="../static/image/start_guide_image/card_element.png">
+                <img src="{{ url_for('static', filename='image/start_guide_image/card_element.png') }}">
                 <p>
                   信用卡能夠消費的額度並非無上限，而是發卡機構會根據申請人的聯徵信用評分的高低，給予不同的信用額度消費。
                 </p>
@@ -88,7 +87,7 @@
       <p>
         兩者都是由國際發卡組織與銀行發行，差別在於：簽帳金融卡是與個人銀行帳戶連動；信用卡則是刷卡當下先跟銀行預借之後再還錢(繳卡費)。
       </p>
-      <img src="../static/image/start_guide_image/credit_vs_debit.png">
+      <img src="{{ url_for('static', filename='image/start_guide_image/credit_vs_debit.png') }}">
     </section>
     
     <section class="section-description">
@@ -105,13 +104,13 @@
     </section>
 
     <section class="image-container">
-      <img src="../static/image/start_guide_image/Image (3).png" alt="Image 1">
-      <img src="../static/image/start_guide_image/Image (4).png" alt="Image 2">
-      <img src="../static/image/start_guide_image/Image (5).png" alt="Image 3">
+      <img src="{{ url_for('static', filename='image/start_guide_image/Image (3).png') }}" alt="Image 1">
+      <img src="{{ url_for('static', filename='image/start_guide_image/Image (4).png') }}" alt="Image 2">
+      <img src="{{ url_for('static', filename='image/start_guide_image/Image (5).png') }}" alt="Image 3">
     </section>
 
     <section class="section-description2">
-      <img src="../static/image/start_guide_image/Image (6).png">
+      <img src="{{ url_for('static', filename='image/start_guide_image/Image (6).png') }}" >
     </section>
 
     <section class="section-description">
@@ -172,16 +171,16 @@
       <p>5.選擇定存 / 存款較多的銀行信用卡</p>
       <p>6.一次備齊信用卡申辦文件</p>
     </div>
-    <img src="../static/image/start_guide_image/Image (7).png">
+    <img src="{{ url_for('static', filename='image/start_guide_image/Image (7).png') }}" >
   </section>
 
     <footer class="container-footer">
-      <script src="../static/js/CreditCard_home.js"></script>
   
       <p>© 2024 卡卡頌 | <a href="#" style="color:#ffde99;">隱私政策</a> | <a href="#" style="color:#ffde99;">使用條款</a></p>
       <p>地址：台北市和平東路一段155號三樓</p>
       <p>電話：(02) 1234-5678</p>
       <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#ffde99;">cardcardsone@gmail.com</p>
+
     </footer>
 
 

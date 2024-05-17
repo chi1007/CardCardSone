@@ -1,7 +1,7 @@
 // 載入 express 模組 port根據live server環境變數 http://localhost:{port}
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5500; // 使用環境變量或默認值
+const port = process.env.PORT || 5000; // 使用環境變量或默認值
 const path = require('path');
 
 // 跨域設置，應該在其他中間件前設置
