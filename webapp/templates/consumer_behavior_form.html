@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消费者分析表单</title>
+      <!-- 引入 Chart.js 库 -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>卡卡頌小幫手</h1>
+    <form action="/consumer_behavior_analysis" method="post"> <!-- 修改表单提交的 action -->
+        <label for="income">您平時一個月預算花費大約多少呢：</label> <!-- 修改收入标签 -->
+        <input type="text" id="income" name="income"><br><br>
+
+        <label for="expenses">您平时花费最多在哪裡呢：</label> <!-- 修改花费标签 -->
+        <input type="text" id="expenses" name="expenses"><br><br>
+
+        <label for="impulsive_spending">您是個衝動性消費者嗎：</label>
+        <select id="impulsive_spending" name="impulsive_spending">
+        <option value="是">是</option>
+        <option value="否">否</option>
+        </select><br><br>
+        <label>您平時會跨國交易嗎：</label><br>
+        <input type="radio" id="domestic" name="overseas_spending" value="domestic">
+        <label for="domestic">否</label><br>
+        <input type="radio" id="international" name="overseas_spending" value="international">
+        <label for="international">是</label><br><br>
+
+
+        <input type="submit" value="提交">
+    </form>
+    <!-- 用戶智能問答欄位 -->
+<div class="user-query-section">
+    <h2>請輸入您的問題：</h2>
+    <input type="text" id="user_query" name="user_query" placeholder="請在此輸入問題...">
+    <button onclick="submitQuery()">提交問題</button>
+</div>
+
+<script>
+    function submitQuery() {
+        var userQuery = document.getElementById('user_query').value;
+        // 此處可以添加將問題提交到伺服器的代碼，或直接在頁面上顯示答案
+        alert('您的問題已提交: ' + userQuery);
+    }
+</script>
+</body>
+</html>
+

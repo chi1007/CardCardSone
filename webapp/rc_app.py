@@ -35,14 +35,24 @@ def index():
         elif card_type_preference == 3:
             card_type = "finance_cards"
             cards = cards_features["finance_cards"]
-        else:
+        elif card_type_preference == 2:
+            card_type = "all_cards"
             cards = {**cards_features["credit_cards"], **cards_features["finance_cards"]}
+        else:
+            raise ValueError("Invalid card type preference")
         
         closest_cards = find_closest_cards(answers, cards)
 
         for card in closest_cards:
-            usercards_info[card[0]] =cards_info[card_type][card[0]]
-        print(usercards_info)
+            if card_type_preference == 1:
+                usercards_info[card[0]] = cards_info["credit_cards"][card[0]]
+            elif card_type_preference == 3:
+                usercards_info[card[0]] = cards_info["finance_cards"][card[0]]
+            elif card_type_preference == 2:
+                if card[0] in cards_features["credit_cards"]:
+                    usercards_info[card[0]] = cards_info["credit_cards"][card[0]]
+                elif card[0] in cards_features["finance_cards"]:
+                    usercards_info[card[0]] = cards_info["finance_cards"][card[0]]
 
         return render_template("recommend_result.html", closest_cards=closest_cards, usercards_info=usercards_info)
     else:
