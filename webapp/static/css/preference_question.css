@@ -48,7 +48,7 @@
 }
 
 .form-container input[type="submit"] {
-    background-color: #a58f7c;
+    background-color: #c2a082;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -63,6 +63,6 @@
     font-weight: bold;
 }
 .form-container input[type="submit"]:hover {
-    background-color: #c2a082;
+    background-color: #a58f7c;
 }
 
