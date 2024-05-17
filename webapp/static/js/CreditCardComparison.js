@@ -1,7 +1,7 @@
     // 載入 express 模組 port根據live server環境變數 http://localhost:{port}
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5500; // 使用環境變數或默認5500
+const port = process.env.PORT || 5000; // 使用環境變數或默認5000
 const path = require('path');
 
 // 設置跨域請求頭
@@ -174,8 +174,6 @@ function toggleCardDisplay() {
     const bankNameHeader3 = document.getElementById('bankName3');
     const rows = document.getElementById('comparison-body').querySelectorAll('tr');
     const toggleButton = document.getElementById('toggle-button');
-    const selectedCardNames = getCookie('selectedCards');
-    const selectedCards = selectedCardNames ? selectedCardNames.split(',') : [];
 
     if (cardColumn3.style.display === 'none' || cardColumn3.style.display === '') {
         cardColumn3.style.display = 'block';

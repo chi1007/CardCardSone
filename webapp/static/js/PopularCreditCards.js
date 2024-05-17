@@ -1,7 +1,7 @@
 // 載入 express 模組 port根據live server環境變數 http://localhost:{port}
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5500; // 使用環境變量或默認值
+const port = process.env.PORT || 5000; // 使用環境變量或默認值
 const path = require('path');
 
 // 跨域設置，應該在其他中間件前設置
@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   app.use(express.static(path.join(__dirname, 'public')));
   
   // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('../../bankdata/CreditCards.json', (req, res) => {
+  app.get('/bankdata/CreditCards.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'bankdata', 'CreditCards.json'));
 });
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadBankData() {
-    fetch('../../bankdata/CreditCards.json')
+    fetch('/bankdata/CreditCards.json')
         .then(response => response.json())
         .then(data => {
             cardData = data.cards;
@@ -90,7 +90,7 @@ function createCardElement(card) {
 
     const cardContent = `
         <div class="card-content">
-            <img src="${card.imagePath}" alt="${card.name}" class="card-image" />
+        <img src="${card.imagePath}" alt="${card.name}" class="card-image" onclick="selectCard('${card.name}')" />
             <div class="card-details">
                 <div class="card-tags">${card.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}</div>
                 <div class="card-description">
@@ -175,30 +175,12 @@ function createCardElements(cards) {
   });
 }
 
-function createCardElement(card) {
-    const article = document.createElement('article');
-    article.classList.add('card');
+function openInNewTab(url) {
+  window.open(url, '_blank');
+}
 
-    // 確保 tags 和 intro 存在並且是數組
-    const tags = Array.isArray(card.tags) ? card.tags : [];
-    const intro = Array.isArray(card.簡介) ? card.簡介 : []; 
-
-    const cardContent = `
-        <div class="card-content">
-            <img src="${card.imagePath}" alt="${card.name}" class="card-image" />
-            <div class="card-details">
-                <div class="card-tags">
-                    ${tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}
-                </div>
-                <div class="card-description">
-                    <h2 class="card-title">${card.name}</h2>
-                    ${intro.map(line => `<p class="card-subtitle">${line}</p>`).join('')}
-                </div>
-            </div>
-        </div>
-    `;
-
-    article.innerHTML = cardContent;
-    return article;
+function selectCard(cardName) {
+  const url = `/description?cardName=${encodeURIComponent(cardName)}`;
+  openInNewTab(url);
 }
 

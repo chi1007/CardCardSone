@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Behavior Analysis</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .dialog-box, .card-box {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .user-message {
+            background-color: #cce5ff;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .ai-message {
+            background-color: #d9ead3;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .card-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .card-image {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .card-details {
+            display: flex;
+            align-items: center;
+        }
+        .card-benefits {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consumer Behavior Analysis</h1>
+        <div class="dialog-box user-message" style="display:none;">
+            <strong>User:</strong>
+            <p>{{ user_message }}</p>
+        </div>
+        <div class="dialog-box ai-message">
+            <strong>小幫手給你的理財建議~:</strong>
+            <p>{{ ai_message }}</p>
+        </div>
+        {% if card %}
+        <h2>Recommended Credit Card</h2>
+        <div class="card-box">
+            <div class="card-details">
+                <img src="{{ url_for('static', filename='images/' + card.image) }}" alt="{{ card.name }}" class="card-image">
+                <strong>{{ card.name }}</strong>
+            </div>
+            <div class="card-benefits">
+                <ul>
+                    {% for benefit in card.benefits %}
+                    <li>{{ benefit }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
