@@ -1,0 +1,258 @@
+.logo a,
+.logo-font a {
+    color: #654327 !important;
+}
+
+/* 標題&標籤 */
+
+.section-title {
+color: #727272;
+font: 25px/100% Epilogue, sans-serif;
+display: flex;
+background-color: #fbf3ea; 
+text-align: center;
+flex-direction: column;
+padding: 0px;
+margin-top: 100px;
+width: 100%;
+
+}
+
+.section-description {
+display: flex;
+background-color: #fbf3ea; 
+text-align: center;
+flex-direction: column;
+padding: 0px;
+/* margin-top: 100px; */
+width: 100%;
+
+}
+
+/* 首頁滾動條 */
+.articles {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 245, 250); 
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.article-nav1 {
+    margin-bottom: 10px;
+    display: flex;
+    }
+    
+    .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+    }
+    
+    .active, .dot:hover {
+    background-color: #63969a;
+    }
+    
+
+
+.article-nav2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.arrow {
+width: 40px; /* 調整鍵號大小 */
+height: 40px; /* 調整鍵號大小 */
+background-color: #ccc;
+cursor: pointer;
+display: flex; /* 讓內容置中 */
+justify-content: center; /* 水平置中 */
+align-items: center; /* 垂直置中 */
+}
+
+.arrow::before {
+content: "";
+display: block;
+width: 0;
+height: 0;
+border-style: solid;
+}
+
+
+.arrow.left::before {
+border-width: 30px 40px 30px 0; /* 調整箭頭大小 */
+border-color: transparent #333 transparent transparent;
+}
+
+.arrow.right::before {
+border-width: 30px 0 30px 40px; /* 調整箭頭大小 */
+border-color: transparent transparent transparent #333;
+}
+
+.article-container active {
+    margin: 0 auto;
+    max-width: 800px;
+    border-radius: 20px;
+    }
+
+.article-container {
+margin: 0 auto;
+max-width: 1000px;
+border-radius: 20px;
+}
+
+.article-img {
+width: 100%;   
+height: 400px; /* 設置統一最小高度 */
+/* object-fit: cover; */
+}
+
+article {
+display: none;
+
+}
+
+article.active {
+display: block;
+
+}
+
+
+
+
+
+
+
+/* web1 */
+.web1-container {
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin: 0 -8px -8px -8px; /* 左右負邊距彌補 body 預設的外邊距，下方負邊距使底部貼邊 */
+
+}
+
+.web1-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+background-color: rgb(228, 240, 200);
+}
+
+.web1-text-section {
+flex: 1;
+padding-right: 20px;
+padding: 20px;
+/* text-align: center; */
+}
+
+.web1-image-section {
+flex: 1;
+text-align: right;
+}
+
+.web1-image-section img {
+max-width: 100%;
+height: auto;
+}
+
+
+/* Web2 */
+.web2-container {
+background-image: url('background-image.jpg');
+background-size: cover;
+background-position: center;
+height: 100vh;
+/* display: flex; */
+justify-content: center;
+align-items: center;
+margin: 0 -8px -8px -8px; /* 左右負邊距彌補 body 預設的外邊距，下方負邊距使底部貼邊 */
+
+}
+
+
+.web2-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+background-color: rgb(173, 217, 230);
+
+}
+
+.web2-text-section {
+flex: 1;
+padding-right: 20px;
+padding: 20px;
+/* text-align: center; */
+
+}
+
+.web2-image-section {
+flex: 1;
+text-align: right;
+}
+
+.web2-image-section img {
+max-width: 100%;
+height: auto;
+}
+
+
+/* web3 */
+.web3-container {
+background-image: url('background-image.jpg');
+background-size: cover;
+background-position: center;
+height: 100vh;
+/* display: flex; */
+justify-content: center;
+align-items: center;
+margin: 0 -8px -8px -8px; /* 左右負邊距彌補 body 預設的外邊距，下方負邊距使底部貼邊 */
+
+}
+
+.web3-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+background-color: rgb(172, 232, 197);
+}
+
+.web3-text-section {
+flex: 1;
+padding-right: 20px;
+padding: 20px;
+/* text-align: center; */
+}
+
+.web3-image-section {
+flex: 1;
+text-align: right;
+}
+
+.web3-image-section img {
+max-width: 100%;
+height: auto;
+}
+
