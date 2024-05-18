@@ -8,7 +8,7 @@ def get_db_connection():
     connection = pymysql.connect(host='localhost',
                                  user='root',
                                  password='1111',
-                                 db='sys',
+                                 db='cardcardsone',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor)
     return connection
