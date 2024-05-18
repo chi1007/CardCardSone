@@ -1,33 +1,3 @@
-// 載入 express 模組 port根據live server環境變數 http://localhost:{port}
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000; // 使用環境變量或默認值
-const path = require('path');
-
-// 跨域設置，應該在其他中間件前設置
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    next();
-  });
-  
-  // 使用當前目錄下的 public 文件夾作為靜態資源目錄
-  app.use(express.static(path.join(__dirname, 'public')));
-  
-  // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('/bankdata/CreditCards.json', (req, res) => {
-    res.sendFile(path.join(__dirname, 'bankdata', 'CreditCards.json'));
-});
-
-  
-  // 啟動服務器
-  app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-  });
-
-
-
 // 全局變量初始化
 var cardData = [];
 
@@ -36,41 +6,70 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadBankData() {
-    fetch('/bankdata/CreditCards.json')
-        .then(response => response.json())
-        .then(data => {
-            cardData = data.cards;
-            createCardElements(cardData);
-            createFilterButtons(cardData);  // 確保標籤按鈕是基於實際卡片數據生成的
-        })
-        .catch(error => console.error('Error loading bank data:', error));
+  fetch('/database/creditcard')
+    .then(response => response.json())
+    .then(data => {
+      cardData = data;
+      createCardElements(cardData);
+      createFilterButtons(cardData);
+    })
+    .catch(error => console.error('Error loading bank data:', error));
 }
 
 function createCardElements(cards) {
-    const cardContainer = document.querySelector('.card-container');
-    cardContainer.innerHTML = ''; // 清空現有的卡片
+  const cardContainer = document.querySelector('.card-container');
+  cardContainer.innerHTML = '';
 
-    cards.forEach(card => {
-        const cardElement = createCardElement(card);
-        cardContainer.appendChild(cardElement);
-    });
+  cards.forEach(card => {
+    const { name, img, description, features, tag } = card;
+    const cardElement = createCardElement({ name, img, description, features, tag });
+    cardContainer.appendChild(cardElement);
+  });
 }
 
+function createCardElement({ name, img, description, features, tag }) {
+  const article = document.createElement('article');
+  article.classList.add('card');
+
+  const cardContent = `
+  <div class="card-content">
+    <img src="${img}" alt="${name}" class="card-image" onclick="selectCard('${name}')" />
+    <div class="card-description">${description || "卡片詳細描述"}</div>
+    <div class="card-details">
+      <div class="card-tags">${tag && tag.split(', ').map(tag => `<span class="card-tag">${tag}</span>`).join('')}</div>
+      <h2 class="card-title">${name}</h2>
+      <p class="card-subtitle">
+        ${features.split(', ').map(line => `<span>${line}</span>`).join('<br>')}
+      </p>
+    </div>
+  </div>
+`;
+
+  article.innerHTML = cardContent;
+  return article;
+}
+
+
 function createFilterButtons(cards) {
-    const uniqueTags = new Set();
-    cards.forEach(card => card.tags.forEach(tag => uniqueTags.add(tag)));
+  const filterOptions = document.querySelector('.filter-options');
+  filterOptions.innerHTML = '';
 
-    const filterOptions = document.querySelector('.filter-options');
-    filterOptions.innerHTML = '';
+  const allTags = new Set();
+  cards.forEach(card => {
+    const { tag } = card;
+    if (tag) {
+      tag.split(', ').forEach(tag => allTags.add(tag));
+    }
+  });
 
-    uniqueTags.forEach(tag => {
-        const button = document.createElement('button');
-        button.className = 'btn';
-        button.textContent = tag;
-        button.setAttribute('data-tag', tag);
-        button.addEventListener('click', function() { showTab(button); });
-        filterOptions.appendChild(button);
-    });
+  allTags.forEach(tag => {
+    const button = document.createElement('button');
+    button.className = 'btn';
+    button.textContent = tag;
+    button.setAttribute('data-tag', tag);
+    button.addEventListener('click', function() { showTab(button); });
+    filterOptions.appendChild(button);
+  });
 }
 
 function showTab(button) {
@@ -84,46 +83,11 @@ function showTab(button) {
     });
 }
 
-function createCardElement(card) {
-    const article = document.createElement('article');
-    article.classList.add('card');
-
-    const cardContent = `
-    <div class="card-content">
-        <img src="${card.imagePath}" alt="${card.name}" class="card-image" onclick="selectCard('${card.name}')" />
-        <div class="card-description">卡片詳細描述</div>
-        <div class="card-details">
-            <div class="card-tags">${card.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}</div>
-            <div class="card-description-full">
-                <h2 class="card-title">${card.name}</h2>
-                ${card.簡介.map(line => `<p class="card-subtitle">${line}</p>`).join('')}
-            </div>
-        </div>
-    </div>`;
-
-    article.innerHTML = cardContent;
-    return article;
-}
-
 // 確保這裡是全局作用域定義的
 document.addEventListener('DOMContentLoaded', function() {
   const filterOptions = document.querySelector('.filter-options');
 
-  // 定義所有可能的標籤
-  const allTags = ['繳稅優惠', '現金回饋', '網購', '行動支付', '影音娛樂', '美食外送', '生活繳費', '超商量販', '百貨購物', '海外消費', '旅遊訂房'];
 
-  // 為每個標籤創建一個按鈕
-  allTags.forEach(tag => {
-    const button = document.createElement('button');
-    button.classList.add('btn');
-    button.textContent = tag;
-    button.addEventListener('click', () => showTab(button));
-    filterOptions.appendChild(button);
-  });
-
-  // 獲取 JSON 數據中的 cards 數組
-  cardData = cardData.cards;
-  createCardElements(cardData);
 });
 
 function showTab(button) {

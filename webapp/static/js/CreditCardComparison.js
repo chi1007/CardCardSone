@@ -1,31 +1,7 @@
-    // 載入 express 模組 port根據live server環境變數 http://localhost:{port}
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000; // 使用環境變數或默認5000
-const path = require('path');
+// 全局變量初始化
+var cardData = [];
 
-// 設置跨域請求頭
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    next();
-  });
-  
-  // 告訴 Express 使用當前目錄下的 public 文件夾作為靜態資源目錄
-  app.use(express.static(path.join(__dirname, 'public')));
-  
-  // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('/bankdata/CreditCardComparison.json', (req, res) => {
-    res.sendFile(path.join(__dirname, 'CreditCardComparison.json'));
-  });
-  
-  // 啟動服務器
-  app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     loadBankData();
     setupButtonToggle();
 });
@@ -42,13 +18,8 @@ function getCookie(name) {
 }
 
 
-
-// 全局變量初始化
-var cardData = [];
-
-
 function loadBankData() {
-    fetch('/bankdata/CreditCardComparison.json')
+    fetch('/database/creditcard')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -101,7 +72,9 @@ function initializeDropdown() {
         console.error('No card data available or card data is not an array');
         return;
     }
+    
     cardSelects.forEach((select, index) => {
+        select.innerHTML = '';
         cardData.forEach(card => {
             const option = document.createElement('option');
             option.value = card.name;
@@ -124,23 +97,21 @@ function updateCard(cardIndex, cardName) {
         const cardTitle = document.getElementById(`cardTitle${cardIndex}`);
         cardTitle.textContent = selectedCard.name;
 
-        // 更新卡片詳情表格數據
-        document.getElementById(`bankName${cardIndex}`).textContent = selectedCard.bankname;
-        document.getElementById(`basicReward${cardIndex}`).textContent = selectedCard.basic_rewards;
-        document.getElementById(`additionalReward${cardIndex}`).textContent = selectedCard.additional_benefits;
-        document.getElementById(`overseasSpending${cardIndex}`).textContent = selectedCard.overseas_spending;
-        document.getElementById(`annualFee${cardIndex}`).textContent = selectedCard.right;
-        document.getElementById(`cardFeatures${cardIndex}`).textContent = selectedCard.features;
-        document.getElementById(`crossBankOffers${cardIndex}`).textContent = selectedCard.cross_bank_offers;
-        document.getElementById(`onlineShoppingDiscounts${cardIndex}`).textContent = selectedCard.online_shopping_discounts;
-        document.getElementById(`mobilePayment${cardIndex}`).textContent = selectedCard.mobile_payment;
-        document.getElementById(`commuteExpenses${cardIndex}`).textContent = selectedCard.commute_expenses;
-        document.getElementById(`utilitiesPayment${cardIndex}`).textContent = selectedCard.utilities_payment;
-        document.getElementById(`foodDelivery${cardIndex}`).textContent = selectedCard.food_delivery;
-        document.getElementById(`entertainment${cardIndex}`).textContent = selectedCard.entertainment;
-        document.getElementById(`traveBooking${cardIndex}`).textContent = selectedCard.trave_booking;
-        document.getElementById(`departmentStores${cardIndex}`).textContent = selectedCard.department_stores;
-        document.getElementById(`newUserOffer${cardIndex}`).textContent = selectedCard.new_user_offer;
+        updateTableCell(`bankName${cardIndex}`, selectedCard.bankname);
+        updateTableCell(`basicReward${cardIndex}`, selectedCard.basic_rewards);
+        updateTableCell(`additionalReward${cardIndex}`, selectedCard.additional_benefits);
+        updateTableCell(`overseasSpending${cardIndex}`, selectedCard.overseas_spending);
+        updateTableCell(`annualFee${cardIndex}`, selectedCard.right);
+        updateTableCell(`cardFeatures${cardIndex}`, selectedCard.features.replace(/, /g, '<br>'));
+        updateTableCell(`onlineShoppingDiscounts${cardIndex}`, selectedCard.online_shopping_discounts);
+        updateTableCell(`mobilePayment${cardIndex}`, selectedCard.mobile_payment);
+        updateTableCell(`commuteExpenses${cardIndex}`, selectedCard.commute_expenses);
+        updateTableCell(`utilitiesPayment${cardIndex}`, selectedCard.utilities_payment);
+        updateTableCell(`foodDelivery${cardIndex}`, selectedCard.food_delivery);
+        updateTableCell(`entertainment${cardIndex}`, selectedCard.entertainment);
+        updateTableCell(`traveBooking${cardIndex}`, selectedCard.travel_booking);
+        updateTableCell(`departmentStores${cardIndex}`, selectedCard.department_stores);
+        updateTableCell(`newUserOffer${cardIndex}`, selectedCard.new_user_offer);
         // 創建連接按鈕
         const websiteLinkContainer = document.getElementById(`websiteLink${cardIndex}`);
         websiteLinkContainer.innerHTML = ''; // 清除之前的内容
@@ -153,6 +124,12 @@ function updateCard(cardIndex, cardName) {
     } else {
         console.error('Selected card not found:', cardName);
     }
+}
+
+function updateTableCell(cellId, content) {
+    const cell = document.getElementById(cellId);
+    cell.innerHTML = content;
+    cell.className = 'card-detail'; // 設置class
 }
 
 function updatePageWithSelectedCards(selectedCardNames) {
