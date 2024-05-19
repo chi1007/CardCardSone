@@ -5,10 +5,10 @@ import pymysql
 database_blueprint = Blueprint('database', __name__)
 
 def get_db_connection():
-    connection = pymysql.connect(host='localhost',
-                                 user='root',
-                                 password='1111',
-                                 db='cardcardsone',
+    connection = pymysql.connect(host='184.73.84.91',
+                                 user='cardcardsone',
+                                 password='cardsone2024',
+                                 db='cardsoneDB',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor)
     return connection
