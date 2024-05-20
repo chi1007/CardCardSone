@@ -1,35 +1,3 @@
-// 載入 express 模組 port根據live server環境變數 http://localhost:{port}
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000; // 使用環境變量或默認值
-const path = require('path');
-
-// 跨域設置，應該在其他中間件前設置
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    next();
-  });
-  
-  // 使用當前目錄下的 public 文件夾作為靜態資源目錄
-  app.use(express.static(path.join(__dirname, 'public')));
-  
-  // 處理根路徑請求，發送 JSON 文件到客戶端
-  app.get('bankdata/CreditCards.json', (req, res) => {
-    res.sendFile(path.join(__dirname, 'CreditCards.json'));
-  });
-  
-  // 啟動服務器
-  app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-  });
-
-
-
-
-
-
 // 全局變量初始化
 var cardData = [];
 var selectedCards = [];  // 確保這裡是全局作用域定義的
@@ -39,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadBankData() {
-    fetch('../../bankdata/CreditCards.json')
+    fetch('/database/creditcard')
         .then(response => response.json())
         .then(data => {
-            cardData = data.cards;
+            cardData = data ;
             createCardElements(cardData);
         })
         .catch(error => console.error('Error loading bank data:', error));
@@ -58,12 +26,19 @@ function createCardElements(cards) {
         const row = tableBody.insertRow();
 
         row.insertCell(0).innerText = index + 1;
-        row.insertCell(1).innerHTML = `<img src="${card.imagePath}" alt="${card.name}" class="card-icon">`;
-        row.insertCell(2).innerHTML = `${card.bankname}<br>${card.name}`;
+        row.insertCell(1).innerHTML = `<img src="${card.img}" alt="${card.name}" class="card-icon">`;
+        row.insertCell(2).innerHTML = `<br>${card.name}`;
         const introCell = row.insertCell(3);
         introCell.classList.add('introduction');
-        introCell.innerHTML = (Array.isArray(card.簡介) ? '◍ ' + card.簡介.join('<br>◍ ') : '☑ 無詳細介紹');
-        row.insertCell(4).innerHTML = `<a href="${card.link}" class="select-button" target="_blank">我要辦卡</a>`;
+
+        // 將 features 字段從字符串轉換為數組
+        const featuresArray = card.features.split(', ').map(feature => feature.trim());
+
+        introCell.innerHTML = (featuresArray.length > 0)
+            ? '◍ ' + featuresArray.join('<br>◍ ')
+            : '☑ 無詳細介紹';
+
+        row.insertCell(4).innerHTML = `<a href="${card.Website}" class="select-button" target="_blank">我要辦卡</a>`;
         
         const checkboxCell = row.insertCell(5);
         const checkbox = document.createElement('input');
@@ -133,12 +108,12 @@ function updateSelectedImages(cards) {
         if (i < selectedCards.length) {
             const card = cardData.find(c => c.name === selectedCards[i]);
             if (card) {
-                img.src = card.imagePath;
+                img.src = card.img;
                 img.alt = card.name;
                 selectedImageTitles[i].textContent = card.name;
             }
         } else {
-            img.src = '../static/image/icon/none.png';
+            img.src = `../static/image/icon/none.png`;
             img.alt = 'Placeholder';
             selectedImageTitles[i].textContent = '';
         }

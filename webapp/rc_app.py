@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
 import numpy as np
 from rc_data import cards_features, questions, cards_info
+from flask import Blueprint
 
-app = Flask(__name__)
+rc_app_blueprint = Blueprint('rc_app', __name__)
 
 # 計算距離並找出最接近的卡片（考慮用戶填答和卡別偏好）
 def find_closest_cards(user_vector, cards):
@@ -20,7 +21,7 @@ def find_closest_cards(user_vector, cards):
     sorted_distances = sorted(distances.items(), key=lambda x: x[1]) # 根據歐氏距離排序
     return sorted_distances[:3] # 推薦距離最近的3張卡片
 
-@app.route("/", methods=["GET", "POST"])
+@rc_app_blueprint.route("/", methods=["GET", "POST"])
 def index():
     card_type = ""
     usercards_info = {}
@@ -58,5 +59,5 @@ def index():
     else:
         return render_template("preference_question.html", questions=questions)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     rc_app_blueprint.run(debug=True)
