@@ -41,11 +41,11 @@ body {
 }
 
 .fadeInTitle {
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .fadeInContent {
-    animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
 }
   
 @keyframes fadeIn {
