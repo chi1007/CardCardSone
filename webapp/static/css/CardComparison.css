@@ -1,6 +1,6 @@
 /* 標題 */
 
-.popular-credit-cards {
+.cards {
   display: flex;
   flex-direction: column;
   padding: 0 0px;
@@ -144,7 +144,6 @@ tr:hover {
 #comparison-table th,
 #comparison-table td {
   padding: 14px;
-  text-align: center; 
 }
 
 #comparison-table th:first-child,
@@ -160,6 +159,7 @@ tr:hover {
 #comparison-table td:nth-child(4) {
   width: 30%; /* 第二、三、四列的寬度*/
 }
+
 
 .card-detail {
   white-space: pre-wrap;

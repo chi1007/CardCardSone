@@ -44,7 +44,7 @@ def get_debitcard():
 @database_blueprint.route('/debitcard', methods=['POST'])
 def post_debitcard():
     data = request.get_json()
-    fields = ['dcid', 'name', 'bankname', 'type', 'utilities_payment', 'basic_rewards', 'additional_benefits', 'overseas_spending', 'online_shopping_discounts', 'mobile_payment', 'commute_expenses', 'food_delivery', 'entertainment', 'travel_booking', 'department_stores', 'img', 'features', 'interest_rate', 'cross_bank_offers', 'Website', 'link']  # 請根據實際字段調整
+    fields = ['dcid', 'name', 'bankname', 'tag', 'utilities_payment', 'basic_rewards', 'additional_benefits', 'overseas_spending', 'online_shopping_discounts', 'mobile_payment', 'commute_expenses', 'food_delivery', 'entertainment', 'travel_booking', 'department_stores', 'img', 'features', 'interest_rate', 'cross_bank_offers', 'Website', 'link']  # 請根據實際字段調整
     return insert_data('debitcard', data, fields)
 
 @database_blueprint.route('/debitcard_desc', methods=['GET'])
