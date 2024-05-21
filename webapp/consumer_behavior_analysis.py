@@ -10,14 +10,14 @@ opeaichat_url = 'https://api.openai.com/v1/chat/completions'
 openaispeech_url = 'https://api.openai.com/v1/audio/speech'
 
 def load_credit_cards():
-    with open('data/credit_cards.json', 'r', encoding='utf-8') as file:
+    with open('../bankdata/ai_credit_cards.json', 'r', encoding='utf-8') as file:
         credit_cards = json.load(file)
     return credit_cards
 
 credit_cards = load_credit_cards()
 
-@app.route('/consumer_behavior_analysis', methods=['GET', 'POST'])
-def consumer_behavior_analysis():
+@app.route('/CBA', methods=['GET', 'POST'])
+def CBA():
     if request.method == 'GET':
         # 第一次來，返回表單頁面
         return render_template('consumer_behavior_form.html')
