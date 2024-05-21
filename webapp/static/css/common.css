@@ -145,3 +145,23 @@ body {
     box-sizing: border-box;
     font-weight: bold;
 }
+
+/* 返回頂部按鈕的樣式 */
+.back-to-top {
+    display: none; /* 初始隱藏 */
+    position: fixed; /* 固定在頁面 */
+    bottom: 30px; /* 離頁面底部20px */
+    right: 20px; /* 離頁面右邊20px */
+    z-index: 1000; /* 確保按鈕顯示在前面 */
+    background-color: #43321e; /* 背景顏色 */
+    color: #fff; /* 文字顏色 */
+    padding: 10px 15px; /* 内邊距 */
+    border: none; /* 無邊框 */
+    border-radius: 50px; /* 圓角 */
+    cursor: pointer; /* 鼠標變為手指 */
+    font-size: 16px; /* 文字大小 */
+}
+.back-to-top:hover {
+    background-color: #896e57; /* 懸停背景顏色 */
+}    
+    
