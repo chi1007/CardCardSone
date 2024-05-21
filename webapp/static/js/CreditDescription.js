@@ -3,6 +3,7 @@ var cardData = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     processUrlParams();
+    setTimeout(hideLoadingScreen, 1000)
 });
 
 function processUrlParams() {  
@@ -21,27 +22,56 @@ function processUrlParams() {
         fetch('/database/creditcard').then(response => response.json()),
         fetch('/database/creditcard_desc').then(response => response.json())
     ]).then(data => {
-        const cardsInfo = data[0]; // 第一個 JSON 文件數據
-        const cardsDesc = data[1]; // 第二個 JSON 文件數據
+        const cardsInfo = data[0]; // 第一個 JSON 檔案數據
+        const cardsDesc = data[1]; // 第二個 JSON 檔案數據
 
         const cardsContainer = document.getElementById('cards-container');
-        cardsContainer.innerHTML = ''; // 清空現有内容
+        if (!cardsContainer) {
+            console.error('Error: cards-container element not found');
+            return;
+        }
+        cardsContainer.innerHTML = ''; // 清空現有內容
 
-        // 找到與 URL 參數中的卡片名稱匹配的卡片信息和描述
+        // 尋找與 URL 參數中的卡片名稱相符的卡片資訊和描述
         const card = cardsInfo.find(card => card.name === cardName);
         const cardDesc = cardsDesc.find(desc => desc.name === cardName);
 
-        // 如果找到匹配的卡片,則創建卡片元素並添加到容器中
+        // 如果找到匹配的卡片，則建立卡片元素並添加到容器中
         if (card && cardDesc) {
             const cardElement = createCardElement(card, cardDesc);
             cardsContainer.appendChild(cardElement);
         } else {
             console.error(`Card '${cardName}' not found in data.`);
         }
+
+        // 處理其他 DOM 元素的顯示
+        const footerElement = document.getElementById('footer-content');
+        const cardContainerElement = document.querySelector('#cards-container');
+
+        if (footerElement) {
+            footerElement.classList.remove('hidden');
+            footerElement.classList.add('fadeInContent');
+        } else {
+            console.error('Error: footer element not found');
+        }
+
+        if (cardContainerElement) {
+            cardContainerElement.classList.remove('hidden');
+            cardContainerElement.classList.add('fadeInContent');
+        } else {
+            console.error('Error: card container element not found');
+        }
     }).catch(error => {
         console.error('Failed to load card data:', error);
     });
 }
+
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+    }
+  }
 
 function createCardElement(card, cardDesc) {
     const wrapper = document.createElement('div');
@@ -116,7 +146,7 @@ function createCardElement(card, cardDesc) {
     const descHeader = document.createElement('h2');
     descHeader.textContent = '卡片詳細描述';
     const descParagraph = document.createElement('p');
-    descParagraph.innerHTML = cardDesc.description.replace(/\n/g, '<br>');  // 使用 innerHTML 和 <br> 替換 \n
+    descParagraph.innerHTML = cardDesc.description.replace(/\r/g, '<br>');  // 使用 innerHTML 和 <br> 替換 \n
     description.appendChild(descHeader);
     description.appendChild(descParagraph);
 

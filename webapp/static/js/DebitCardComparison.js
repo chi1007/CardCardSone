@@ -19,63 +19,63 @@ function getCookie(name) {
 
 
 function loadBankData() {
-    fetch('/database/creditcard')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (!Array.isArray(data)) {
-                throw new Error('Data is not an array');
-            }
-            cardData = data;
-            initializeDropdown();
-            const selectedCardNames = getCookie('selectedCards') || '';
-            updatePageWithSelectedCards(selectedCardNames);
-            toggleCardDisplayOnInit(selectedCardNames.split(',').length);
+    fetch('/database/debitcard')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (!Array.isArray(data)) {
+            throw new Error('Data is not an array');
+        }
+        cardData = data;
+        initializeDropdown();
+        const selectedCardNames = getCookie('selectedCards') || '';
+        updatePageWithSelectedCards(selectedCardNames);
+        toggleCardDisplayOnInit(selectedCardNames.split(',').length);
 
-            // 確保所有目標元素存在後再移除隱藏類別並新增動畫類
-            const footerElement = document.getElementById('footer-content');
-            const titleElement = document.querySelector('.section-title');
-            const comparisonTableElement = document.getElementById('comparison-table');
-            const cardContainerElement = document.getElementById('card-container');
-            
-            if (footerElement) {
-                footerElement.classList.remove('hidden');
-                footerElement.classList.add('fadeInContent');
-            } else {
-                console.error('Error: footer element not found');
-            }
-            
-            if (titleElement) {
-                titleElement.classList.remove('hidden');
-                titleElement.classList.add('fadeInTitle');
-            } else {
-                console.error('Error: title element not found');
-            }
-            
-            if (comparisonTableElement) {
-                comparisonTableElement.classList.remove('hidden');
-                comparisonTableElement.classList.add('fadeInContent');
-            } else {
-                console.error('Error: comparison table element not found');
-            }
-            
-            if (cardContainerElement) {
-                cardContainerElement.classList.remove('hidden');
-                cardContainerElement.classList.add('fadeInContent');
-            } else {
-                console.error('Error: card container element not found');
-            }
-            
-            // 調整最後一行的文字居中
-            adjustLastRowAlignment();
-        })
-        .catch(error => {
-            console.error('Error loading bank data:', error);
-        });
+        // 確保所有目標元素存在後再移除隱藏類別並新增動畫類
+        const footerElement = document.getElementById('footer-content');
+        const titleElement = document.querySelector('.section-title');
+        const comparisonTableElement = document.getElementById('comparison-table');
+        const cardContainerElement = document.getElementById('card-container');
+        
+        if (footerElement) {
+            footerElement.classList.remove('hidden');
+            footerElement.classList.add('fadeInContent');
+        } else {
+            console.error('Error: footer element not found');
+        }
+        
+        if (titleElement) {
+            titleElement.classList.remove('hidden');
+            titleElement.classList.add('fadeInTitle');
+        } else {
+            console.error('Error: title element not found');
+        }
+        
+        if (comparisonTableElement) {
+            comparisonTableElement.classList.remove('hidden');
+            comparisonTableElement.classList.add('fadeInContent');
+        } else {
+            console.error('Error: comparison table element not found');
+        }
+        
+        if (cardContainerElement) {
+            cardContainerElement.classList.remove('hidden');
+            cardContainerElement.classList.add('fadeInContent');
+        } else {
+            console.error('Error: card container element not found');
+        }
+        
+        // 調整最後一行的文字居中
+        adjustLastRowAlignment();
+    })
+    .catch(error => {
+        console.error('Error loading bank data:', error);
+    });
 }
 
 function hideLoadingScreen() {
@@ -145,7 +145,7 @@ function updateCard(cardIndex, cardName) {
         updateTableCell(`basicReward${cardIndex}`, selectedCard.basic_rewards);
         updateTableCell(`additionalReward${cardIndex}`, selectedCard.additional_benefits);
         updateTableCell(`overseasSpending${cardIndex}`, selectedCard.overseas_spending);
-        updateTableCell(`annualFee${cardIndex}`, selectedCard.right);
+        updateTableCell(`crossBankOffers${cardIndex}`, selectedCard.cross_bank_offers);
         updateTableCell(`cardFeatures${cardIndex}`, selectedCard.features.replace(/, /g, '<br>'));
         updateTableCell(`onlineShoppingDiscounts${cardIndex}`, selectedCard.online_shopping_discounts);
         updateTableCell(`mobilePayment${cardIndex}`, selectedCard.mobile_payment);
@@ -155,7 +155,7 @@ function updateCard(cardIndex, cardName) {
         updateTableCell(`entertainment${cardIndex}`, selectedCard.entertainment);
         updateTableCell(`traveBooking${cardIndex}`, selectedCard.travel_booking);
         updateTableCell(`departmentStores${cardIndex}`, selectedCard.department_stores);
-        updateTableCell(`newUserOffer${cardIndex}`, selectedCard.new_user_offer);
+        updateTableCell(`interestRate${cardIndex}`, selectedCard.interest_rate);
         // 創建連接按鈕
         const websiteLinkContainer = document.getElementById(`websiteLink${cardIndex}`);
         websiteLinkContainer.innerHTML = ''; // 清除之前的内容

@@ -21,3 +21,4 @@ dots.forEach((dot, index) => {
     });
 });
 }
+

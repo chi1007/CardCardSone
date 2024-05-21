@@ -31,15 +31,21 @@ def showpage(page_name):
         return render_template('PopularDebitCards.html', css_file=css_file, js_file=js_file)
     elif page_name == 'PopularCreditCards':
         return render_template('PopularCreditCards.html', css_file=css_file, js_file=js_file)
-    elif page_name == 'description':
-        return render_template('CardsDescription.html', css_file=css_file, js_file=js_file)
+    elif page_name == 'DebitDescription':
+        return render_template('DebitDescription.html', css_file=css_file, js_file=js_file)
+    elif page_name == 'CreditDescription':
+        return render_template('CreditDescription.html', css_file=css_file, js_file=js_file)
     elif page_name == 'contact':
         return render_template('CreditCard_mail.html', css_file=css_file, js_file=js_file)
     elif page_name == 'news':
         return render_template('CreditCard_news.html', css_file=css_file, js_file=js_file)
-    elif page_name == 'comparison':
+    elif page_name == 'DebitComparison':
+        return render_template('DebitComparison.html', css_file=css_file, js_file=js_file)
+    elif page_name == 'DebitCardComparison':
+        return render_template('DebitCardComparison.html', css_file=css_file, js_file=js_file)
+    elif page_name == 'CreditComparison':
         return render_template('CreditComparison.html', css_file=css_file, js_file=js_file)
-    elif page_name == 'CardComparison':
+    elif page_name == 'CreditCardComparison':
         return render_template('CreditCardComparison.html', css_file=css_file, js_file=js_file)
     elif page_name == 'guide':
         return render_template('start_guide.html', css_file=css_file, js_file=js_file)
