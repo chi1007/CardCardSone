@@ -2,19 +2,69 @@
 var cardData = [];
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadBankData();
-});
+  loadBankData();
+  setTimeout(hideLoadingScreen, 1000)
+}); 
 
 function loadBankData() {
   fetch('/database/creditcard')
-    .then(response => response.json())
-    .then(data => {
-      cardData = data;
-      createCardElements(cardData);
-      createFilterButtons(cardData);
-    })
-    .catch(error => console.error('Error loading bank data:', error));
+      .then(response => response.json())
+      .then(data => {
+          cardData = data;
+          createCardElements(cardData);
+          createFilterButtons(cardData);
+
+          // 確保所有目標元素存在後再移除隱藏類別並新增動畫類
+          const contactElement = document.getElementById('content');
+          const footerElement = document.getElementById('footer-content');
+          const titleElement = document.querySelector('.section-title');
+          const filterOptionsElement = document.querySelector('.filter-options');
+          const cardContainerElement = document.querySelector('.card-container');
+          
+          if (contactElement) {
+              contactElement.classList.remove('hidden');
+          } else {
+              console.error('Error: contact element not found');
+          }
+
+          if (footerElement) {
+              footerElement.classList.remove('hidden');
+              footerElement.classList.add('fadeInContent');
+          } else {
+              console.error('Error: content element not found');
+          }
+
+          if (titleElement) {
+              titleElement.classList.remove('hidden');
+              titleElement.classList.add('fadeInTitle');
+          } else {
+              console.error('Error: title element not found');
+          }
+
+          if (filterOptionsElement) {
+              filterOptionsElement.classList.remove('hidden');
+              filterOptionsElement.classList.add('fadeInContent');
+          } else {
+              console.error('Error: filter options element not found');
+          }
+
+          if (cardContainerElement) {
+              cardContainerElement.classList.remove('hidden');
+              cardContainerElement.classList.add('fadeInContent');
+          } else {
+              console.error('Error: card container element not found');
+          }
+      })
+      .catch(error => console.error('Error loading bank data:', error));
 }
+
+function hideLoadingScreen() {
+  const loadingScreen = document.getElementById('loading-screen');
+  if (loadingScreen) {
+      loadingScreen.style.display = 'none';
+  }
+}
+
 
 function createCardElements(cards) {
   const cardContainer = document.querySelector('.card-container');
@@ -145,7 +195,7 @@ function openInNewTab(url) {
 }
 
 function selectCard(cardName) {
-  const url = `/description?cardName=${encodeURIComponent(cardName)}`;
+  const url = `/CreditDescription?cardName=${encodeURIComponent(cardName)}`;
   openInNewTab(url);
 }
 

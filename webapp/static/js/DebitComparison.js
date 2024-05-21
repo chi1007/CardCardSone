@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         const selectedCardNames = selectedCards.join(',');
-        window.open(`/CreditCardComparison?cards=${selectedCardNames}`, '_blank');
+        window.open(`/DebitCardComparison?cards=${selectedCardNames}`, '_blank');
     });
 });
 
 
 function loadBankData() {
-    fetch('/database/creditcard')
+    fetch('/database/debitcard')
         .then(response => response.json())
         .then(data => {
             cardData = data;
