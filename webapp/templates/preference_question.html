@@ -8,6 +8,30 @@
   <title>卡卡頌 CardCardSone</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/preference_question.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+  <script>
+     function validateForm() {
+         const totalQuestions = {{ questions|length }};
+         let isAllAnswered = true;
+         for (let i = 0; i < totalQuestions; i++) {
+             const answers = document.getElementsByName("q" + i);
+             let answered = false;
+             for (let j = 0; j < answers.length; j++) { 
+                 if (answers[j].checked) {
+                     answered = true;
+                     break;
+                 }
+             }
+             if (!answered) {
+                 isAllAnswered = false;
+                 break;
+             }
+         }
+         if (!isAllAnswered) {
+             alert("尚有題目未填答，請確認均填答完畢後再送出「提交」。");
+         }
+         return isAllAnswered;
+     }
+   </script>
 </head>
 
 <body>
@@ -43,7 +67,7 @@
 
     <div class="form-container">
     <h1>信用卡/金融卡推薦系統</h1>
-    <form action="/rc_app/" method="POST">
+    <form action="/rc_app/" method="POST" onsubmit="return validateForm()">
         <!-- 第一題只有三個選項，使用單選框 -->
         <p>1. 您是否對申辦卡片有特定的卡別偏好？</p>
         <span class="inline-flex items-center">
@@ -94,7 +118,3 @@
 <p>電話：(02) 1234-5678</p>
 <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#ffde99;">cardcardsone@gmail.com</p>
 
-</footer>
-
-</body>
-</html>

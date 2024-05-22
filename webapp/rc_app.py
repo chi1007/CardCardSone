@@ -27,8 +27,11 @@ def index():
     usercards_info = {}
 
     if request.method == "POST":
-        answers = [int(request.form[f"q{i}"]) for i in range(len(questions))]
-        
+        try:
+            answers = [int(request.form[f"q{i}"]) for i in range(len(questions))]
+        except KeyError:
+            return "尚有題目未填答，請確認均填答完畢再按\"提交\""
+                        
         card_type_preference = int(request.form["q0"])
         if card_type_preference == 1:
             card_type = "credit_cards"
@@ -61,3 +64,4 @@ def index():
 
 # if __name__ == "__main__":
 #     rc_app_blueprint.run(debug=True)
+
