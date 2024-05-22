@@ -214,9 +214,14 @@ body {
     border: none; /* 無邊框 */
     border-radius: 50px; /* 圓角 */
     cursor: pointer; /* 鼠標變為手指 */
-    font-size: 16px; /* 文字大小 */
+    transform: scale(1.5); /* 圖案放大 */
+    font-weight: bold; /* 文字粗體 */
+
 }
 .back-to-top:hover {
     background-color: #896e57; /* 懸停背景顏色 */
-}    
-    
+    transform: scale(1.5);
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: bold; /* 文字粗體 */
+}

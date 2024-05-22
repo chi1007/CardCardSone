@@ -58,51 +58,33 @@
 
     
   .decorative-button {
-    width: 105px;
+    width: 142px;
     background-color: #f8dbb9;
     border-radius: 17px;
     height: 41px;
     font-size: 22px;
     color: #a8795f;
-    border: none;
     font-weight: bold;
     transition: all 0.3s ease;
-}
+    padding: 0px 3px;
+    margin: 0 12px 12px 0;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+  }
   
   .decorative-button:hover {
     background-color: #a8795f;
     color: #ffffff;
   }
-
-  
-  /* .decorative-icon {
-    width: 65px;
-    background-color: #f3f4f6;
-    border-radius: 50%;
-    height: 60px;
-    margin: auto 0;
-    font-size: 50px;
-    line-height: 56px;
-    text-align: center;
-    color: #8f5b4c;
-    border: none;
-  
-    transition: all 0.3s ease;
-  }
-  
-  .decorative-icon:hover {
-    background-color: #8f5b4c;
-    color: #f3f4f6;
-  } */
-  
-  
-  
   
   
   /* 表格 */
   
   table {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
     border-collapse: collapse;
     border: 2px solid #795548 
@@ -140,14 +122,17 @@
   }
   
   #comparison-table th:nth-child(2) { 
-    width: 21%;
+    width: 20%;
   }
 
   #comparison-table th:nth-child(3) { 
-    width: 21%;
+    width: 20%;
   }
   #comparison-table th:nth-child(4) { 
     width: 40%;
+  }
+  #comparison-table th:nth-child(5) { 
+    width: 12%;
   }
   #comparison-table td:nth-child(1) { 
     font-size:20px;
@@ -168,7 +153,7 @@
     text-decoration: none;
     border: none;
     border-radius: 13px;
-    font-size: 15px;
+    font-size: 18px;
     transition: background-color 0.3s ease;
   }
   
