@@ -11,6 +11,10 @@ db_config = {
     'database': 'cardsoneDB',
 }
 
+@app.route('/credit_card_mail')
+def credit_card_mail():
+    return render_template('CreditCard_mail.html')
+
 
 # 處理用戶提交的留言
 @app.route('/submit_reply', methods=['POST'])
@@ -40,9 +44,6 @@ def submit_reply():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/credit_card_mail')
-def credit_card_mail():
-    return render_template('CreditCard_mail.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
