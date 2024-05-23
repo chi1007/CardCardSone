@@ -98,7 +98,7 @@
 
 <div class="mail-container">
     <h3>歡迎留下您寶貴的意見：</h3>
-    <form id="feedbackForm">
+    <form id="feedbackForm" action="/submit_reply" method="POST"> <!-- 修改表單的提交地址和方法 -->
         <label class=mail-label for="name" >姓名／稱呼：</label>
         <input class=mail-input type="text" id="name" name="name" required><br>
         <label class=mail-label for="email">電子郵件：</label>
@@ -107,8 +107,9 @@
         <textarea class=mail-textarea id="message" name="message" rows="4" required></textarea><br>
         <button class=mail-button type="submit"  >提交</button>
     </form>
-    <!-- <div id="mail-response"></div> -->
+    <div id="mail-response"></div>
 </div>
+
 
 <hr class="hr1">
         
