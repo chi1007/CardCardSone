@@ -3,10 +3,12 @@ import requests
 import numpy as np
 from rc_data import cards_features, cards_info
 from flask import Blueprint
+
 from database import database_blueprint, get_data
 
 rc_app_blueprint = Blueprint('rc_app', __name__)
 
+cards_features=cards_features()
 # 計算距離並找出最接近的卡片（考慮用戶填答和卡別偏好）
 def find_closest_cards(user_vector, cards):
     distances = {}
@@ -33,16 +35,24 @@ def get_data(api_route):
 
 @rc_app_blueprint.route("/", methods=["GET", "POST"])
 def index():
-    # 获取问题数据
     questions = get_data('http://127.0.0.1:5000/database/questions')
+    cards_features = requests.get('http://127.0.0.1:5000/database/recommend_data')
+    card_type = cards['type']
     
-    card_type = ""
+    if card_type == "credit_cards":
+        cards = cards_features["credit_cards"]
+    elif card_type == "finance_cards":
+        cards = cards_features["finance_cards"]
+    elif card_type == "all_cards":
+        cards = {**cards_features["credit_cards"], **cards_features["finance_cards"]}
+    else:
+        raise ValueError("Invalid card type from json_data")
+    
+
     usercards_info = {}
 
     if request.method == "POST":
-        # 获取用户提交的答案
         answers = [int(request.form[f"q{i}"]) for i in range(len(questions))]
-        print(answers)
         card_type_preference = int(request.form["q0"])
         if card_type_preference == 1:
             card_type = "credit_cards"
