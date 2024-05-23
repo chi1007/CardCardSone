@@ -85,7 +85,7 @@
 
         <!-- 其他問題使用單選框 -->
         {% for question in questions[1:] %}
-        <p>{{ question }}</p>
+        <p>{{ question.question }}</p>
         <span class="inline-flex items-center">
              <input type="radio" id="q{{ loop.index }}_1" name="q{{ loop.index }}" value="1" class="form-radio h-5 w-5 text-blue-600">
              <label for="q{{ loop.index }}_1" class="ml-2">非常不重要</label>

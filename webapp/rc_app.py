@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
+import requests
 import numpy as np
-from rc_data import cards_features, questions, cards_info
+from rc_data import cards_features, cards_info
 from flask import Blueprint
+from database import database_blueprint, get_data
 
 rc_app_blueprint = Blueprint('rc_app', __name__)
 
@@ -21,14 +23,26 @@ def find_closest_cards(user_vector, cards):
     sorted_distances = sorted(distances.items(), key=lambda x: x[1]) # 根據歐氏距離排序
     return sorted_distances[:3] # 推薦距離最近的3張卡片
 
+def get_data(api_route):
+    response = requests.get(api_route)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print("Failed to retrieve data from API:", response.status_code)
+        return []
+
 @rc_app_blueprint.route("/", methods=["GET", "POST"])
 def index():
+    # 获取问题数据
+    questions = get_data('http://127.0.0.1:5000/database/questions')
+    
     card_type = ""
     usercards_info = {}
 
     if request.method == "POST":
+        # 获取用户提交的答案
         answers = [int(request.form[f"q{i}"]) for i in range(len(questions))]
-                         
+        print(answers)
         card_type_preference = int(request.form["q0"])
         if card_type_preference == 1:
             card_type = "credit_cards"
