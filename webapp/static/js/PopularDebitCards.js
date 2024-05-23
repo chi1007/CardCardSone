@@ -158,7 +158,7 @@ function showTab(button) {
 
   // 獲取激活的標籤
   const selectedTags = Array.from(activeTags).map(function(tag) {
-    return tag.textContent.trim(); // 修改這裡獲取標籤textContent
+    return tag.textContent.trim(); 
   });
 
   const cards = document.querySelectorAll('.card-container .card');

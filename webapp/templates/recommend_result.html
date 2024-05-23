@@ -14,7 +14,9 @@
 </head>
 <body>
     <h1>推薦結果</h1>
-    <h2>以下是最適合您的卡片：</h2>
+    <h2>根據您的填答結果，以下為提供您的理財建議：</h2>
+    <h2 style="color:red">{待導入AI理財建議}</h2>
+    <h2>下列為最適合您的卡片：</h2>
     <ul>
         {% for card, dist in closest_cards %}
         <li>{{ card }} (距離: {{ dist }})</li>
