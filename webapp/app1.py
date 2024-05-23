@@ -51,6 +51,10 @@ def showpage(page_name):
         return render_template('start_guide.html', css_file=css_file, js_file=js_file)
     elif page_name == 'question':
         return render_template('preference_question.html', css_file=css_file, js_file=js_file)
+    elif page_name == 'register':
+        return render_template('register.html', css_file=css_file)
+    elif page_name == 'login':
+        return render_template('login.html')
     else:
         return render_template('CreditCard_home.html', css_file=css_file, js_file=js_file)
 

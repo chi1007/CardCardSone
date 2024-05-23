@@ -9,6 +9,8 @@ app = Flask(__name__)
 app.register_blueprint(app1_blueprint, url_prefix='/')
 app.register_blueprint(rc_app_blueprint, url_prefix='/rc_app')
 app.register_blueprint(database_blueprint, url_prefix='/database')  
+app.register_blueprint(register_blueprint, url_prefix='/register')  
+app.register_blueprint(login_blueprint, url_prefix='/login')
 
 
 
