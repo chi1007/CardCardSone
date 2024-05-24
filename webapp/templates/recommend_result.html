@@ -1,48 +1,3 @@
-<!-- result.html
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>推薦結果</title>
-    <style>
-        .title {
-            font-size: 15px;
-            color: blue;
-        }
-    </style>
-</head>
-<body>
-    <h1>推薦結果</h1>
-    <h2>根據您的填答結果，以下為提供您的理財建議：</h2>
-    <h2 style="color:red">{待導入AI理財建議}</h2>
-    <h2>下列為最適合您的卡片：</h2>
-    <ul>
-        {% for card, dist in closest_cards %}
-        <li>{{ card }} (距離: {{ dist }})</li>
-        <li>{{ usercards_info[card] }}</li>
-        {% endfor %}
-    <table>
-        <tr class="title">
-
-            <th>說明項目</th>
-            <th>{{ card }}</th>
-            <th>{{ card }}</th>
-            <th>{{ card }}</th>
-            </tr>
-            <tr>
-                <td>優惠項目</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-            <!-- Add more rows as needed -->
-        <!-- </table>
-    </ul>
-</body>
-</html> -->
-<!-- result.html -->
-<!-- result.html -->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -76,14 +31,16 @@
 <body>
     <h1>推薦結果</h1>
     <h2>根據您的填答結果，以下為提供您的理財建議：</h2>
-    <h2 style="color:red">{待導入AI理財建議}</h2>
+    <h2>卡片資訊和理財建議：</h2>
+    <p>{{ user_analysis }}</p>
+        
     <h2>下列為最適合您的卡片：</h2>
     <ul>
         {% for card, dist in closest_cards %}
         <li>{{ card }} (距離: {{ dist }})</li>
-        <!-- <li>{{ usercards_info[card] }}</li> -->
         {% endfor %}
     </ul>
+
     <table>
         <tr class="title">
             <th>推薦卡片</th>
@@ -92,12 +49,104 @@
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>優惠項目</td>
-            {% for card, dist in closest_cards %}
-            <td>...</td>
+            <td>銀行名稱</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.bankname }}</td>
             {% endfor %}
         </tr>
-        <!-- Add more rows as needed -->
+        <tr class="item">
+            <td>卡片類型</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.card_type }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>特色標籤</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.tag }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>基本回饋</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.basic_rewards }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>加碼回饋</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.additional_benefits }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>海外消費</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.overseas_spending }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>網購優惠</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.online_shopping_discounts }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>行動支付</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.mobile_payment }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>通勤交通</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.commute_expenses }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>生活繳費</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.utilities_payment }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>餐飲外送</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.food_delivery }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>影音娛樂</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.entertainment }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>旅遊訂房</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.travel_booking }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>量販百貨</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.department_stores }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>發卡組織</td>
+            {% for card in recommended_cards %}
+            <td>{{ card.type }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="item">
+            <td>官方連結</td>
+            {% for card in recommended_cards %}
+            <td>
+                <a href="{{ card.website }}" target="_blank">
+                    <button>官方申辦</button>
+                </a>
+            </td>
+            {% endfor %}
     </table>
 </body>
 </html>
