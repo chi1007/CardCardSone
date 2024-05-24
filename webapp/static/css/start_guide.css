@@ -1,218 +1,189 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-  .section-title {
-    color: #727272;
-    font: 25px/100% Epilogue, sans-serif;
-    display: flex;
-    background-color: #fbf3ea; 
-    text-align: center;
-    flex-direction: column;
-    padding: 0px;
-    margin-top: 100px;
-    width: 100%;
-  }
+.content {
+  margin: 35px;
+  margin-top: -5em;
+  padding: 6em;
+}
+.indent {
+  margin-left: 3em;
+  margin-top: 3em;
+  margin-bottom: 7em;
+}
 
-  .section-description {
-    margin: 0 auto;
-    text-align: center;
-    display: block;
-    background-color: #fbf3ea; 
-    flex-direction: column;
-    margin-top: 10px;
-    width: 80%;
-    font-size: 20px;
-    font-weight: 400;
-    
-  }
-
-  .section-description2 {
-    color: #ce7c0a;
-    margin: 0 auto;
-    text-align: left;
-    display: block;
-    background-color: #ffffff; 
-    flex-direction: column;
-    margin-top: 10px;
-    width: 80%;
-    font-size: 20px;
-    font-weight: 400;
-    
-  }
-
+h2 {
+  color: #727272;
+  font: 700 50px/131% Epilogue, sans-serif;
+  margin-top: 3em;
+  text-align: center;
+}
   
-
-  .section-description2 img {
-    /* 讓圖片高度自動調整以保持比例 */
-    height: auto;
-    /* 設置圖片寬度為父元素寬度 */
-    width: 80%;
-    /* 讓圖片在容器內置中 */
-    display: block;
-    margin: 0 auto;
+h3 {
+  color: #8B4513;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 2em;
 }
 
-.section-description3 {
-  margin: 0 auto;
-  text-align: left;
-  display: block; /*元素将显示为块级元素，即宽度将填满父元素的整个宽度，而不是与其他元素共享水平空间*/
-  background-color: #faf5f5; 
-  flex-direction: column;
-  margin-top: 10px;
-  width: 80%;
-  font-size: 20px;  /*字体大小*/
-  font-weight: 400;   /*字體粗細*/
+h4 {
+  font-size: 2em;
 
 }
 
-.section-description3 p {
-  text-indent: 2em; /* 設置段落首行縮進 */
-  line-height: 1.5; /* 設置行高 */
+.content p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.content p.reminder {
+  font-size: 18px;
+  color: #d9534f;
+  text-align: right;
+}
+
+
+/* 表格 */
+.table-container {
+  display: flex;
+  justify-content: center;
+} 
+table {
+  width: 90%;
+  margin: 0 auto;  
+  border-collapse: collapse;
+  border: 2px solid #795548;
+}
+
+th, td {
+  border-bottom: 1px solid #795548;
+  border-right: 1px solid #795548;
+  text-align: center;
+}
+th {
+  color: #fff;
+  background-color: #654327b0;
+  font: 700 24px / 100% Epilogue, sans-serif;
+  padding: 1em;
+  padding-left: 3em;
+}
+td {
+  font: 18px/110% Arial, sans-serif;
+  background-color: #ffffffba;
+  padding: 1em;
+  line-height: 1.5; 
+}
+tr:hover {
+  background-color: rgb(224, 207, 203);
+}
+
+
+.content p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.reminder {
+  font-size: 18px;
+  color: #d9534f;
+  text-align: right;
+}
+
+.first-column {
+  font-weight: bold;
+  width: 10%;
+  background-color: #ffefda
+}
+.second-column, .third-column, .fourth-column {
+  width: 20%;
+}
+.second-column-title{
+  font-weight: bold;
+  background-color: #ffefda
+}
+
+.third-column-title{
+  font-weight: bold;
+  background-color:#ffefda
+}
+.fourth-column-title{
+  font-weight: bold;
+  background-color:#ffefda
+}
+
+.rounded-image {
+  border-radius: 20px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+}
+.rounded2-image {
+  border-radius: 20px;
+  display: block;
+  max-width: 20%;
+  height: auto;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
 }
 
 
 .image-container {
-  display: flex; /* 使用弹性盒子布局 */
-  justify-content: space-between; /* 图片在容器中水平均匀分布 */
-  margin: 0 auto;
-  display: block; /*元素将显示为块级元素，即宽度将填满父元素的整个宽度，而不是与其他元素共享水平空间*/
-  background-color: #ffffff; 
-  flex-direction: column;
-  margin-top: 10px;
-  margin-bottom: 70px;
-  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
 .image-container img {
-  height: auto; /* 保持图片的纵横比 */
-  max-width: 33%; 
+  border-radius: 20px;
+  border: 2px solid #ffffff00;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+  background-color: #fff;
 }
 
 .pros_cons_container {
-  display: flex; /* 使用弹性盒子布局 */
-  justify-content: center; /* 弹性项目在主轴上居中对齐 */
-  width: 80%;
-  margin: 0 auto; /* margin 元素的外边距。0 auto 表示上下外边距为 0，左右外边距自动计算以实现水平居中。浏览器会自动计算左右外边距，使得元素水平居中显示在其父容器中 */
-  margin-bottom: 35px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
 .box {
-  flex: 1; /* 设置弹性项目平均占据剩余空间 */
-  padding: 20px; /* 设置内边距 */
-  text-align: left;
-  background-color:#faf5f5;
-  margin: 0 10px; /* 左右间距为 10px */
-}
-  
-  /* 首頁滾動條 */
-  .credit_articles {
-    margin: 0 auto;
-    text-align: left;
-    display: block;
-    background-color: #faf5f5; 
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 10px;
-    width: 80%;
-    font-size: 20px;
-    font-weight: 400;
-  }
-  
-  
-  .credit_articles p {
-    text-indent: 2em; /* 設置段落首行縮進 */
-    line-height: 1.5; /* 設置行高 */
-}
-  .credit_articles img {
-    /* 讓圖片高度自動調整以保持比例 */
-    height: auto;
-    /* 設置圖片寬度為父元素寬度 */
-    width: 80%;
-    /* 讓圖片在容器內置中 */
-    display: block;
-    margin: 0 auto;
+  width: 25%;
+  background-color: #ffffffb5;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding-left: 4em;
+  padding-bottom: 2em;
+  border: 5px solid #d8b291a8;
 }
 
-  .credit_articles p:last-of-type {
-    text-indent: 0; /* 移除段落的縮進 */
+.tips-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.debit_articles {
-  margin: 0 auto;
-  text-align: left;
-  display: block;
-  background-color: #faf5f5; 
-  flex-direction: column;
-  padding: 10px;
-  margin-top: 10px;
-  width: 80%;
-  font-size: 20px;
-  font-weight: 400;
+.tips-text {
+  flex: 1;
+  margin-right: 20px;
 }
 
-.debit_articles p {
-  text-indent: 2em; /* 設置段落首行縮進 */
-  line-height: 1.5; /* 設置行高 */
+.tips-text p {
+  margin: 28px 0;
+  margin-left: 3em;
 }
 
-  .article-container {
-    position: flex;
-  }
-  
-  article {
-    display: none;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
-  article.active {
-    display: block;
-  }
-  
-  .credit_apply_articles {
-    margin: 0 auto;
-    text-align: left;
-    display: block;
-    background-color: #faf5f5; 
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 10px;
-    width: 80%;
-    font-size: 20px;
-    font-weight: 400;
-  }
-
-  .credit_apply_articles p {
-    text-indent: 2em; /* 設置段落首行縮進 */
-    line-height: 1.5; /* 設置行高 */
-}
-
-.credit_apply_articles p:first-child,
-.credit_apply_articles p:last-child {
-    text-indent: 0; /* 移除第一行和最后一行段落的缩进 */
-}
-
-  .credit_articles_img {
-    position: relative; /* 设置相对定位 */
-    margin: 0 auto;
-    display: flex;
-    background-color: #faf5f5; 
-    padding: 10px;
-    margin-top: 10px;
-    width: 80%;
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 40px;
-}
-
-.credit_articles_img .text {
-    flex: 1;
-    text-align: left;
-}
-
-.credit_articles_img img {
-    position: absolute; /* 设置绝对定位 */
-    top: 0;
-    right: 0; /* 图片位于父元素的右上角 */
-    max-height: 100%; /* 限制图片高度 */
-    max-width: 50%; /* 限制图片宽度 */
+.tips-container img {
+  flex: 1;
+  max-width: 40%;
+  height: auto;
+  margin-right: 100px;
 }
