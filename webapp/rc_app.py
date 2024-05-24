@@ -61,12 +61,14 @@ def index():
             raise ValueError("Invalid card type preference")
         
         closest_cards = find_closest_cards(answers, cards)
-         # 找出最接近的3張卡片的名稱
+
+        # 找出最接近的3張卡片的名稱
         closest_card_names = [card[0] for card in closest_cards]
         
-        # 找到對應的卡片詳細資料
-        recommended_cards = [card for card in recommend_card_all if card["name"] in closest_card_names]
-        
+        # 找到對應的卡片詳細資料並按順序排列
+        recommended_cards = [card for name in closest_card_names for card in recommend_card_all if card["name"] == name]
+
+        return render_template("recommend_result.html", closest_cards=closest_cards, recommended_cards=recommended_cards)
         # return json.dumps(recommended_cards, indent=4, ensure_ascii=False)
         # for card, dist in closest_cards:
         #     if card_type in cards_info and card in cards_info[card_type]:
@@ -91,7 +93,7 @@ def index():
         # # 獲取分析結果
         # user_analysis = response.choices[0].message['content']
 
-        return render_template("recommend_result.html", closest_cards=closest_cards, recommended_cards=recommended_cards)
+        
     else:
         return render_template("preference_question.html", questions=questions)
 
