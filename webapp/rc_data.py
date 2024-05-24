@@ -93,7 +93,7 @@ def get_rc_data():
     cnx.close()
 
     # 轉換為JSON格式
-    cards_all_features = json.dumps([{
+    cards_all_features = [{
         "cid": row[0],
         "type": row[1],
         "name": row[2],
@@ -108,30 +108,15 @@ def get_rc_data():
         "entertainment": float(row[11]),
         "travel_booking": float(row[12]),
         "department_stores": float(row[13])
-    } for row in data])
+    } for row in data]
 
-    cards_features = json.loads(cards_all_features)
-    for card in cards_features:
-        if card["type"] == "credit_cards":
-            card_name = card["name"]
-            print(card_name)
-            card_values = [
-                card["basic_rewards"],
-                card["additional_benefits"],
-                card["overseas_spending"],
-                card["online_shopping_discounts"],
-                card["mobile_payment"],
-                card["commute_expenses"],
-                card["utilities_payment"],
-                card["food_delivery"],
-                card["entertainment"],
-            ]
-            print(card_values)
+    # global cards_features
+    cards_features = {
+        'credit_cards': {},
+        'debit_cards': {}
+    }
     
-    # 使用 for 循环打印出每张卡的名称和对应的数据数组
-    #cards_dict={'credit_cards':{},'finance_cards':{}}
-    for card in cards_features:
-        #print(card)
+    for card in cards_all_features:
         if card["type"]=="credit_card":
             card_name = card["name"]
             card_values = [
@@ -147,8 +132,58 @@ def get_rc_data():
                 card["travel_booking"],
                 card["department_stores"]
             ]
-            for card_name, card_values in card.items():
-                cards_features={'credit_cards':{card_name:card_values}}
+            cards_features['credit_cards'][card_name] = card_values
+        elif card["type"]=="debit_card":
+            card_name = card["name"]
+            card_values = [
+                card["basic_rewards"],
+                card["additional_benefits"],
+                card["overseas_spending"],
+                card["online_shopping_discounts"],
+                card["mobile_payment"],
+                card["commute_expenses"],
+                card["utilities_payment"],
+                card["food_delivery"],
+                card["entertainment"],
+                card["travel_booking"],
+                card["department_stores"]
+            ]
+            cards_features['debit_cards'][card_name] = card_values
+        else:
+            print(f"card_type: {card['type']}")
     
-        return cards_features
-get_rc_data()
+    all_cards = {**cards_features["credit_cards"], **cards_features["debit_cards"]}
+        
+    return cards_features, all_cards
+    
+#get_rc_data()
+    
+    
+
+
+    
+
+
+    
+    # 使用 for 循环打印出每张卡的名称和对应的数据数组
+    #cards_dict={'credit_cards':{},'finance_cards':{}}
+    # cards_features = {}
+    # for card in cards_all_features:
+    #     if card["type"]=="credit_card":
+    #         card_name = card["name"]
+    #         card_values = [
+    #             card["basic_rewards"],
+    #             card["additional_benefits"],
+    #             card["overseas_spending"],
+    #             card["online_shopping_discounts"],
+    #             card["mobile_payment"],
+    #             card["commute_expenses"],
+    #             card["utilities_payment"],
+    #             card["food_delivery"],
+    #             card["entertainment"],
+    #             card["travel_booking"],
+    #             card["department_stores"]
+    #         ]
+    #         cards_features['credit_cards'][card_name] = card_values
+    
+    # return cards_features
