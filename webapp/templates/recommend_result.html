@@ -1,44 +1,87 @@
-<!-- result.html -->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='image/icon/Croissant1.png') }}">
+    <title>卡卡頌 CardCardSone</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/recommend_result.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}"> -->
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>推薦結果</title>
-    <style>
-        .title {
-            font-size: 15px;
-            color: blue;
-        }
-    </style>
+
 </head>
 <body>
+    <!-- <div class="header-container">
+      <header class="header">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='image/icon/Croissant1.png') }}" alt="icon" width="50" height="50">
+          <a href="/">卡卡頌 CardCardSone</a>
+        </div>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a href="/guide" class="nav-link">小白指南</a></li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">卡片介紹▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="/PopularCreditCards">熱門信用卡</a></li>
+                <li><a href="/PopularDebitCards">熱門金融卡</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">卡片比較▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="/CreditComparison">信用卡比較</a></li>
+                <li><a href="/DebitComparison">金融卡比較</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="/news" class="nav-link">最新消息</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">關於我們</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+     -->
     <h1>推薦結果</h1>
     <h2>根據您的填答結果，以下為提供您的理財建議：</h2>
-    <h2 style="color:red">{待導入AI理財建議}</h2>
+    <h2 class="recommendation" id="ai-advice">{待導入AI理財建議}</h2>
     <h2>下列為最適合您的卡片：</h2>
     <ul>
         {% for card, dist in closest_cards %}
-        <li>{{ card }} (距離: {{ dist }})</li>
-        <li>{{ usercards_info[card] }}</li>
+        <li class="suitable">
+            <strong>{{ card }}</strong> (距離: {{ dist }})<br>
+            {{ usercards_info[card] }}
+        </li>
         {% endfor %}
-        
-<table>
-    <tr class="title">
-
-        <th>說明項目</th>
-        <th>卡片1</th>
-        <th>卡片2</th>
-        <th>卡片3</th>
-    </tr>
-    <tr>
-        <td>優惠項目</td>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-    </tr>
-    <!-- Add more rows as needed -->
-</table>
     </ul>
+    <table>
+        <tr class="title">
+            <th>說明項目</th>
+            <th>卡片1</th>
+            <th>卡片2</th>
+            <th>卡片3</th>
+        </tr>
+        <tr>
+            <td>優惠項目</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+
+    <script>
+        // This script is to fetch AI advice and insert it into the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fetch('/api/ai_advice') // Adjust the endpoint as necessary
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ai-advice').textContent = data.advice;
+                })
+                .catch(error => console.error('Error fetching AI advice:', error));
+        });
+    </script>
 </body>
 </html>

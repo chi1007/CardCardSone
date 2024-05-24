@@ -43,151 +43,226 @@
     </header>
   </div>
     
-    <section class="section-title">
-        <h2>信用卡小白指南</h2> 
-    </section>
+  <div class="content">
+    <h2>信用卡小白指南</h2> 
 
-    <section class="section-description">
-      <h3>何謂信用卡?</h3>
-    </section>
-    
-    <section class="credit_articles">
-                <p>
-                  信用卡可視為一種用於金融交易的理財工具，發卡銀行會根據信用卡持有者的信用評等，來決定信用卡消費額度的多寡，當你使用信用卡進行消費時，該筆金額就會自動添加到你該期帳單的未結餘額當中。對於大多數的銀行來說，信用卡帳單都是以30天、每月的方式來結帳，若持卡人沒有在該期帳單的繳費時限內結清帳單，則會被收取高額的循環利率利息，而這也是信用卡銀行主要的賺錢方式。
-                </p>
-                <p>
-                  信用卡允許持卡人在接受信用卡的商家消費時，能預先向銀行借入資金來支付費用。信用卡的本質，就是以持卡人自身的「信用」為擔保，向銀行「借錢消費」。因此信用卡持卡人需要在一段時間內(通常是以月結算，如每月的5號)結清這段時間內累積的消費金額，並加上任何信用卡消費時產生的額外費用(如跨國交易手續費)。一般來說，信用卡會以塑膠或金屬的卡面來製作，並且具備以下的元素：
-                </p>
-                <img src="{{ url_for('static', filename='image/start_guide_image/card_element.png') }}">
-                <p>
-                  信用卡能夠消費的額度並非無上限，而是發卡機構會根據申請人的聯徵信用評分的高低，給予不同的信用額度消費。
-                </p>
-    </section>
-    
-    <section class="section-description">
-      <h3>何謂簽帳金融卡?</h3>
-    </section>
+    <h3>何謂信用卡?</h3>
+    <p>
+        信用卡可視為一種用於金融交易的理財工具，發卡銀行會根據信用卡持有者的信用評等，來決定信用卡消費額度的多寡，當你使用信用卡進行消費時，該筆金額就會自動添加到你該期帳單的未結餘額當中。對於大多數的銀行來說，信用卡帳單都是以30天、每月的方式來結帳，若持卡人沒有在該期帳單的繳費時限內結清帳單，則會被收取高額的循環利率利息，而這也是信用卡銀行主要的賺錢方式。
+    </p>
+    <p>
+        信用卡允許持卡人在接受信用卡的商家消費時，能預先向銀行借入資金來支付費用。信用卡的本質，就是以持卡人自身的「信用」為擔保，向銀行「借錢消費」。因此信用卡持卡人需要在一段時間內(通常是以月結算，如每月的5號)結清這段時間內累積的消費金額，並加上任何信用卡消費時產生的額外費用(如跨國交易手續費)。一般來說，信用卡會以塑膠或金屬的卡面來製作，並且具備以下的元素：
+    </p>
+    <img class="rounded-image" src="{{ url_for('static', filename='image/start_guide_image/card_element.png') }}">
+    <p class="reminder">
+        信用卡能夠消費的額度並非無上限，而是發卡機構會根據申請人的聯徵信用評分的高低，給予不同的信用額度消費。
+    </p>
 
-    <section class="debit_articles">
-        <p>
-          簽帳金融卡連動的是個人銀行帳戶，不涉及與銀行間信用往來，可消費的額度不需要銀行核准，而是根據銀行戶頭餘額，有多少就可以刷多少，持卡人不用到銀行臨櫃填寫或使用支票就能提取現金。
-        </p>
-        <p>
-          接受信用卡支付的地方都能使用簽帳金融卡。舉例來說，若你手上的簽帳金融卡上有Visa的發卡組織標誌，那麼他就能在任何支援Visa的地方進行刷卡消費。使用簽帳金融卡時，銀行會根據你的消費金額，來凍結並轉移你帳戶中的資金。
-        </p>
-        <p>
-          當使用簽帳金融卡時，跟信用卡一樣可能會被要求簽名，或者是輸入設定好的個人識別號（PIN碼），對於常常透支、還不熟悉理財的人來說，使用簽帳金融卡會比信用卡來的好。
-        </p>
-    </section>
+    <h3>何謂簽帳金融卡?</h3>
+    <p>
+        簽帳金融卡連動的是個人銀行帳戶，不涉及與銀行間信用往來，可消費的額度不需要銀行核准，而是根據銀行戶頭餘額，有多少就可以刷多少，持卡人不用到銀行臨櫃填寫或使用支票就能提取現金。
+    </p>
+    <p>
+        接受信用卡支付的地方都能使用簽帳金融卡。舉例來說，若你手上的簽帳金融卡上有Visa的發卡組織標誌，那麼他就能在任何支援Visa的地方進行刷卡消費。使用簽帳金融卡時，銀行會根據你的消費金額，來凍結並轉移你帳戶中的資金。
+    </p>
+    <p>
+        當使用簽帳金融卡時，跟信用卡一樣可能會被要求簽名，或者是輸入設定好的個人識別號（PIN碼），對於常常透支、還不熟悉理財的人來說，使用簽帳金融卡會比信用卡來的好。
+    </p>
 
-    <section class="section-description">
-      <h2>信用卡 vs. 簽帳金融卡 哪一種比較好？</h2>
-    </section>
-
-    <section class="section-description2">
-      <p>
+    <h2>信用卡 vs. 簽帳金融卡 哪一種比較好？</h2>
+    <p>
         兩者都是由國際發卡組織與銀行發行，差別在於：簽帳金融卡是與個人銀行帳戶連動；信用卡則是刷卡當下先跟銀行預借之後再還錢(繳卡費)。
-      </p>
-      <img src="{{ url_for('static', filename='image/start_guide_image/credit_vs_debit.png') }}">
-    </section>
-    
-    <section class="section-description">
-      <h3>信用卡等級種類有哪些？</h3>
-    </section>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">信用卡 vs. 簽帳金融卡差異比較</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="first-column">比較</td>
+                <td class="second-column-title">信用卡</td>
+                <td class="third-column-title">簽帳金融卡</td>
+            </tr>
+            <tr>
+                <td class="first-column">消費金額</td>
+                <td class="second-column">依照申請時的財力證明、信用評等來核准</td>
+                <td class="third-column">依該卡連結的銀行帳戶餘額而定</td>
+            </tr>
+            <tr>
+                <td class="first-column">建立信用紀錄</td>
+                <td class="second-column">是</td>
+                <td class="third-column">否</td>
+            </tr>
+            <tr>
+                <td class="first-column">使用時直接從銀行帳戶扣款</td>
+                <td class="second-column">否</td>
+                <td class="third-column">是</td>
+            </tr>
+            <tr>
+                <td class="first-column">先支付、延遲付款</td>
+                <td class="second-column">是</td>
+                <td class="third-column">否</td>
+            </tr>
+            <tr>
+                <td class="first-column">被盜刷時</td>
+                <td class="second-column">掛失24小時「內」被盜刷不用支付
+                    <br>掛失24小時「前」被盜刷要支付費用：
+                    <br>1. 至多支付台幣3000元自負額
+                    <br>2. 另外支付信用卡補辦費用約台幣200元。
+                </td>
+                <td class="third-column">基本上是無法追回被盜刷的金額，被盜刷時在最短時間回報給銀行，能追回的機會才比較大。</td>
+            </tr>
+            <tr>
+                <td class="first-column">相關費用</td>
+                <td class="second-column">跨國消費、遲繳循環利率、預借現金</td>
+                <td class="third-column">跨行ATM領錢、透支</td>
+            </tr>
+            <tr>
+                <td class="first-column">循環利率</td>
+                <td class="second-column">有</td>
+                <td class="third-column">無</td>
+            </tr> 
+        </tbody>
+    </table>
+  <p class="reminder">資料整理：<a href="https://rich01.com/" target="_blank">Mr.Market 市場先生</a></p>
 
-    <section class="section-description3">
-      <p>
+    <h3>信用卡等級種類有哪些？</h3>
+    <p>
         申請信用卡前，首先必須認識信用卡等級、國際發卡組織和信用額度。信用卡分成不同卡等，隨著卡片等級越高，申請門檻、年費標準、年度消費規定也會提高，相對的持卡人也享有更多權益和尊榮禮遇。例如申請的第一張信用卡如果是世界卡/無限卡之類的頂級卡片，就可能比較難審核通過。如果考慮從白金卡、或御璽卡/鈦金卡/晶緻卡開始，之後再慢慢往上跳，就相對比較容易。
-      </p>
-      <p>
+    </p>
+    <p>
         台灣較常用的三大發卡組織為Visa、MasterCard、JCB，如果都在國內消費，選哪間國際發卡組織其實影響不大，主要是差在通路、特定商店的優惠多寡。
-      </p>
-    </section>
+    </p>
 
-    <section class="image-container">
-      <img src="{{ url_for('static', filename='image/start_guide_image/Image (3).png') }}" alt="Image 1">
-      <img src="{{ url_for('static', filename='image/start_guide_image/Image (4).png') }}" alt="Image 2">
-      <img src="{{ url_for('static', filename='image/start_guide_image/Image (5).png') }}" alt="Image 3">
-    </section>
-
-    <section class="section-description2">
-      <img src="{{ url_for('static', filename='image/start_guide_image/Image (6).png') }}" >
-    </section>
-
-    <section class="section-description">
-      <h3>信用卡的優缺點 : </h3>
-    </section>
-
-    <section class="pros_cons_container">
-      <div class="box">
-          <h4>優點</h4>
-          <p>1. 便利性高</p>
-          <p>2.獎勵回饋</p>
-          <p>3.建立信用紀錄</p>
-          <p>4.應付緊急支出</p>
-          <p>5.安全性</p>
-      </div>
-      <div class="box">
-        <h4>缺點</h4>
-        <p>1.高額的循環利息</p>
-        <p>2.可能傷害個人信用評等分數</p>
-      </div>
-    </section>
-
-    <section class="section-description">
-      <h3>信用卡申請準備&注意事項 </h3>
-    </section>
-
-    <section class="credit_apply_articles">
-      <p>
-        只要年滿20歲且有固定收入就符合信用卡資格，想要申請等級高、信用額度多的信用卡，年收入與信用評等分數也需要更高。為了證明自己是個負責任、有信用的用卡人，可以靠過去與銀行良好的來往紀錄（如借貸、房貸）來增加信用卡核卡機率以及信用卡額度，但這並不能在短時間完成，因此在申請信用卡時，至少需要確保自己符合身份，並備妥以下幾種資料：
-      </p>
-      <p>
-        →正卡年齡需滿20歲，附卡15歲(依該信用卡規定為主)
-      </p>
-      <p>
-        →年收入是否符合該信用卡規定？
-      </p>
-      <p>
-        →身分雙證件(如身分證)、若申請學生卡還需學生證明
-      </p>
-      <p>
-        →近三個月的薪資證明(可以薪轉戶的轉帳明細作為證明)
-      </p>
-      <P>
-        如果你想要提高信用卡過件機會與核卡額度，也可以在申請時附上適合的財力證明，像是銀行存款證明、定存單、保險存單，或是提供不動產等地契證明，也有助於幫助銀行判斷你是否有使用信用卡的能力。
-      </P>
-  </section>
-
-  <section class="section-description">
-    <h3>信用卡核卡率提升小撇步！</h3>
-  </section>
-
-  <section class="credit_articles_img">
-    <div class="text">
-      <p>1.辦理薪轉銀行的信用卡</p>
-      <p>2.申辦主打年輕族群的信用卡</p>
-      <p>3.選擇「聯名卡」申辦</p>
-      <p>4.選擇「新上市」的信用卡申辦</p>
-      <p>5.選擇定存 / 存款較多的銀行信用卡</p>
-      <p>6.一次備齊信用卡申辦文件</p>
+    <div class="image-container">
+        <img class="rounded2-image" src="{{ url_for('static', filename='image/start_guide_image/Image (3).png') }}" alt="Image 1">
+        <img class="rounded2-image" src="{{ url_for('static', filename='image/start_guide_image/Image (4).png') }}" alt="Image 2">
+        <img class="rounded2-image" src="{{ url_for('static', filename='image/start_guide_image/Image (5).png') }}" alt="Image 3">
     </div>
-    <img src="{{ url_for('static', filename='image/start_guide_image/Image (7).png') }}" >
-  </section>
+    <table>
+      <thead>
+          <tr>
+              <th colspan="4">3大發卡組織權益比較</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="first-column">比較</td>
+              <td class="second-column-title">Visa</td>
+              <td class="third-column-title">MasterCard</td>
+              <td class="fourth-column-title">JCB</td>
+          </tr>
+          <tr>
+              <td class="first-column">通路</td>
+              <td class="second-column">全球最多通路可以使用</td>
+              <td class="third-column">通路較Visa少</td>
+              <td class="fourth-column">3大組織中通路最少，但針對日本的優惠多</td>
+          </tr>
+          <tr>
+              <td class="first-column">普及地區</td>
+              <td class="second-column">美洲/亞洲/澳洲</td>
+              <td class="third-column">歐洲/北美</td>
+              <td class="fourth-column">日/韓</td>
+          </tr>
+          <tr>
+              <td class="first-column">匯率</td>
+              <td class="second-column">較差一點點</td>
+              <td class="third-column">較好一點點(除了日本)</td>
+              <td class="fourth-column">日本匯率最好</td>
+          </tr>
+          <tr>
+              <td class="first-column">手續費</td>
+              <td class="second-column">1.5%
+                  <br>(發卡組織收1%+發卡銀行收0.5%)
+              </td>
+              <td class="third-column">1.5%
+                  <br>(發卡組織收1%+發卡銀行收0.5%)
+              </td>
+              <td class="fourth-column">1.5%
+                  <br>(發卡組織收1%+發卡銀行收0.5%)
+              </td>
+          </tr>
+          <tr>
+              <td class="first-column">刷退是否退手續費</td>
+              <td class="second-column">是</td>
+              <td class="third-column">是</td>
+              <td class="fourth-column">是</td>
+          </tr>
+          <tr>
+              <td class="first-column">機場接送</td>
+              <td class="second-column">自費機場接送門檻低、費用也最低</td>
+              <td class="third-column">自費機場接送</td>
+              <td class="fourth-column">免費機場接送</td>
+          </tr>
+          <tr>
+              <td class="first-column">在台優惠</td>
+              <td class="second-column">最多</td>
+              <td class="third-column">次多</td>
+              <td class="fourth-column">少</td>
+          </tr>
+      </tbody>
+  </table>
+  <p class="reminder">資料整理：<a href="https://rich01.com/" target="_blank">Mr.Market 市場先生</a></p>
 
-    <footer class="container-footer">
-  
-      <p>© 2024 卡卡頌 | <a href="#" style="color:#ffde99;">隱私政策</a> | <a href="#" style="color:#ffde99;">使用條款</a></p>
-      <p>地址：台北市和平東路一段155號三樓</p>
-      <p>電話：(02) 1234-5678</p>
-      <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#ffde99;">cardcardsone@gmail.com</p>
+    <h3>信用卡的優缺點 :</h3>
+    <div class="pros_cons_container">
+        <div class="box">
+            <h4>優點</h4>
+            <p>1. 便利性高</p>
+            <p>2. 獎勵回饋</p>
+            <p>3. 建立信用紀錄</p>
+            <p>4. 應付緊急支出</p>
+            <p>5. 安全性</p>
+        </div>
+        <div class="box">
+            <h4>缺點</h4>
+            <p>1. 高額的循環利息</p>
+            <p>2. 可能傷害個人信用評等分數</p>
+        </div>
+    </div>
 
-    </footer>
+    <h3>信用卡申請準備&注意事項</h3>
+    <p>
+        只要年滿20歲且有固定收入就符合信用卡資格，想要申請等級高、信用額度多的信用卡，年收入與信用評等分數也需要更高。為了證明自己是個負責任、有信用的用卡人，可以靠過去與銀行良好的來往紀錄（如借貸、房貸）來增加信用卡核卡機率以及信用卡額度，但這並不能在短時間完成，因此在申請信用卡時，至少需要確保自己符合身份，並備妥以下幾種資料：
+    </p>
+    <div class="indent">
+      <p>→ 正卡年齡需滿20歲，附卡15歲(依該信用卡規定為主)</p>
+      <p>→ 年收入是否符合該信用卡規定？</p>
+      <p>→ 身分雙證件(如身分證)、若申請學生卡還需學生證明</p>
+      <p>→ 近三個月的薪資證明(可以薪轉戶的轉帳明細作為證明)</p>
+    </div>
+    <p>
+        如果你想要提高信用卡過件機會與核卡額度，也可以在申請時附上適合的財力證明，像是銀行存款證明、定存單、保險存單，或是提供不動產等地契證明，也有助於幫助銀行判斷你是否有使用信用卡的能力。
+    </p>
+
+    <div class="tips-container">
+      <div class="tips-text">
+          <p>1. 辦理薪轉銀行的信用卡</p>
+          <p>2. 申辦主打年輕族群的信用卡</p>
+          <p>3. 選擇「聯名卡」申辦</p>
+          <p>4. 選擇「新上市」的信用卡申辦</p>
+          <p>5. 選擇定存 / 存款較多的銀行信用卡</p>
+          <p>6. 一次備齊信用卡申辦文件</p>
+      </div>
+      <img class="rounded-image" src="{{ url_for('static', filename='image/start_guide_image/Image (7).png') }}">
+    </div>
+  </div>
+
+  <footer class="container-footer">
+
+    <p>© 2024 卡卡頌 | <a href="#" style="color:#ffde99;">隱私政策</a> | <a href="#" style="color:#ffde99;">使用條款</a></p>
+    <p>地址：台北市和平東路一段155號三樓</p>
+    <p>電話：(02) 1234-5678</p>
+    <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#ffde99;">cardcardsone@gmail.com</p>
+
+  </footer>
 
 
-    </body>
-    
-    </html>
+</body>
+
+</html>
     
     
 
