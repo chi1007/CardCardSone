@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>推薦結果</title>
     <style>
-        /* .title {
-            font-size: 15px;
-            color: blue;
-        } */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -31,16 +27,9 @@
 <body>
     <h1>推薦結果</h1>
     <h2>根據您的填答結果，以下為提供您的理財建議：</h2>
-    <h2>卡片資訊和理財建議：</h2>
     <p>{{ user_analysis }}</p>
-        
-    <h2>下列為最適合您的卡片：</h2>
-    <ul>
-        {% for card, dist in closest_cards %}
-        <li>{{ card }} (距離: {{ dist }})</li>
-        {% endfor %}
-    </ul>
 
+    <h2>下列為最適合您的卡片：</h2>
     <table>
         <tr class="title">
             <th>推薦卡片</th>
@@ -147,6 +136,7 @@
                 </a>
             </td>
             {% endfor %}
+        </tr>
     </table>
 </body>
 </html>
