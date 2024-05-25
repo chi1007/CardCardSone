@@ -8,6 +8,8 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <button class="back-to-top" onclick="scrollToTop()"> <b>↑</b> </button>
+
     <h1>卡卡頌小幫手</h1>
     <form action="/CBA" method="post"> <!-- 修改表单提交的 action -->
         <label for="income">您平時一個月預算花費大約多少呢：</label> <!-- 修改收入标签 -->
@@ -44,6 +46,7 @@
         alert('您的問題已提交: ' + userQuery);
     }
 </script>
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
 </body>
 </html>
 
