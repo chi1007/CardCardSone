@@ -4,36 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for('static', filename='image/icon/Croissant1.png') }}">
-    <title>卡卡頌 CardCardSone</title>
+    <title>推薦結果</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/recommend_result.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
-</head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>推薦結果</title>
-    <style>
-        /* .title {
-            font-size: 15px;
-            color: blue;
-        } */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid rgb(152, 122, 82);
-        }
-        th {
-            background-color: rgb(200, 163, 114);
-            color: white;
-            padding: 10px;
-            text-align: center; /* 置中標題文字 */
-        }
-        td {
-            padding: 10px;
-            text-align: center; /* 置中表格文字 */
-        }
-    </style>
 </head>
 <body>
     <div class="header-container">
@@ -66,17 +39,23 @@
       </header>
     </div>
     
-    <h1>推薦結果</h1>
-    <h2>根據您的填答結果，以下為提供您的理財建議：</h2>
+    <h1 class="title">推薦結果</h1>
+    <h2 class="recommendation">根據您的填答結果，以下為提供您的理財建議</h2>
     <h2>卡片資訊和理財建議：</h2>
     <p>{{ user_analysis }}</p>
         
     <h2>下列為最適合您的卡片：</h2>
-    <ul>
+    <!-- <ul>
         {% for card, dist in closest_cards %}
         <li>{{ card }} (距離: {{ dist }})</li>
         {% endfor %}
-    </ul>
+    </ul> -->
+
+    <div class="card-container">
+        {% for card in recommended_cards %}
+        <img src="{{ card.img }}" alt="{{ card.name }}" width="300" height="300">
+        {% endfor %}
+    </div>
 
     <table>
         <tr class="title">
@@ -86,97 +65,97 @@
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>銀行名稱</td>
+            <th>銀行名稱</th>
             {% for card in recommended_cards %}
             <td>{{ card.bankname }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>卡片類型</td>
+            <th>卡片類型</th>
             {% for card in recommended_cards %}
             <td>{{ card.card_type }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>特色標籤</td>
+            <th>特色標籤</th>
             {% for card in recommended_cards %}
             <td>{{ card.tag }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>基本回饋</td>
+            <th>基本回饋</th>
             {% for card in recommended_cards %}
             <td>{{ card.basic_rewards }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>加碼回饋</td>
+            <th>加碼回饋</th>
             {% for card in recommended_cards %}
             <td>{{ card.additional_benefits }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>海外消費</td>
+            <th>海外消費</th>
             {% for card in recommended_cards %}
             <td>{{ card.overseas_spending }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>網購優惠</td>
+            <th>網購優惠</th>
             {% for card in recommended_cards %}
             <td>{{ card.online_shopping_discounts }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>行動支付</td>
+            <th>行動支付</th>
             {% for card in recommended_cards %}
             <td>{{ card.mobile_payment }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>通勤交通</td>
+            <th>通勤交通</th>
             {% for card in recommended_cards %}
             <td>{{ card.commute_expenses }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>生活繳費</td>
+            <th>生活繳費</th>
             {% for card in recommended_cards %}
             <td>{{ card.utilities_payment }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>餐飲外送</td>
+            <th>餐飲外送</th>
             {% for card in recommended_cards %}
             <td>{{ card.food_delivery }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>影音娛樂</td>
+            <th>影音娛樂</th>
             {% for card in recommended_cards %}
             <td>{{ card.entertainment }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>旅遊訂房</td>
+            <th>旅遊訂房</th>
             {% for card in recommended_cards %}
             <td>{{ card.travel_booking }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>量販百貨</td>
+            <th>量販百貨</th>
             {% for card in recommended_cards %}
             <td>{{ card.department_stores }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>發卡組織</td>
+            <th>發卡組織</th>
             {% for card in recommended_cards %}
             <td>{{ card.type }}</td>
             {% endfor %}
         </tr>
         <tr class="item">
-            <td>官方連結</td>
+            <th>官方連結</th>
             {% for card in recommended_cards %}
             <td>
                 <a href="{{ card.website }}" target="_blank">

@@ -99,7 +99,7 @@ def index():
 
 # 註冊Blueprint到主應用
 app = Flask(__name__)
-app.register_blueprint(rc_app_blueprint, url_prefix='/rc_app')
+app.register_blueprint(rc_app_blueprint, url_prefix='/recommend')
 
 if __name__ == "__main__":
     app.run(debug=True)

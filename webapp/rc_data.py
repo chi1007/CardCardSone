@@ -42,11 +42,13 @@ def get_rc_data():
             "online_shopping_discounts": float(row[6]),
             "mobile_payment": float(row[7]),
             "commute_expenses": float(row[8]),
-            "utilities_payment": float(row[9]),
+            "utilities_payment": (row[9]),
             "food_delivery": float(row[10]),
             "entertainment": float(row[11]),
             "travel_booking": float(row[12]),
-            "department_stores": float(row[13])
+            "department_stores": float(row[13]),
+            "img":row[14]
+
         } for row in recommend_data]
 
         cards_features = {
@@ -95,7 +97,8 @@ def get_rc_data():
             "travel_booking": row[14],
             "department_stores": row[15],
             "type": row[16],
-            "website": row[17]
+            "website": row[17],
+            "img": row[18]
         } for row in recommend_card]
         
         return cards_features, recommend_card_all

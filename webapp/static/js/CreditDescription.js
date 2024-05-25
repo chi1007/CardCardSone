@@ -104,7 +104,7 @@ function createCardElement(card, cardDesc) {
         'features', 'basic_rewards', 'additional_benefits', 'overseas_spending',
         'cross_bank_offers', 'online_shopping_discounts', 'mobile_payment', 'commute_expenses',
         'utilities_payment', 'food_delivery', 'entertainment', 'travel_booking',
-        'department_stores', 'new_user_offer', 'right', 'revolving_interest_rate', 'Website'
+        'department_stores', 'new_user_offer', 'revolving_interest_rate', 'right', 'Website'
     ];
 
     // 過濾出需要顯示的特徵
