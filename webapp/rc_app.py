@@ -79,9 +79,18 @@ def index():
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "你是一個專業的消費習慣分析師，請根據使用者的消費習慣與卡片資訊進行綜合分析並提供有效建議。"},
+                {"role": "system", "content": "你是一個專業的消費習慣分析師，請根據使用者的消費習慣與卡片資訊進行綜合分析並提供個人化的有效建議，項目編號自動分段換行。"},
                 {"role": "user", "content": prompt}
-            ]
+            ],
+            max_tokens=1000,
+            n=1,
+            stop=None,
+            temperature=0.7,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+            
+            
         )
         
         # 獲取分析結果
