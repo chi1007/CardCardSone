@@ -13,27 +13,28 @@
 }
 
 
-.section-about-content{
-    display: flex;
-    background-color: #fbf3ea; 
-    text-align: center;
-    line-height: 2;
-    font-size: 20px;
-    flex-direction: column;
-    padding: 0px;
-    padding-top: 0px;
-    padding-bottom: 20px;
+.section-about-content {
+    padding: 20px;
+    font-family: 'Arial', sans-serif; /* 更改字體 */
 }
 
+.about-paragraph {
+    text-align: left;
+    padding-left: 150px; /* 添加左側內邊距 */
+    padding-right: 150px;
+    line-height: 2; /* 增加行距使文本更易讀 */
+    font-size: 20px; /* 設置字體大小 */
+    color: #333; /* 設置字體顏色 */
+    padding-bottom: 20px;
+    text-align: justify;
+}
 
-
-.logo-text-section h3 {
+.section-about-content h3 {
     color: #333; /* 標題顏色 */
     font-size: 30px; /* 標題字體大小 */
     text-align: center;
-    line-height: 20px;
-    padding: 0px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-left: 50px;
 }
 
 .logo-container {
@@ -44,47 +45,49 @@
 }
 
 .section-logo-content {
-display: flex;
-flex-wrap: wrap;
-max-width: 1200px;
-}
-
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    }
 
 .section-logo {
-display: flex;
-flex-direction: row;
-width: 100%;
-margin: 10px;
-border: 1px solid #ddd;
-align-items: center;
-background-color: #f3e9d7;
-border: 10px solid #352214; /* 顏色及粗細調整 */
-border-radius: 20px;
-background: linear-gradient(135deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff); /* 斜條紋背景 */
-background-size: 100px 100px;
-padding: 20px;
-/* background-image: radial-gradient(circle, #ffffff 10%, transparent 15%);
-background-size: 40px 40px;  */
-}
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px;
+    border: 1px solid #ddd;
+    align-items: center;
+    background-color: #f3e9d7;
+    border: 10px solid #352214; /* 顏色及粗細調整 */
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff); /* 斜條紋背景 */
+    background-size: 100px 100px;
+    padding: 20px;
+    /* background-image: radial-gradient(circle, #ffffff 10%, transparent 15%);
+    background-size: 40px 40px;  */
+    }
+
 
 
 .logo-text-section {
-flex: 1;
-text-align: center; /* 文字水平置中 */
-/* color: #416f74; */
-}
+    flex: 1;
+    text-align: center; /* 文字水平置中 */
+    /* color: #416f74; */
+    }
 
 .logo-text-section h3 {
-color: #333; /* 標題顏色 */
-font-size: 30px; /* 標題字體大小 */
-text-align: center;
-line-height: 30px;
-padding: 0px;
-padding-bottom: 0px;
+    color: #333; /* 標題顏色 */
+    font-size: 30px; /* 標題字體大小 */
+    text-align: center;
+    line-height: 20px;
+    padding: 0px;
+    padding-bottom: 0px;
+    padding-left: 60px;
 }
 
+
 .logo-text-section p {
-color: #000000; /* 文字顏色 */
+color: #333; /* 文字顏色 */
 font-size: 20px; /* 文字字體大小 */
 /* text-align: left; */
 text-align: justify;
@@ -175,12 +178,6 @@ padding-top: 10px;
     color: #5e3d34;
     /* font-weight:bold */
 }
-
-/* #mail-response {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-} */
 
 
 /* 内嵌分隔線 */
