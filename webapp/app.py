@@ -5,13 +5,13 @@ from database import database_blueprint
 from mail import mail_blueprint
 
 
+
 app = Flask(__name__)
 
 app.register_blueprint(app1_blueprint, url_prefix='/')
-app.register_blueprint(rc_app_blueprint, url_prefix='/rc_app')
+app.register_blueprint(rc_app_blueprint, url_prefix='/recommend')
 app.register_blueprint(database_blueprint, url_prefix='/database')  
 app.register_blueprint(mail_blueprint, url_prefix='/api_contact') #導入contact之路由 
-
 
 
 

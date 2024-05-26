@@ -11,6 +11,8 @@
 
 <body onload="loadBankData()">
 
+  <button class="back-to-top" onclick="scrollToTop()"> <b>↑</b> </button>
+
   <div id="loading-screen">
     <div id="loading-spinner"></div>
   </div>
@@ -39,6 +41,7 @@
             </ul>
           <div class="active-nav-underline"></div>
           </li>
+          <li class="nav-item"><a href="/recommend" class="nav-link">智能推薦</a></li>
           <li class="nav-item"><a href="/news" class="nav-link">最新消息</a></li>
           <li class="nav-item"><a href="/contact" class="nav-link">關於我們</a></li>
         </ul>
@@ -92,6 +95,7 @@
 
 </footer>
   <script src="{{ url_for('static', filename='js/DebitComparison.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/common.js') }}"></script>
 </body>
 
 </html>

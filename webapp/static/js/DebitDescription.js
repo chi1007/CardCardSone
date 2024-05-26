@@ -101,10 +101,10 @@ function createCardElement(card, cardDesc) {
 
     // 定義特徵顯示順序
     const displayOrder = [
-        'features', 'basic_rewards', 'additional_benefits', 'overseas_spending',
+        'type', 'basic_rewards', 'additional_benefits', 'overseas_spending',
         'cross_bank_offers', 'online_shopping_discounts', 'mobile_payment', 'commute_expenses',
         'utilities_payment', 'food_delivery', 'entertainment', 'travel_booking',
-        'department_stores', 'new_user_offer', 'right', 'revolving_interest_rate', 'Website'
+        'department_stores', 'new_user_offer', 'savings_account_interest_rate', 'qualification', 'Website'
     ];
     
 
@@ -147,7 +147,7 @@ function createCardElement(card, cardDesc) {
     const descHeader = document.createElement('h2');
     descHeader.textContent = '卡片詳細描述';
     const descParagraph = document.createElement('p');
-    descParagraph.innerHTML = cardDesc.description.replace(/\n/g, '<br>');  // 使用 innerHTML 和 <br> 替換 \n
+    descParagraph.innerHTML = cardDesc.description.replace(/\r/g, '<br>');  // 使用 innerHTML 和 <br> 替換 \n
     description.appendChild(descHeader);
     description.appendChild(descParagraph);
 
@@ -171,7 +171,7 @@ function translateFeature(feature) {
         'name': '金融卡名稱',
         'img': '金融卡圖片',
         'link': '金融卡介紹資料來源',
-        'features': '特色',
+        'type': '發卡組織',
         'tag': 'tag',
         'basic_rewards': '基本回饋',
         'additional_benefits': '加碼優惠',
@@ -186,8 +186,8 @@ function translateFeature(feature) {
         'travel_booking': '旅遊訂房',
         'department_stores': '量販百貨',
         'new_user_offer': '新戶優惠',
-        'right': '年費',
-        'revolving_interest_rate': '循環利率',
+        'savings_account_interest_rate': '活存利率',
+        'qualification': '辦卡資格',
         'Website': '卡片官網',
     };
     return featureTranslations[feature] || feature;

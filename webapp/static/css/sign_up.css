@@ -1,0 +1,65 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbf3ea; /* 修改背景顏色 */
+    color: #654327; /* 主色調 */
+}
+.header-container {
+    margin-bottom: 100px; /* 與footer相同的距離 */
+}
+.container {
+    max-width: 400px;
+    margin: 37px auto;
+    padding: 20px;
+    background-color: #FFFFF0; /* 象牙白背景 */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 133px; 
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input {
+    width: calc(100% - 20px); /* 考慮到padding */
+    padding: 10px;
+    border: 1px solid #DCDCDC; /* 灰白色邊框 */
+    border-radius: 5px;
+}
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+.btn {
+    width: 100%; /* 讓 sign up 按鈕擴展至容器的整個寬度 */
+    padding: 10px;
+    background-color: #654327; /* 主色調背景 */
+    color: #FFFDD0; /* 奶油色文字 */
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #8B4513; /* 深紅色 */
+}
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+}
+.forgot-password a {
+    color: #654327; /* 主色調 */
+    text-decoration: none;
+}
+.forgot-password a:hover {
+    text-decoration: underline;
+}

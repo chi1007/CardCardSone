@@ -77,21 +77,52 @@ def post_creditcard_desc():
     fields = ['name', 'description']  # 請根據實際字段調整
     return insert_data('creditcard_desc', data, fields)
 
-@database_blueprint.route('/recommend_data', methods=['GET'])
-def get_recommend_data():
-    return get_data('recommend_data')
+# @database_blueprint.route('/recommend_data', methods=['GET'])
+# def get_recommend_data():
+#     return get_data('recommend_data')
 
-@database_blueprint.route('/recommend_data', methods=['POST'])
-def post_recommend_data():
-    data = request.get_json()
-    fields = [
-        'cid', 'name', 'basic_rewards', 'additional_benefits', 
-        'overseas_spending', 'online_shopping_discounts', 
-        'mobile_payment', 'commute_expenses', 'utilities_payment', 
-        'food_delivery', 'entertainment', 'travel_booking', 
-        'department_stores'
-    ]
-    return insert_data('recommend_data', data, fields)
+# [
+#     {
+#         cid:
+#         type:  
+#         name:  
+#         basic_rewards:  
+#         additional_benefits:  
+#         overseas_spending:  
+#         online_shopping_discounts:  
+#         mobile_payment:  
+#         commute_expenses:  
+#         utilities_payment:  
+#         food_delivery:  
+#         entertainment:  
+#         travel_booking:  
+#         department_stores:
+#     }
+# ]
+
+# arr = []
+
+# for data in dataList:
+#   name = data.name
+#   arr[name] = []
+#   arr[name][] = data
+#   arr[name][] = data
+#   arr[name][] = data
+#   arr[name][] = data
+#   arr[name][] = data
+#   arr[name][] = data
+
+# @database_blueprint.route('/recommend_data', methods=['POST'])
+# def post_recommend_data():
+#     data = request.get_json()
+#     fields = [
+#         'cid', 'type', 'name', 'basic_rewards', 'additional_benefits', 
+#         'overseas_spending', 'online_shopping_discounts', 
+#         'mobile_payment', 'commute_expenses', 'utilities_payment', 
+#         'food_delivery', 'entertainment', 'travel_booking', 
+#         'department_stores'
+#     ]
+#     return insert_data('recommend_data', data, fields)
 
 @database_blueprint.route('/questions', methods=['GET'])
 def get_questions():
@@ -105,3 +136,4 @@ def post_question():
 
 if __name__ == '__main__':
     database_blueprint.run(debug=True)
+    

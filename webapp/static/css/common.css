@@ -83,15 +83,22 @@ body {
     color: #ffffff;
     flex-grow: 1;
     margin: auto 0;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 24px;
     text-decoration: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    display: inline-block; 
+    transform: translateY(-13px);
 }
 
 .logo a:hover,
 .logo-font a:hover {
     text-decoration: none; /* 在滑鼠懸停時保持沒有底線 */
+    background-color: #ffde99;
+    color: #8f5b4c;
+    transform: translateY(-13px);
 }
+
 
 .nav {
     justify-content: center;
@@ -118,6 +125,37 @@ body {
 .nav-link {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-link:hover{
+    color: #8f5b4c;
+
+}
+
+.nav-link::after {
+    background: #8f5b4c;
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    height: 3px;
+    content: '';
+    width: 0;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    transition: width 0.3s ease;
+    
+}
+
+.nav-link:hover::after {
+    background: #8f5b4c;
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 80%; 
+    height: 3px;
 }
 
 .dropdown-menu {
@@ -216,6 +254,7 @@ body {
     cursor: pointer; /* 鼠標變為手指 */
     transform: scale(1.5); /* 圖案放大 */
     font-weight: bold; /* 文字粗體 */
+    font-size: 1em;
 
 }
 .back-to-top:hover {

@@ -155,7 +155,7 @@ function updateCard(cardIndex, cardName) {
         updateTableCell(`entertainment${cardIndex}`, selectedCard.entertainment);
         updateTableCell(`traveBooking${cardIndex}`, selectedCard.travel_booking);
         updateTableCell(`departmentStores${cardIndex}`, selectedCard.department_stores);
-        updateTableCell(`interestRate${cardIndex}`, selectedCard.interest_rate);
+        updateTableCell(`interestRate${cardIndex}`, selectedCard.savings_account_interest_rate);
         // 創建連接按鈕
         const websiteLinkContainer = document.getElementById(`websiteLink${cardIndex}`);
         websiteLinkContainer.innerHTML = ''; // 清除之前的内容
