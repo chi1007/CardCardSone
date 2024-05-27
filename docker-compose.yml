@@ -44,6 +44,7 @@ services:
       - flask
     volumes:
       - ./env/nginx/www:/var/www
+      - ./env/nginx/app.conf:/etc/nginx/nginx.conf
     networks:
       flask_test:
 
