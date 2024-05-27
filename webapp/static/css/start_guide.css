@@ -35,17 +35,24 @@ h4 {
 
 }
 
-.content p {
-  text-align: justify;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
 .content p.reminder {
   font-size: 18px;
   color: #d9534f;
-  text-align: right;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contact-nav-link {
+    color: #8f5b4c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+.contact-nav-link:hover{
+    color: #8f5b4c;
+    background-color: #f7e5bd;
+    font-weight: bold;
+
 }
 
 
@@ -55,7 +62,7 @@ h4 {
   justify-content: center;
 } 
 table {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;  
   border-collapse: collapse;
   border: 2px solid #795548;
@@ -89,7 +96,6 @@ tr:hover {
   line-height: 1.8;
   margin-bottom: 20px;
   font-size: 20px;
-  margin-right: 70px;
 }
 .reminder {
   font-size: 18px;
