@@ -75,7 +75,7 @@ services:
   #     - ./env/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
   #   networks:
   #     flask_test:
-volumes:
+#volumes:
   #nginx_secrets:
 
 networks:
