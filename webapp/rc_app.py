@@ -44,7 +44,7 @@ def find_closest_cards(user_vector, cards):
 # 定義路由
 @rc_app_blueprint.route("/", methods=["GET", "POST"])
 def index():
-    questions = get_data('http://cardcardsone.cloudns.be/database/questions')
+    questions = get_data('http://flask:5000/questions')
     cards = {}
 
     # 處理表單提交
