@@ -47,6 +47,14 @@
     
     <h1 class="title">推薦結果</h1>
     <h2 class="recommendation">根據您的填答結果，以下為提供您的理財建議</h2>
+    <div>
+        {% for section in user_analysis_sections %}
+            <div class="analysis-section">
+                <h3 class="hidden">{{ loop.index }}</h3>
+                <p>{{ section }}</p>
+            </div>
+        {% endfor %}
+    </div>
     <h2>卡片資訊和理財建議：</h2>
     <p>{{ user_analysis }}</p>
         
