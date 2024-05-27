@@ -90,7 +90,7 @@
   text-align: center;
   color: #8f5b4c;
   border: none;
-
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 

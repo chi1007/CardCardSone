@@ -39,6 +39,7 @@
     width: 15px;
     height: 15px;
     accent-color: #977c65;
+    cursor: pointer;
 }
 
 .form-container label {
