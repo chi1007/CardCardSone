@@ -16,38 +16,37 @@ services:
     networks:
       flask_test:
 
-  nginx:
-    image: jonasal/nginx-certbot:5.2.0-nginx1.26.0
-    restart: unless-stopped
-    env_file:
-      - ./env/nginx/nginx-certbot.env
-    ports:
-      - 80:80
-      - 443:443
-    depends_on:
-      - flask
-    volumes:
-      - nginx_secrets:/etc/letsencrypt
-      - ./env/nginx/user_conf.d:/etc/nginx/user_conf.d
-    networks:
-      - flask_test:
   # nginx:
-  #   image: test-nginx
-  #   build:
-  #     context: .
-  #     dockerfile: ./env/nginx/Dockerfile
+  #   image: jonasal/nginx-certbot:5.2.0-nginx1.26.0
+  #   restart: unless-stopped
+  #   env_file:
+  #     - ./env/nginx/nginx-certbot.env
   #   ports:
-  #     - "80:80"
-  #     - "443:443"
+  #     - 80:80
+  #     - 443:443
   #   depends_on:
   #     - flask
   #   volumes:
-  #     - ./env/nginx/conf/:/etc/nginx/conf.d/:ro
-  #     - ./tmp/acme-challenge/:/tmp/acme-challenge/:rw
-  #     - etc/letsencrypt:/etc/letsencrypt:ro
-  #     - acme-challenge:/var/www/certbot/acme-challenge
+  #     - nginx_secrets:/etc/letsencrypt
+  #     - ./env/nginx/user_conf.d:/etc/nginx/user_conf.d
   #   networks:
-  #     flask:
+  #       flask_test:
+
+  nginx:
+    image: test-nginx
+    build:
+      context: .
+      dockerfile: ./env/nginx/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - flask
+    volumes:
+      - ./env/nginx/www:/var/www
+    networks:
+      flask_test:
+
     
   # certbot:
   #   image: certbot/certbot
@@ -77,7 +76,7 @@ services:
   #   networks:
   #     flask_test:
 volumes:
-  nginx_secrets:
+  #nginx_secrets:
 
 networks:
   flask_test:
