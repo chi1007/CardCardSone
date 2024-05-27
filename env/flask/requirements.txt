@@ -1,5 +1,6 @@
 Flask==3.0.3
 gunicorn
+openai
 numpy
 mysql-connector-python
 pymysql==1.1.0
