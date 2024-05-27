@@ -61,6 +61,7 @@
     width: 142px;
     background-color: #f8dbb9;
     border-radius: 17px;
+    border: 2px solid #f8dbb9;
     height: 41px;
     font-size: 22px;
     color: #a8795f;
@@ -77,6 +78,7 @@
   
   .decorative-button:hover {
     background-color: #a8795f;
+    border: 2px solid #a8795f;
     color: #ffffff;
   }
   

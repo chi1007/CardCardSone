@@ -88,7 +88,11 @@ body {
     text-decoration: none;
     transition: background-color 0.5s ease, color 0.5s ease;
     display: inline-block; 
-    transform: translateY(-13px);
+    transform: translateY(-15px);
+}
+
+.logo img {
+    transform: translate(-10px, 1px);
 }
 
 .logo a:hover,
@@ -96,7 +100,7 @@ body {
     text-decoration: none; /* 在滑鼠懸停時保持沒有底線 */
     background-color: #ffde99;
     color: #8f5b4c;
-    transform: translateY(-13px);
+    transform: translateY(-15px);
 }
 
 
