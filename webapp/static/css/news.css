@@ -1,6 +1,6 @@
 /* Reset some basic styles */
 body, h2, h3, p, a {
-    margin: 20;
+    /* margin: 20; */
     padding: 0;
     color: inherit;
     text-decoration: none;
@@ -10,7 +10,6 @@ body, h2, h3, p, a {
 /* main 主要內容區樣式 */
 main {
     margin: 0 auto;
-    padding: 10px;
     position: relative;
     max-width: 85%;
     height: 150%;
@@ -29,10 +28,11 @@ main {
     padding: 0px;
 }
 
-.section-newstitle, .news-section, .book-section {
+.news-section, .book-section {
     margin-bottom: 20px;
     text-align: center;
     padding: 10px;
+    /* padding-top:20px;  */
 }
 
 .search-bar {
@@ -40,14 +40,16 @@ main {
     padding: 40px;
     text-align: left;
     color: #000;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .search-bar input {
     width: 95%;
+    height: 40px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 /* 信用卡最新資訊區塊 */
@@ -58,15 +60,15 @@ main {
 }
 
 .news-item, .book-item {
-    width: calc(33.33% - 20px); /* 調整卡片之間的距離 */
+    width: calc(33.33% - 25px); /* 調整卡片之間的距離 */
     padding: 1px;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .news-item img, .book-item img {
-    width: 90%; /* 設置圖片寬度為容器寬度 */
-    height: 160px;
+    width: 100%; /* 設置圖片寬度為容器寬度 */
+    height: 200px;
     cursor: pointer;
     transition: transform 0.5s ease; /* 設置過渡效果 */
     margin-bottom: 15px; /* 調整圖片和文字之間的距離 */
@@ -85,7 +87,7 @@ main {
 }
 
 .news-item:hover img, .book-item:hover img {
-    transform: scale(1.1); /* 鼠標懸停時圖片放大 */
+    transform: scale(1.06); /* 鼠標懸停時圖片放大 */
 }
 
 /* news-item */
@@ -93,12 +95,15 @@ main {
     color: #333; /* 標題顏色 */
     text-align: center;
     padding: 0 20px;
+    font-size: 20px;
+    line-height: 1.1;
 }
 
 .news-item p {
     color: #666; /* 文字顏色 */
     text-align: justify;
     padding: 0 20px; /* 調整文字的側邊間距 */
+    font-size: 15px;
 }
 
 .news-item a {
@@ -117,12 +122,15 @@ main {
     color: #333; /* 標題顏色 */
     text-align: center;
     padding: 0 20px;
+    font-size: 20px;
+    line-height: 1.1;
 }
 
 .book-item p {
     color: #666; /* 文字顏色 */
     text-align: justify;
     padding: 0 20px; /* 調整文字的側邊間距 */
+    font-size: 15px;
 }
 
 .book-item a {
@@ -145,13 +153,20 @@ footer {
 }
 
 /* 頁碼 */
+
+.pagination  {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
 .pagination a {
     color: #8f5b4c;
-    text-decoration: none;
-    padding: 8px 16px;
+    text-decoration: none;  
+    padding: 8px 15px;
     border: 1px solid #794536;
-    margin: 0 4px;
+    margin: 0 5px;
     align-items: center;
+    
 }
 
 .pagination a:hover {
@@ -178,3 +193,6 @@ footer {
 .back-to-top:hover {
     background-color: #896e57; /* 懸停背景顏色 */
 }
+
+
+
