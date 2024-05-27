@@ -75,7 +75,7 @@ def index():
         for i, answer in enumerate(answers):
             prompt += f"Q{i + 1}: {questions[i]}: {answer}\n"
          # 組合消費者行為分析的提示()提取每張卡片的特徵做出迴圈
-        prompt += "\nRecommended Cards Information:\n"
+        prompt += "Recommended Cards Information:\n"
         for card in recommended_cards:
             prompt += f"Recommended Card: {card['name']}\n"
             prompt += f"Features: {card['tag']}, {card['basic_rewards']}, {card['additional_benefits']}, {card['overseas_spending']}, {card['online_shopping_discounts']}, {card['mobile_payment']}, {card['commute_expenses']}, {card['utilities_payment']}, {card['food_delivery']}, {card['entertainment']}, {card['travel_booking']}, {card['department_stores']}\n"
