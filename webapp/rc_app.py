@@ -21,7 +21,7 @@ def get_data(api_route):
     else:
         print("Failed to retrieve data from API:", response.status_code)
         return []
-    
+
 # 獲取卡片特徵數據
 cards_features, recommend_card_all = get_rc_data()
 
@@ -34,7 +34,7 @@ def find_closest_cards(user_vector, cards):
     for card, features in cards.items():
         card_vector = np.array(features)
         card_vector_norm = card_vector / np.linalg.norm(card_vector)  # 將卡片特徵向量歸一化為單位向量
-               
+        
         dist = np.linalg.norm(card_vector_norm - user_vector_norm)  # 計算歐氏距離
         distances[card] = dist
         
@@ -68,35 +68,44 @@ def index():
         # 找到對應的卡片詳細資料並按順序排列
         recommended_cards = [card for name in closest_card_names for card in recommend_card_all if card["name"] == name]
                 
-        # 組合消費者行為分析的提示
-        prompt = "Based on the following answers and recommended cards information, please analyze the user's consumption habits and provide suggestions:\n"
+        # 組合消費者行為分析的提示()請根據以下回答和推薦卡信息，分析用戶的消費習慣並提供建議
+        prompt = "Based on the following answers and recommended cards information, please analyze the user's consumption habits and provide suggestions:\n\n"
+         # 組合消費者行為分析的提示()根據問題和答案
+        prompt += "User Answers:\n"
         for i, answer in enumerate(answers):
-            prompt += f"{questions[i]}: {answer}\n"
+            prompt += f"Q{i + 1}: {questions[i]}: {answer}\n"
+         # 組合消費者行為分析的提示()提取每張卡片的特徵做出迴圈
+        prompt += "\nRecommended Cards Information:\n"
         for card in recommended_cards:
-            prompt += f"Recommended Card: {card['name']} - Features: {card['tag']}, {card['basic_rewards']}, {card['additional_benefits']}, {card['overseas_spending']}, {card['online_shopping_discounts']}, {card['mobile_payment']}, {card['commute_expenses']}, {card['utilities_payment']}, {card['food_delivery']}, {card['entertainment']}, {card['travel_booking']}, {card['department_stores']}\n"
-
-        # 使用OpenAI API進行分析
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "你是一個專業的消費習慣分析師，請根據使用者的消費習慣與卡片資訊進行綜合分析並提供個人化的有效建議，項目編號自動分段換行。"},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=1000,
-            n=1,
-            stop=None,
-            temperature=0.7,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
-            
-            
-        )
+            prompt += f"Recommended Card: {card['name']}\n"
+            prompt += f"Features: {card['tag']}, {card['basic_rewards']}, {card['additional_benefits']}, {card['overseas_spending']}, {card['online_shopping_discounts']}, {card['mobile_payment']}, {card['commute_expenses']}, {card['utilities_payment']}, {card['food_delivery']}, {card['entertainment']}, {card['travel_booking']}, {card['department_stores']}\n"
         
-        # 獲取分析結果
-        user_analysis = response.choices[0].message['content']
+        # 使用OpenAI API進行分析
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "你是一個專業的消費習慣分析師，請根據使用者的消費習慣與卡片資訊進行綜合分析並提供個人化的有效建議。"},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=1000,
+                n=1,
+                stop=None,
+                temperature=0.7,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0,
+            )
+            
+            # 獲取分析結果
+            user_analysis = response.choices[0].message['content']
+        except Exception as e:
+            user_analysis = f"An error occurred while fetching analysis: {str(e)}"
 
-        return render_template("recommend_result.html", closest_cards=closest_cards, recommended_cards=recommended_cards, user_analysis=user_analysis)
+        # 將分析結果分段
+        user_analysis_sections = user_analysis.split('\n\n')
+        
+        return render_template("recommend_result.html", closest_cards=closest_cards, recommended_cards=recommended_cards, user_analysis_sections=user_analysis_sections)
     else:
         return render_template("preference_question.html", questions=questions)
 
