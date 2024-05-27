@@ -101,61 +101,122 @@
 
 
 
-<div class="card_carousel">
-    <h3><u>熱門信用卡</u></h3> 
-    <button class="card_carousel-control prev" onclick="scrollLeft()">&#10094;</button>
-    <div class="card_carousel-track">
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/sinopac-insurance.png" alt="Card 1">
-            <p>永豐保倍卡</p>
+<section class="card_showline">
+    <h2>卡片總覽</h2>
+    
+    <div class="card_carousel">
+        <h3><a href="/PopularCreditCards" target="_blank"><u>熱門信用卡</u></a></h3> 
+        <div class="card_carousel-track-wrapper">
+            <div class="card_carousel-track">
+
+                <div class="card" onclick="selectCard('永豐保倍卡')">
+                    <img src="../static/image/CreditCards/sinopac-insurance.png" alt="Card 1">
+                    <p>永豐保倍卡</p>
+                </div>
+                <div class="card" onclick="selectCard('聯邦 吉鶴卡')">
+                    <img src="../static/image/CreditCards/union-jiho.png" alt="Card 2">
+                    <p>聯邦 吉鶴卡</p>
+                </div>
+                <div class="card" onclick="selectCard('富邦 J 卡')">
+                    <img src="../static/image/CreditCards/fubon-j.png" alt="Card 3">
+                    <p>富邦 J 卡</p>
+                </div>
+                <div class="card" onclick="selectCard('台新 玫瑰Giving卡')">
+                    <img src="../static/image/CreditCards/taishin-giving.png" alt="Card 11">
+                    <p>台新 玫瑰Giving卡</p>
+                </div>
+                <div class="card" onclick="selectCard('滙豐 現金回饋御璽卡')">
+                    <img src="../static/image/CreditCards/hsbc-cash.png" alt="Card 9">
+                    <p>滙豐 現金回饋御璽卡</p>
+                </div>
+                <div class="card" onclick="selectCard('第一銀行 icash 聯名卡')">
+                    <img src="../static/image/CreditCards/first-icash-new.png" alt="Card 6">
+                    <p>第一銀行 icash 聯名卡</p>
+                </div>
+                <div class="card" onclick="selectCard('國泰世華 CUBE 卡')">
+                    <img src="../static/image/CreditCards/cub-cube-Visa.png" alt="Card 5">
+                    <p>國泰世華 CUBE 卡</p>
+                </div>
+                <div class="card" onclick="selectCard('台新 @GoGo 卡')">
+                    <img src="../static/image/CreditCards/taishin-gogo.png" alt="Card 10">
+                    <p>台新 @GoGo 卡</p>
+                </div>
+                <div class="card" onclick="selectCard('永豐 現金回饋 Green 卡')">
+                    <img src="../static/image/CreditCards/sinopac-green.png" alt="Card 4">
+                    <p>永豐 現金回饋 Green 卡</p>
+                </div>
+                <div class="card" onclick="selectCard('滙豐 匯鑽卡')">
+                    <img src="../static/image/CreditCards/hsbc-diamond.png" alt="Card 8">
+                    <p>滙豐 匯鑽卡</p>
+                </div>
+                <div class="card" onclick="selectCard('第一銀行 Living Green 綠活卡')">
+                    <img src="../static/image/CreditCards/first-green.png" alt="Card 7">
+                    <p>第一銀行 Living Green 綠活卡</p>
+                </div>
+                <div class="card" onclick="selectCard('台新 FlyGo卡')">
+                    <img src="../static/image/CreditCards/taishin-flygo.png" alt="Card 12">
+                    <p>台新 FlyGo卡</p>
+                </div>
+            </div>
         </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/union-jiho.png" alt="Card 2">
-            <p>聯邦 吉鶴卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/fubon-j.png" alt="Card 3">
-            <p>富邦 J 卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/sinopac-green.png" alt="Card 4">
-            <p>永豐 現金回饋 Green 卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/cub-cube-Visa.png" alt="Card 5">
-            <p>國泰世華 CUBE 卡</p>
-        </div>    
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/first-icash-new.png" alt="Card 6">
-            <p>第一銀行 icash 聯名卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/first-green.png" alt="Card 7">
-            <p>第一銀行 Living Green 綠活卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/hsbc-diamond.png" alt="Card 8">
-            <p>滙豐 匯鑽卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/hsbc-cash.png" alt="Card 9">
-            <p>滙豐 現金回饋御璽卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/taishin-gogo.png" alt="Card 10">
-            <p>台新 @GoGo 卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/taishin-giving.png" alt="Card 11">
-            <p>台新 玫瑰Giving卡</p>
-        </div>
-        <div class="card" onclick="location.href='card1.html'">
-            <img src="../static/image/CreditCards/taishin-flygo.png" alt="Card 12">
-            <p>台新 FlyGo卡</p>
-        </div>
+        <button class="card_carousel-control prev">←</button>
+        <button class="card_carousel-control next">→</button>
     </div>
-    <button class="card_carousel-control next" onclick="scrollRight()">&#10095;</button>
-</div>
+
+    <br>
+    <hr class="hr1"> 
+    
+    <div class="debitcard_carousel">
+        <h3><a href="/PopularDebitCards" target="_blank"><u>熱門金融卡</u></a></h3> 
+        <div class="debitcard_carousel-track-wrapper">
+            <div class="debitcard_carousel-track">
+                <div class="debitcard" onclick="selectDebitCard('LINE Bank 快點卡')">
+                    <img src="../static/image/DebitCards/line-bank.png" alt="Card 1">
+                    <p>LINE Bank 快點卡</p>
+                </div>
+                <div class="debitcard" onclick="selectDebitCard('中國信託 LINE Pay 簽帳金融卡')">
+                    <img src="../static/image/DebitCards/中信line pay .png" alt="Card 2">
+                    <p>中國信託 LINE Pay 簽帳金融卡</p>
+                </div>
+                
+                <div class="debitcard" onclick="selectDebitCard('國泰一卡通簽帳金融卡')">
+                    <img src="../static/image/DebitCards/國泰一卡通簽帳金融卡.png" alt="Card 3">
+                    <p>國泰一卡通簽帳金融卡</p>
+                </div> 
+                <div class="debitcard" onclick="selectDebitCard('台新 遛狗卡')">
+                    <img src="../static/image/DebitCards/taishin-dogwalk.png" alt="Card 4">
+                    <p>台新 遛狗卡</p>
+                </div>
+                <div class="debitcard" onclick="selectDebitCard('玉山 Pi 拍兔簽帳金融卡')">
+                    <img src="../static/image/DebitCards/玉山 Pi 拍兔簽帳金融卡.png" alt="Card 5">
+                    <p>玉山 Pi 拍兔簽帳金融卡</p>
+                </div>   
+                <div class="debitcard" onclick="selectDebitCard('將來 將將卡')">
+                    <img src="../static/image/DebitCards/將來銀行 將將卡.png" alt="Card 6">
+                    <p>將來 將將卡</p>
+                </div>
+                <div class="debitcard" onclick="selectDebitCard('永豐大戶DAWHO現金回饋Debit卡')">
+                    <img src="../static/image/DebitCards/永豐大戶DAWHO現金回饋Debit卡.png" alt="Card 7">
+                    <p>永豐大戶DAWHO現金回饋Debit卡</p>
+                </div>
+                <div class="debitcard" onclick="selectDebitCard('兆豐 Visa 簽帳金融卡')">
+                    <img src="../static/image/DebitCards/兆豐visa.png" alt="Card 8">
+                    <p>兆豐 Visa 簽帳金融卡</p>
+                </div>
+                <div class="debitcard" onclick="selectDebitCard('玉山家樂福悠遊簽帳金融卡')">
+                    <img src="../static/image/DebitCards/玉山家樂福悠遊簽帳金融卡.png" alt="Card 9">
+                    <p>玉山家樂福悠遊簽帳金融卡</p>
+                </div>
+                <div class="debitcard" onclick="selectDebitCard('王道銀行 O-Bank簽帳金融卡')">
+                    <img src="../static/image/DebitCards/王道銀行 簽帳金融卡.png" alt="Card 10">
+                    <p>王道銀行 O-Bank簽帳金融卡</p>
+                </div>
+            </div>
+        </div>
+        <button class="debitcard_carousel-control prev">←</button>
+        <button class="debitcard_carousel-control next">→</button>
+    </div>
+</section>
 
 
 
