@@ -14,21 +14,23 @@ services:
       - ./webapp:/app
     working_dir: /app
     networks:
-      flask:
+      flask_test:
 
   nginx:
     image: jonasal/nginx-certbot:5.2.0-nginx1.26.0
     restart: unless-stopped
-    env:
+    env_file:
       - ./env/nginx/nginx-certbot.env
     ports:
       - 80:80
       - 443:443
+    depends_on:
+      - flask
     volumes:
       - nginx_secrets:/etc/letsencrypt
       - ./env/nginx/user_conf.d:/etc/nginx/user_conf.d
     networks:
-      - flask
+      - flask_test:
   # nginx:
   #   image: test-nginx
   #   build:
@@ -74,8 +76,8 @@ services:
   #     - ./env/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
   #   networks:
   #     flask_test:
-volume:
+volumes:
   nginx_secrets:
 
 networks:
-  flask:
+  flask_test:
