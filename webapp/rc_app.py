@@ -4,12 +4,12 @@ import numpy as np
 from rc_data import get_rc_data
 from flask import Blueprint
 from database import database_blueprint, get_data
-# import openai
+import openai
 
 # 初始化API金鑰
-# openai.api_key = 'sk-proj-vXwqJ0vrfQJFSl0avB3ET3BlbkFJtBPsnVuRmDVORicdjQAc'
-# opeaichat_url = 'https://api.openai.com/v1/chat/completions'
-# openaispeech_url = 'https://api.openai.com/v1/audio/speech'
+openai.api_key = 'sk-proj-QG6q8wKsaMpozoxm2v3VT3BlbkFJJnEEmrRgZ2w77JK8me2t'
+opeaichat_url = 'https://api.openai.com/v1/chat/completions'
+openaispeech_url = 'https://api.openai.com/v1/audio/speech'
 
 # 定義Blueprint
 rc_app_blueprint = Blueprint('rc_app', __name__)
