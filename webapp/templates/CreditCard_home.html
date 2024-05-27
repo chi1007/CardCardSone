@@ -44,6 +44,59 @@
       </header>
     </div>
   
+<!-- 首頁滾動條 -->
+<div class="carousel-container">
+  <div class="article-nav">
+      <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+      <div class="carousel">
+          
+          <div class="carousel-item active">
+              <a href="/CreditComparison" class="web-image-section">
+              <img src="../static/image/image_Home/home_banner.png" class="article-img" alt="banner">
+              </a>
+              <div class="carousel-caption">
+                  <h3>卡卡頌</h3>
+                  <p>最適合信用卡小白的比較網站</p>
+              
+              </div>
+          </div>
+          <div class="carousel-item">
+              <a href="/guide" class="web-image-section">
+              <img src="../static/image/image_Home/home_banner02.png" class="article-img" alt="信用卡">
+              </a>
+              <div class="carousel-caption">
+                  <h3>信用卡小知識</a></h3>
+                  <p>只要你懂卡，卡就會幫你</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <a href="/PopularCreditCards" class="web-image-section">
+              <img src="../static/image/image_Home/信用卡2.jpg" class="article-img" alt="信用卡2">
+              </a>    
+            <div class="carousel-caption">
+                  <h3>2024必備神卡</h3>
+                  <p>刷刷刷~刷不停~~</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <a href="/news" class="web-image-section">  
+            <img src="../static/image/image_Home/信用卡5.jpg" class="article-img" alt="信用卡5">
+            </a>
+              <div class="carousel-caption">
+                  <h3>卡奴的日子</h3>
+                  <p>關於我和債變成家人的那件事</p>
+              </div>
+          </div>
+      </div>
+      <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+      <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+
     <section class="section-title">
         
         <h2>首頁</h2>  
@@ -51,41 +104,16 @@
     </section>
     
     <section class="section-description">
-      <p>「卡卡頌」主要目的是幫助從未辦過信用卡的小白們，認識信用卡和簽帳金融卡。<br>網站內收集了2024上半年的熱門信用卡／簽帳金融卡資料，<br>包含「基本回饋、加碼優惠、海外消費、網購優惠、行動支付、通勤交通、生活繳費、餐飲外送、影音娛樂、旅遊訂房、量販百貨」，<br>希望透過卡片比較與介紹，以及個人消費分析等功能<br>幫助小白們能以最快速與輕鬆的方式，找到最符合個人需求的卡片!!</p>
+      <div class="random-bg"></div>
+      <p>　　<b>「卡卡頌」(CardCardSone)</b>主要目的是幫助從未辦過信用卡的小白們，認識「信用卡」(Credit Card)和「簽帳金融卡」(Debit card)之間的差異。網站內收集了2024上半年的熱門信用卡／簽帳金融卡資料，包含「基本回饋、加碼優惠、海外消費、網購優惠、行動支付、通勤交通、生活繳費、餐飲外送、影音娛樂、旅遊訂房、量販百貨」，除了提供卡片的比較與介紹，並兼具個人消費分析與智能推薦功能，希望幫助小白們能以最快速與輕鬆的方式，找到最符合個人需求的卡片！！</p>
       
     </section>
 
-  <section class="webpages-container">
-
 <br>
-    <!-- 首頁滾動條 -->
-    <section class="articles">
-      <div class="article-nav">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      </div>
+<br>
 
-      <article class="article-container active">
-      <img src="{{ url_for('static', filename='image/image_Home/信用卡.jpg') }}" class="article-img" alt="信用卡">
-      <h3>信用卡小知識</h3>
-      <p>只要你懂卡，卡就會幫你</p>
-      </article>
 
-      <article class="article-container">
-      <img src="{{ url_for('static', filename='image/image_Home/信用卡2.jpg') }}" class="article-img" alt="信用卡2">
-      <h3>2024必備神卡</h3>
-      <p>刷刷刷~刷不停~~</p>
-      </article>
-
-      <article class="article-container">
-      <img src="{{ url_for('static', filename='image/image_Home/信用卡5.jpg') }}" class="article-img" alt="信用卡5">
-      <h3>卡奴的日子</h3>
-      <p>關於我和債變成家人的那件事</p>
-      </article>
-  </section>
-  </main>
-  <br>
+  
   <section class="web-container">
     <div class="web-content">
       <div class="web-block bg1">
@@ -103,8 +131,8 @@
   
       <div class="web-block bg2">
         <div class="web-text-section align-center">
-          <h2><a href="/guide">信用卡小白指南</a></h2>
-          <p><a href="/guide">若你是從未申辦過信用卡的新手，面對市場眾多類型及功能的卡片，是否會擔心該如何開始進行選擇呢？<br>別擔心！以下是一個信用卡小白指南，讓你能夠更了解信用卡和簽帳金融卡，同時也能從中找到最符合自己需求的第一張卡!
+          <h2><a href="/guide" target="_blank">信用卡小白指南</a></h2>
+          <p><a href="/guide" target="_blank">若你是從未申辦過信用卡的新手，面對市場眾多類型及功能的卡片，是否會擔心該如何開始進行選擇呢？<br>別擔心！以下是一個信用卡小白指南，讓你能夠更了解信用卡和簽帳金融卡，同時也能從中找到最符合自己需求的第一張卡!
             <br>
             <br>
                   <span class="arrow-container"><span class="arrow"></span> <span class="arrow"></span> <span class="arrow"></span></span></a></p>
@@ -129,8 +157,122 @@
     </div>
   </section>
 
+  <br>
 
-    </section>
+
+  <section class="card_showline">
+    <h2>卡片一覽</h2>
+    
+    <div class="card_carousel">
+      <h3><u>熱門信用卡</u></h3> 
+      <button class="card_carousel-control prev" onclick="scrollLeft()">&#10094;</button>
+      <div class="card_carousel-track">
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/sinopac-insurance.png" alt="Card 1">
+              <p>永豐保倍卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/union-jiho.png" alt="Card 2">
+              <p>聯邦 吉鶴卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/fubon-j.png" alt="Card 3">
+              <p>富邦 J 卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/sinopac-green.png" alt="Card 4">
+              <p>永豐 現金回饋 Green 卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/cub-cube-Visa.png" alt="Card 5">
+              <p>國泰世華 CUBE 卡</p>
+          </div>    
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/first-icash-new.png" alt="Card 6">
+              <p>第一銀行 icash 聯名卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/first-green.png" alt="Card 7">
+              <p>第一銀行 Living Green 綠活卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/hsbc-diamond.png" alt="Card 8">
+              <p>滙豐 匯鑽卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/hsbc-cash.png" alt="Card 9">
+              <p>滙豐 現金回饋御璽卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/taishin-gogo.png" alt="Card 10">
+              <p>台新 @GoGo 卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/taishin-giving.png" alt="Card 11">
+              <p>台新 玫瑰Giving卡</p>
+          </div>
+          <div class="card" onclick="location.href='card1.html'">
+              <img src="../static/image/CreditCards/taishin-flygo.png" alt="Card 12">
+              <p>台新 FlyGo卡</p>
+          </div>
+      </div>
+      <button class="card_carousel-control next" onclick="scrollRight()">&#10095;</button>
+    </div>
+
+    <br>
+    <hr class="hr1"> 
+    
+    <div class="debitcard_carousel">
+      <h3><u>熱門簽帳金融卡</u></h3> 
+      <button class="debitcard_carousel-control prev" onclick="scrollLeft()">&#10094;</button>
+      <div class="debitcard_carousel-track">
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/line-bank.png" alt="Card 1">
+              <p>LINE Bank 快點卡</p>
+          </div>
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/中信line pay .png" alt="Card 2">
+              <p>中國信託 LINE Pay 簽帳金融卡</p>
+          </div>
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/兆豐Visa.png" alt="Card 3">
+              <p>兆豐 Visa 簽帳金融卡</p>
+          </div>
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/taishin-dogwalk.png" alt="Card 4">
+              <p>台新 遛狗卡</p>
+          </div>
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/國泰一卡通簽帳金融卡.png" alt="Card 5">
+              <p>國泰一卡通簽帳金融卡</p>
+          </div>    
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/將來銀行 將將卡.png" alt="Card 6">
+              <p>將來 將將卡</p>
+          </div>
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/永豐大戶DAWHO現金回饋Debit卡.png" alt="Card 7">
+              <p>永豐大戶DAWHO現金回饋Debit卡</p>
+          </div>
+          <div class="debitcard onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/玉山 Pi 拍兔簽帳金融卡.png" alt="Card 8">
+              <p>玉山 Pi 拍兔簽帳金融卡</p>
+          </div>
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/玉山家樂福悠遊簽帳金融卡.png" alt="Card 9">
+              <p>玉山家樂福悠遊簽帳金融卡</p>
+          </div>
+          <div class="debitcard" onclick="location.href='card1.html'">
+              <img src="../static/image/DebitCards/王道銀行 簽帳金融卡.png" alt="Card 10">
+              <p>王道銀行 O-Bank簽帳金融卡</p>
+          </div>
+          
+      </div>
+      <button class="debitcard_carousel-control next" onclick="scrollRight()">&#10095;</button>
+    </div>
+  </section>
+
+
 
     <footer class="container-footer">
 
