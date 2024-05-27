@@ -1,0 +1,148 @@
+{
+  "cards": [
+    {
+      "name": "匯豐 匯鑽卡",
+      "bankname": "匯豐銀行",
+      "imagePath": "../static/image/CreditCards/hsbc-diamond.png",
+      "tags": ["現金回饋", "行動支付"],
+      "簡介": [
+        "網購/ 影音娛樂/ 美食外送 指定通路最高 6% 回饋",
+        "OPEN POINT 錢包 30點 OPEN POINT回饋",
+        "ICash Pay指定通路消費享10%回饋"
+      ],
+      "link": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/"
+    },
+    {
+      "name": "台新 @GoGo 卡",
+      "bankname": "台新銀行",
+      "imagePath": "../static/image/CreditCards/taishin-gogo.png",
+      "tags": ["現金回饋", "網購", "行動支付"],
+      "簡介": [
+        "精選網購、行動支付Go給力 最高 3.8%！",
+        "出行禮賓服務機場接送優惠",
+        "Richart 新戶回饋最高6.8%"
+      ],
+      "link": "https://richart.tw/TSDIB_RichartWeb/discount/discount-details?discount=128&utm_source=google&utm_medium=gsm&utm_campaign=richart_alwayson_creditcard_20240401&gad_source=1&gclid=Cj0KCQjw_qexBhCoARIsAFgBlevKd4vxQhGm-F1Gd8Eb5OGgC03IRLkNGOH4sGZxw8IB1e_0BalRUz8aAgVNEALw_wcB"
+    },
+    {
+      "name": "滙豐 現金回饋御璽卡",
+      "bankname": "滙豐銀行",
+      "imagePath": "../static/image/CreditCards/hsbc-cash.png",
+      "tags": ["現金回饋", "影音娛樂", "保費回饋"],
+      "簡介": [
+        "海外2.22% 國內1.22%，現金回饋無上限！",
+        "OPEN POINT 錢包 30點 OPEN POINT回饋",
+        "攜手Visa贏得2024年巴黎奧運之旅！"
+      ],
+      "link": ""
+    },
+    {
+      "name": "永豐 現金回饋 Green 卡",
+      "bankname": "永豐銀行",
+      "imagePath": "../static/image/CreditCards/sinopac-green.png",
+      "tags": ["繳稅優惠", "現金回饋", "生活繳費"],
+      "簡介": [
+        "精選國內綠色通路最高5%現金回饋",
+        "大咖繳費稅最高10%回饋",
+        "辦卡刷就幫你種1棵樹"
+      ],
+      "link": ""
+    },
+    {
+      "name": "台新 玫瑰Giving卡",
+      "bankname": "台新銀行",
+      "imagePath": "../static/image/CreditCards/taishin-giving.png",
+      "tags": ["現金回饋", "美食外送", "生活繳費"],
+      "簡介": [
+        "國內節 / 假日 & 國外最高 3% 回饋",
+        "平日消費滿額享 2 次居家清潔服務",
+        "FunNow 米其林餐廳最高85折"
+      ],
+      "link": ""
+    },
+    {
+      "name": "國泰世華 CUBE 卡",
+      "bankname": "國泰世華銀行",
+      "imagePath": "../static/image/CreditCards/cub-cube-Visa.png",
+      "tags": ["海外消費", "超商量販", "百貨購物"],
+      "簡介": [
+        "5 大權益天天切換，指定消費 3% 起，回饋無上限",
+        "登入CUBE APP領取優惠券，回饋再加碼",
+        "一般消費享 0.3 % 小樹點(信用卡)，回饋無上限"
+      ],
+      "link": ""
+    },
+    {
+      "name": "聯邦 吉鶴卡",
+      "bankname": "聯邦銀行",
+      "imagePath": "../static/image/CreditCards/union-jiho.png",
+      "tags": ["現金回饋", "美食外送", "海外消費"],
+      "簡介": [
+        "國內消費最高2.5%回饋",
+        "日本Apple Pay消費 最高4.5%回饋",
+        "國內日系名店最高6.5%回饋"
+      ],
+      "link": ""
+    },
+    {
+      "name": "富邦 J 卡",
+      "bankname": "富邦銀行",
+      "imagePath": "../static/image/CreditCards/fubon-J.png",
+      "tags": ["海外消費", "網購", "行動支付"],
+      "簡介": [
+        "揪友辦卡 推薦獎金無上限",
+        "日韓旅遊刷J卡 最高10%回饋",
+        "新戶辦J卡 限時享最高2%回饋"
+      ],
+      "link": ""
+    },
+    {
+      "name": "台新 FlyGo卡",
+      "bankname": "台新銀行",
+      "imagePath": "../static/image/CreditCards/taishin-flygo.png",
+      "tags": ["現金回饋", "旅遊訂房", "海外消費"],
+      "簡介": [
+        "精選航空、交通、旅遊最高 5%",
+        "海外消費 最高 3% 無上限",
+        "分期減擔繳 最高分12期0利率"
+      ],
+      "link": ""
+    },
+    {
+      "name": "第一銀行 icash 聯名卡",
+      "bankname": "第一銀行",
+      "imagePath": "../static/image/CreditCards/first-icash-new.png",
+      "tags": ["超商量販", "保費回饋"],
+      "簡介": [
+        "新戶數位申辦最高贈750元",
+        "新卡友遊日韓8%現金回饋",
+        "統一超商/指定餐飲10% OPEN POINT"
+      ],
+      "link": ""
+    },
+    {
+      "name": "永豐 保倍卡",
+      "bankname": "永豐銀行",
+      "imagePath": "../static/image/CreditCards/sinopac-insurance.png",
+      "tags": ["現金回饋", "保費回饋"],
+      "簡介": [
+        "扣繳保費最高贈【百貨即享券5,000元】",
+        "新卡扣繳保費【加碼1%】最高享2.2%現金回饋",
+        "扣繳任一保費享【1.2%回饋無上限】或【最高12期分期】"
+      ],
+      "link": ""
+    },
+    {
+      "name": "第一銀行 Living Green 綠活卡",
+      "bankname": "第一銀行",
+      "imagePath": "../static/image/CreditCards/first-green.png",
+      "tags": ["現金回饋", "海外消費"],
+      "簡介": [
+        "新戶數位申辦最高贈750元",
+        "減碳樂活最高10%現金回饋",
+        "自動加值/臺鐵/高鐵5%回饋"
+      ],
+      "link": ""
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+/* Reset some basic styles */
+body, h2, h3, p, a {
+    margin: 20;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+    font-family: Epilogue, sans-serif;
+}
+
+/* main 主要內容區樣式 */
+main {
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    max-width: 85%;
+    height: 150%;
+}
+
+/* 標題&標籤 */
+.section-newstitle {
+    color: #727272;
+    font: 25px/100% Epilogue, sans-serif;
+    display: flex;
+    background-color: #fbf3ea;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 100%;
+    padding: 0px;
+}
+
+.section-newstitle, .news-section, .book-section {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.search-bar {
+    margin-bottom: 0px;
+    padding: 40px;
+    text-align: left;
+    color: #000;
+    font-size: 18px;
+}
+
+.search-bar input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* 信用卡最新資訊區塊 */
+.news-container, .book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.news-item, .book-item {
+    width: calc(33.33% - 20px); /* 調整卡片之間的距離 */
+    padding: 1px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.news-item img, .book-item img {
+    width: 90%; /* 設置圖片寬度為容器寬度 */
+    height: 160px;
+    cursor: pointer;
+    transition: transform 0.5s ease; /* 設置過渡效果 */
+    margin-bottom: 15px; /* 調整圖片和文字之間的距離 */
+}
+
+/* 在小屏幕上，每行顯示兩個項目 */
+@media (max-width: 768px) {
+    .news-item,
+    .book-item {
+        width: calc(49% - 20px); /* 調整卡片之間的距離 */
+    }
+}
+
+.placeholder {
+    visibility: hidden; /* 隱藏占位符 */
+}
+
+.news-item:hover img, .book-item:hover img {
+    transform: scale(1.1); /* 鼠標懸停時圖片放大 */
+}
+
+/* news-item */
+.news-item h3 {
+    color: #333; /* 標題顏色 */
+    text-align: center;
+    padding: 0 20px;
+}
+
+.news-item p {
+    color: #666; /* 文字顏色 */
+    text-align: justify;
+    padding: 0 20px; /* 調整文字的側邊間距 */
+}
+
+.news-item a {
+    text-decoration: none;
+    color: var(--fg-color);
+    cursor: pointer;
+}
+
+.news-item a:hover {
+    text-decoration: none !important; /* 滑鼠懸停時移除底線 */
+    color: #378482;
+}
+
+/* book-item */
+.book-item h3 {
+    color: #333; /* 標題顏色 */
+    text-align: center;
+    padding: 0 20px;
+}
+
+.book-item p {
+    color: #666; /* 文字顏色 */
+    text-align: justify;
+    padding: 0 20px; /* 調整文字的側邊間距 */
+}
+
+.book-item a {
+    text-decoration: none;
+    color: var(--fg-color);
+    cursor: pointer;
+}
+
+.book-item a:hover {
+    text-decoration: none !important; /* 滑鼠懸停時移除底線 */
+    color: #378482;
+}
+
+/* 頁尾樣式 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 頁碼 */
+.pagination a {
+    color: #8f5b4c;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #794536;
+    margin: 0 4px;
+    align-items: center;
+}
+
+.pagination a:hover {
+    background-color: #8f5b4c;
+    color: #fff;
+}
+
+/* 返回頂部按鈕的樣式 */
+.back-to-top {
+    display: none; /* 初始隱藏 */
+    position: fixed; /* 固定在頁面 */
+    bottom: 30px; /* 離頁面底部20px */
+    right: 40px; /* 離頁面右邊距離x */
+    z-index: 1000; /* 確保按鈕顯示在前面 */
+    background-color: #43321e; /* 背景顏色 */
+    color: #fff; /* 文字顏色 */
+    padding: 10px 15px; /* 内邊距 */
+    border: none; /* 無邊框 */
+    border-radius: 50px; /* 圓角 */
+    cursor: pointer; /* 鼠標變為手指 */
+    font-size: 16px; /* 文字大小 */
+}
+
+.back-to-top:hover {
+    background-color: #896e57; /* 懸停背景顏色 */
+}

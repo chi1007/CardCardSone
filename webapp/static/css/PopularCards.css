@@ -1,0 +1,169 @@
+/* 標題&標籤 */
+.popular-cards {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0px;
+  margin-top: 146px;
+  width: 100%;
+}
+
+.section-title {
+  color: #727272;
+  font: 700 64px/131% Epilogue, sans-serif;
+  margin: 0 30px;
+}
+
+  .filter-options {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: #a97f7b;
+    font-size: 16px;
+    font-weight: 400;
+    gap: 3px;
+    line-height: 16%;
+    margin-top: 27px;
+    white-space: nowrap;
+  }
+
+  .filter-options button {
+    background-color: transparent; /* 按鈕的背景顏色 */
+    color: inherit; /* 繼承父级的文字顏色 */
+    border: 2px solid transparent; /* 透明邊框 */
+    padding: 5px 10px; 
+    transition: all 0.3s ease; 
+  }
+  
+  .filter-options button:hover {
+    background-color: #caa28d;
+    color: white; 
+    border-color: white;
+  }
+
+/* 未按下標籤 */
+.filter-options .btn {
+  background-color: #fff;
+  border: 1px solid rgba(169, 127, 123, 1);
+  border-radius: 22px;
+  font-family: Inter, sans-serif;
+  justify-content: center;
+  padding: 5px 16px;
+  font-size: 16px;
+  color: #795548;
+}
+
+/* 按下標籤 */ 
+.filter-options .btn.active {
+  background-color: #d8b29161;
+  border: 1px solid rgba(169, 127, 123, 1);
+  border-radius: 22px;
+  font-family: Inter, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 16px;
+  font-size: 16px;
+}
+
+/* 內文 */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 10px; */
+  margin: 12px 20px 0;
+  padding: 0 1px;
+  justify-content: space-between;
+}
+
+.card-image {
+  width: 70%;
+  height: auto;
+  transition: transform 0.3s ease; /* 添加過渡效果 */
+}
+
+.card-image:hover {
+  transform: scale(1.05); /* 滑鼠懸停時放大圖片 */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: calc(32% - 20px);
+  margin-left: 31px;
+  margin-bottom: 0px;
+  position: relative; /* 定位內部描述框 */
+}
+
+.card-description {
+  position: absolute;
+  bottom: 52%; 
+  left: 23%; 
+  width: 30%; 
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.856);
+  color: black; 
+  text-align: center;
+  border-radius: 5px; 
+  opacity: 0; /* 默認不顯示 */
+  transition: opacity 0.3s ease; 
+}
+
+.card:hover .card-description {
+  opacity: 1; /* 鼠标悬停时显示 */
+}
+
+.card-tags {
+  display: flex;
+  gap: 4px;
+  font-size: 16px;
+  color: #fff;
+  white-space: nowrap;
+  line-height: 35%;
+  background-color: rgba(0, 0, 0, 0);
+  align-self: start;
+  flex-wrap: wrap;
+}
+
+.card-tag {
+  font-family: Inter, sans-serif;
+  justify-content: center;
+  border-radius: 22px;
+  background-color: #a8795f;
+  padding: 15px 16px;
+}
+
+.card-description {
+  color: #171a1f;
+  text-transform: uppercase;
+  margin-top: 35px;
+  font: 20px/30px Inter, sans-serif;
+}
+
+.card-title {
+  font-family: Epilogue, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  color: rgba(86, 94, 108, 1);
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  font-size: 20px;
+  margin-bottom: 5px;
+  line-height: 2;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

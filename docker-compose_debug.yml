@@ -1,0 +1,52 @@
+version: "3"
+
+services:
+  flask:
+    image: test-flask
+    build:
+      context: .
+      dockerfile: ./env/flask/Dockerfile
+    environment:
+      - FLASK_ENV
+    ports:
+      - 5000:5000
+    volumes:
+      - ./webapp:/app
+    working_dir: /app
+    networks:
+      flask:
+
+  # nginx:
+  #   image: jonasal/nginx-certbot:5.2.0-nginx1.26.0
+  #   restart: unless-stopped
+  #   env:
+  #     - ./env/nginx/nginx-certbot.env
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   volumes:
+  #     - nginx_secrets:/etc/letsencrypt
+  #     - ./env/nginx/user_conf.d:/etc/nginx/user_conf.d
+  #   networks:
+  #     - flask
+  nginx:
+    image: test-nginx
+    build:
+      context: .
+      dockerfile: ./env/nginx/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - flask
+    volumes:
+      - ./env/nginx/www:/var/www/
+    networks:
+      flask:
+    
+  
+volume:
+  nginx_secrets:
+
+networks:
+  flask:

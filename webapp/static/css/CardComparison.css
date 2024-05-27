@@ -1,0 +1,194 @@
+/* 標題 */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0px;
+  margin-top: 146px;
+  width: 100%;
+  align-items: center
+}
+
+.section-title {
+  color: #727272;
+  font: 700 64px/131% Epilogue, sans-serif;
+  margin: 0 30px;
+}
+
+/* 圖片 & 下拉選單  */
+.content-wrapper {
+  display: flex; 
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 13%;
+  flex-direction: row; 
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.card {
+  margin: 10px; 
+}
+
+.card-image {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: calc( 65% - 20px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+}
+
+.card-title {
+  color: #565e6c;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font: 600 30px/48px Epilogue, sans-serif;
+  text-align: center;
+}
+
+.card-select {
+  width: 270px; /* 設定下拉選單的寬度 */
+  height: 40px; 
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#card-column-3 {
+  display: block; /* 默認顯示 */
+}
+
+.dropdown-container {
+    justify-content: flex-end; 
+    
+}
+
+
+.dropdown-text {
+  font-family: Inter, sans-serif;
+}
+
+.decorative-icon {
+  width: 65px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  height: 60px;
+  margin: auto 0;
+  font-size: 50px;
+  line-height: 56px;
+  text-align: center;
+  color: #8f5b4c;
+  border: none;
+
+  transition: all 0.3s ease;
+}
+
+.decorative-icon:hover {
+  background-color: #8f5b4c;
+  color: #f3f4f6;
+}
+
+
+
+
+
+/* 表格 */
+
+table {
+  width: 85%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 2px solid #795548 
+}
+.table-container.two-columns table {
+  width: 50%;
+  float: left;
+}
+.hidden {
+  display: none;
+}
+th, td {
+  border-bottom: 1px solid #795548;
+  border-right: 1px solid #795548
+}
+th {
+  color: #fff;
+  background-color: #654327b0;
+  font: 700 20px/131% Epilogue, sans-serif
+}
+td {
+  font:  18px/110% Arial, sans-serif; 
+  background-color: #ffffffba;
+} 
+tr:hover {
+  background-color: rgb(224, 207, 203)
+}
+
+#comparison-table {
+  table-layout: fixed;
+  width: 90%; 
+  max-height: 300px; 
+}
+
+#comparison-table th,
+#comparison-table td {
+  padding: 14px;
+}
+
+#comparison-table th:first-child,
+#comparison-table td:first-child {
+  width: 8%; /* 第一列的寬度 */
+}
+
+#comparison-table th:nth-child(2),
+#comparison-table td:nth-child(2),
+#comparison-table th:nth-child(3),
+#comparison-table td:nth-child(3),
+#comparison-table th:nth-child(4),
+#comparison-table td:nth-child(4) {
+  width: 30%; /* 第二、三、四列的寬度*/
+}
+
+
+.card-detail {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+    user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #fff;
+  background-color: #a8795f;
+  border-color: #59382a;
+  font-weight: bold;
+  text-decoration: none; 
+}
+.btn-primary:hover {
+  color: #a8795f;
+  background-color: #f8dbb9;
+  border-color: #654327;
+  font-weight: bold;
+  text-decoration: none; 
+}
