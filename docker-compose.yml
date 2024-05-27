@@ -2,60 +2,82 @@ version: "3"
 
 services:
   flask:
-    image: cardcardsone-flask
-    container_name: cardcardsone-flask-container
+    image: test-flask
     build:
       context: .
       dockerfile: ./env/flask/Dockerfile
+    environment:
+      - FLASK_ENV
     ports:
-      - "8000:8000" # only for other containers
+      - 5000:5000
     volumes:
       - ./webapp:/app
     working_dir: /app
     networks:
-      - flask_init
+      flask_test:
 
   nginx:
-    image: cardcardsone-nginx
-    container_name: cardcardsone-nginx-container
-    build:
-      context: .
-      dockerfile: ./env/nginx/Dockerfile
+    image: jonasal/nginx-certbot:5.2.0-nginx1.26.0
+    restart: unless-stopped
+    env_file:
+      - ./env/nginx/nginx-certbot.env
     ports:
-      - "80:80" # http
-      - "443:443" # https
+      - 80:80
+      - 443:443
     depends_on:
       - flask
     volumes:
-      - ./env/nginx/www:/var/www
-      # - /etc/letsencrypt:/etc/letsencrypt
-      # - /var/log/letsencrypt:/var/log/letsencrypt
-      # - /root/letsencrypt/lib:/var/lib/letsencrypt
+      - nginx_secrets:/etc/letsencrypt
+      - ./env/nginx/user_conf.d:/etc/nginx/user_conf.d
     networks:
-      - flask_init
-
-  mysql:
-    image: cardcardsone-mysql
-    container_name: cardcardsone-mysql-container
-    build:
-      context: .
-      dockerfile: ./env/mysql/Dockerfile
-    ports:
-      - "3306:3306"
-    expose:
-      - "3306"
-    volumes:
-      - mysql:/var/lib/mysql
-      - ./env/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
-    networks:
-      - flask_init
-
+      - flask_test:
+  # nginx:
+  #   image: test-nginx
+  #   build:
+  #     context: .
+  #     dockerfile: ./env/nginx/Dockerfile
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   depends_on:
+  #     - flask
+  #   volumes:
+  #     - ./env/nginx/conf/:/etc/nginx/conf.d/:ro
+  #     - ./tmp/acme-challenge/:/tmp/acme-challenge/:rw
+  #     - etc/letsencrypt:/etc/letsencrypt:ro
+  #     - acme-challenge:/var/www/certbot/acme-challenge
+  #   networks:
+  #     flask:
+    
+  # certbot:
+  #   image: certbot/certbot
+  #   command: >
+  #     sh -c "certbot certonly --webroot --webroot-path /tmp/acne-challenge 
+  #     -d 'cardcardsone.cloudns.be' --text --agree-tos
+  #     --email S0878114@gm.ncue.edu.tw --rsa-key-size 4096 --vervbose
+  #     --keep-until-expiring --preferred-challenges=http --dry-run"
+  #   entrypoint: ""
+  #   volumes:
+  #     - "/tmp/acme-challenge/:/tmp/acme-challenge/:rw"
+  #     - "/etc/letsencrypt:/etc/letsencrypt"
+  #   depends_on:
+  #     - nginx
+  # mysql:
+  #   image: test-mysql
+  #   build:
+  #     context: .
+  #     dockerfile: ./env/mysql/Dockerfile
+  #   ports:
+  #     - "3306:3306"
+  #   expose:
+  #     - "3306"
+  #   volumes:
+  #     - mysql:/var/lib/mysql
+  #     - ./env/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
+  #   networks:
+  #     flask_test:
 volumes:
-  mysql:
+  nginx_secrets:
 
 networks:
-  flask_init:
-
-    
-  
-  
+  flask_test:

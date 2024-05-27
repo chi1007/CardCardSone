@@ -4,12 +4,12 @@ import numpy as np
 from rc_data import get_rc_data
 from flask import Blueprint
 from database import database_blueprint, get_data
-import openai
+# import openai
 
 # 初始化API金鑰
-openai.api_key = 'sk-proj-vXwqJ0vrfQJFSl0avB3ET3BlbkFJtBPsnVuRmDVORicdjQAc'
-opeaichat_url = 'https://api.openai.com/v1/chat/completions'
-openaispeech_url = 'https://api.openai.com/v1/audio/speech'
+# openai.api_key = 'sk-proj-vXwqJ0vrfQJFSl0avB3ET3BlbkFJtBPsnVuRmDVORicdjQAc'
+# opeaichat_url = 'https://api.openai.com/v1/chat/completions'
+# openaispeech_url = 'https://api.openai.com/v1/audio/speech'
 
 # 定義Blueprint
 rc_app_blueprint = Blueprint('rc_app', __name__)
@@ -67,36 +67,33 @@ def index():
         
         # 找到對應的卡片詳細資料並按順序排列
         recommended_cards = [card for name in closest_card_names for card in recommend_card_all if card["name"] == name]
-                
-        # 組合消費者行為分析的提示
-        prompt = "Based on the following answers and recommended cards information, please analyze the user's consumption habits and provide suggestions:\n"
-        for i, answer in enumerate(answers):
-            prompt += f"{questions[i]}: {answer}\n"
-        for card in recommended_cards:
-            prompt += f"Recommended Card: {card['name']} - Features: {card['tag']}, {card['basic_rewards']}, {card['additional_benefits']}, {card['overseas_spending']}, {card['online_shopping_discounts']}, {card['mobile_payment']}, {card['commute_expenses']}, {card['utilities_payment']}, {card['food_delivery']}, {card['entertainment']}, {card['travel_booking']}, {card['department_stores']}\n"
 
-        # 使用OpenAI API進行分析
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "你是一個專業的消費習慣分析師，請根據使用者的消費習慣與卡片資訊進行綜合分析並提供個人化的有效建議，項目編號自動分段換行。"},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=1000,
-            n=1,
-            stop=None,
-            temperature=0.7,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
-            
-            
-        )
+        return render_template("recommend_result.html", closest_cards=closest_cards, recommended_cards=recommended_cards)
+        # return json.dumps(recommended_cards, indent=4, ensure_ascii=False)
+        # for card, dist in closest_cards:
+        #     if card_type in cards_info and card in cards_info[card_type]:
+        #         usercards_info[card] = cards_info[card_type][card]
+        #     else:
+        #         usercards_info[card] = {"優惠項目": "無詳細資訊", "照片URL": "static/images/default.jpg"}
+
+        # # 組合消費者行為分析的提示
+        # prompt = "Based on the following answers, please analyze your consumption habits in a concise manner and provide suggestions:\n"
+        # for i, answer in enumerate(answers):
+        #     prompt += f"{questions[i]}: {answer}\n"
         
-        # 獲取分析結果
-        user_analysis = response.choices[0].message['content']
+        # # 使用OpenAI API進行分析
+        # response = openai.ChatCompletion.create(
+        #     model="gpt-3.5-turbo",
+        #     messages=[
+        #         {"role": "system", "content": "你是一個專業的消費習慣分析師。"},
+        #         {"role": "user", "content": prompt}
+        #     ]
+        # )
+        
+        # # 獲取分析結果
+        # user_analysis = response.choices[0].message['content']
 
-        return render_template("recommend_result.html", closest_cards=closest_cards, recommended_cards=recommended_cards, user_analysis=user_analysis)
+        
     else:
         return render_template("preference_question.html", questions=questions)
 
