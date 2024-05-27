@@ -108,7 +108,7 @@ function createFilterButtons(cards) {
   cards.forEach(card => {
     const { tag } = card;
     if (tag) {
-      tag.split(',').forEach(tag => allTags.add(tag));
+      tag.split(', ').forEach(tag => allTags.add(tag));
     }
   });
 
