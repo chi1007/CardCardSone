@@ -61,6 +61,7 @@
     width: 142px;
     background-color: #f8dbb9;
     border-radius: 17px;
+    border: 2px solid #f8dbb9;
     height: 41px;
     font-size: 22px;
     color: #a8795f;
@@ -73,10 +74,12 @@
     text-decoration: none;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
   }
   
   .decorative-button:hover {
     background-color: #a8795f;
+    border: 2px solid #a8795f;
     color: #ffffff;
   }
   

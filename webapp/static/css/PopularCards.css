@@ -32,7 +32,8 @@
     color: inherit; /* 繼承父级的文字顏色 */
     border: 2px solid transparent; /* 透明邊框 */
     padding: 5px 10px; 
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   
   .filter-options button:hover {
@@ -73,12 +74,14 @@
   /* gap: 10px; */
   margin: 12px 20px 0;
   padding: 0 1px;
+  /* justify-content: space-between; */
 }
 
 .card-image {
   width: 70%;
   height: auto;
   transition: transform 0.3s ease; /* 添加過渡效果 */
+  cursor: pointer;
 }
 
 .card-image:hover {

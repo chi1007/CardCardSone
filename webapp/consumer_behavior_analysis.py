@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 import openai
 import json
-
+import os 
 app = Flask(__name__, template_folder='templates')
 
 # OpenAI API 访问密钥
-openai.api_key = 'sk-proj-eLTLLKES9xIgNyXiJjnxT3BlbkFJJoEOeNgGgqBmZv8HWv8J'
+openai_key = os.getenv('openai')
+openai.api_key = openai_key
 opeaichat_url = 'https://api.openai.com/v1/chat/completions'
 openaispeech_url = 'https://api.openai.com/v1/audio/speech'
 
