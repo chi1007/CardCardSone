@@ -68,7 +68,7 @@ main {
 
 .news-item img, .book-item img {
     width: 100%; /* 設置圖片寬度為容器寬度 */
-    height: 200px;
+    height: 280px;
     cursor: pointer;
     transition: transform 0.5s ease; /* 設置過渡效果 */
     margin-bottom: 15px; /* 調整圖片和文字之間的距離 */
@@ -95,15 +95,15 @@ main {
     color: #333; /* 標題顏色 */
     text-align: center;
     padding: 0 20px;
-    font-size: 20px;
-    line-height: 1.1;
+    font-size: 25px;
+    line-height: 1.2;
 }
 
 .news-item p {
     color: #666; /* 文字顏色 */
     text-align: justify;
     padding: 0 20px; /* 調整文字的側邊間距 */
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .news-item a {
@@ -122,15 +122,15 @@ main {
     color: #333; /* 標題顏色 */
     text-align: center;
     padding: 0 20px;
-    font-size: 20px;
-    line-height: 1.1;
+    font-size: 25px;
+    line-height: 1.2;
 }
 
 .book-item p {
     color: #666; /* 文字顏色 */
     text-align: justify;
     padding: 0 20px; /* 調整文字的側邊間距 */
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .book-item a {
