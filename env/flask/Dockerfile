@@ -14,4 +14,6 @@ RUN /usr/local/bin/python -m pip install --upgrade pip && pip3 install -r requir
 
 COPY ./webapp/ ./
 
-CMD [ "uwsgi", "--ini", "app.ini" ]
+#CMD [ "uwsgi", "--ini", "app.ini" ]
+
+CMD [ "gunicorn", "--bind", "0.0.0.0:5000","--timeout","60", "app:app" ]
