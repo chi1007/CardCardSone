@@ -44,7 +44,11 @@ def find_closest_cards(user_vector, cards):
 # 定義路由
 @rc_app_blueprint.route("/", methods=["GET", "POST"])
 def index():
-    questions = get_data('http://<Flask_IP>:5000/questions')
+
+    # 獲取當前請求的主機 URL
+    questions_url = f"{request.host_url}database/questions"
+    print(questions_url)
+    questions = get_data(questions_url)
     cards = {}
 
     # 處理表單提交
