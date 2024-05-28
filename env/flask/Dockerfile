@@ -16,4 +16,4 @@ COPY ./webapp/ ./
 
 #CMD [ "uwsgi", "--ini", "app.ini" ]
 
-CMD [ "gunicorn",  "8", "--bind", "0.0.0.0:5000","--timeout","60", "app:app" ]
+CMD [ "gunicorn", "--bind", "0.0.0.0:5000","--timeout","60", "app:app" ]
