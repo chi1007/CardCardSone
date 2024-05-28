@@ -1,4 +1,5 @@
 Flask==3.0.3
+gevent
 gunicorn
 openai
 numpy
