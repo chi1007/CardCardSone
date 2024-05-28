@@ -47,6 +47,7 @@ def index():
 
     # 獲取當前請求的主機 URL
     questions_url = f"{request.host_url}database/questions"
+    print(questions_url)
     questions = get_data(questions_url)
     cards = {}
 
