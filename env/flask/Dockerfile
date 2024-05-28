@@ -10,10 +10,10 @@ EXPOSE 5000
 
 COPY ./env/flask/requirements.txt .
 
-RUN /usr/local/bin/python -m pip install  --upgrade pip  && pip3 install gevent &&pip3 install -r requirements.txt
+RUN /usr/local/bin/python -m pip install  --upgrade pip &&pip3 install -r requirements.txt
 
 COPY ./webapp/ ./
 
 #CMD [ "uwsgi", "--ini", "app.ini" ]
 
-CMD [ "gunicorn", "--workers", "8", "--worker-class","gevent", "--bind", "0.0.0.0:5000","--timeout","60", "app:app" ]
+CMD [ "gunicorn", "--bind", "0.0.0.0:5000","--timeout","60", "app:app" ]
