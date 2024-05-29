@@ -9,29 +9,87 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/preference_question.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
   <script>
-     function validateForm() {
-         const totalQuestions = {{ questions|length }};
-         let isAllAnswered = true;
-         for (let i = 0; i < totalQuestions; i++) {
-             const answers = document.getElementsByName("q" + i);
-             let answered = false;
-             for (let j = 0; j < answers.length; j++) { 
-                 if (answers[j].checked) {
-                     answered = true;
-                     break;
-                 }
-             }
-             if (!answered) {
-                 isAllAnswered = false;
-                 break;
-             }
-         }
-         if (!isAllAnswered) {
-             alert("尚有題目未填答，請確認均填答完畢後再送出「提交」。");
-         }
-         return isAllAnswered;
-     }
-   </script>
+
+      let alertShown = false; // Global variable to track if alert has been shown
+
+      function validateForm(event) {
+        const totalQuestions = {{ questions|length }};
+        let isAllAnswered = true;
+        let firstUnansweredIndex = -1;
+        let allUnanswered = false; // 標記是否所有題目都未作答
+
+        // 檢查第一題是否作答
+        const q0Answers = document.getElementsByName("q0");
+        let q0Answered = false;
+        for (let j = 0; j < q0Answers.length; j++) {
+          if (q0Answers[j].checked) {
+            q0Answered = true;
+            break;
+          }
+        }
+
+        if (!q0Answered) {
+          isAllAnswered = false;
+          firstUnansweredIndex = 0;
+          allUnanswered = true; // 如果第一題未作答,則視為所有題目都未作答
+        }
+
+        // 檢查其他題目是否作答
+        for (let i = 1; i < totalQuestions; i++) {
+          const answers = document.getElementsByName("q" + i);
+          let answered = false;
+          for (let j = 0; j < answers.length; j++) {
+            if (answers[j].checked) {
+              answered = true;
+              break;
+            }
+          }
+          if (!answered) {
+            isAllAnswered = false;
+            if (firstUnansweredIndex === -1) {
+              firstUnansweredIndex = i;
+            }
+          }
+        }
+
+        if (!isAllAnswered) {
+          if (!alertShown) {
+            alert("尚有題目未填答，請確認均填答完畢後再送出「提交」。");
+            alertShown = true;
+          }
+          if (allUnanswered) {
+            window.scrollTo({
+              top: 0, // 滾動到頁面頂部
+              behavior: 'smooth'
+            });
+          } else if (firstUnansweredIndex !== -1) {
+            const firstUnansweredElement = document.getElementsByName("q" + firstUnansweredIndex)[0];
+            const elementPosition = firstUnansweredElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - 150; // 調整偏移量
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+          return false; // 防止表單提交
+        } else {
+          alertShown = false; // 重設 alertShown 當所有題目都作答時
+        }
+
+        return true; // 允許表單提交,如果所有題目都作答
+      }
+
+          document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (event) {
+              if (!validateForm(event)) {
+                event.preventDefault();
+              } else {
+                document.getElementById('loading').style.display = 'block';
+              }
+            });
+          });
+  </script>
 </head>
 
 <body>
@@ -70,22 +128,24 @@
       </nav>
     </header>
   </div>
-
+    <div class="question">
+    <h1>智能推薦</h1>
+    <h2>以下12道題目為您對卡片優惠項目的重視程度，完成填答後我們將為您分析推薦出最適合的三張卡片</h2>
+    </div>
     <div class="form-container">
-    <h1>信用卡/金融卡推薦系統</h1>
     <form action="/recommend" method="POST" onsubmit="return validateForm()">
         <!-- 第一題只有三個選項，使用單選框 -->
         <p>{{ questions[0].question }}</p>
         <span class="inline-flex items-center">
-            <input type="radio" id="q0_1" name="q0" value="1" class="form-radio h-5 w-5 text-blue-600" required>
+            <input type="radio" id="q0_1" name="q0" value="1" class="form-radio h-5 w-5 text-blue-600">
             <label for="q0_1" class="ml-2">信用卡</label>
         </span>
         <span class="inline-flex items-center">
-            <input type="radio" id="q0_2" name="q0" value="2" class="form-radio h-5 w-5 text-blue-600" required>
+            <input type="radio" id="q0_2" name="q0" value="2" class="form-radio h-5 w-5 text-blue-600">
             <label for="q0_2" class="ml-2">無特定偏好</label>
         </span>
         <span class="inline-flex items-center">
-            <input type="radio" id="q0_3" name="q0" value="3" class="form-radio h-5 w-5 text-blue-600" required>
+            <input type="radio" id="q0_3" name="q0" value="3" class="form-radio h-5 w-5 text-blue-600">
             <label for="q0_3" class="ml-2">金融卡</label>
         </span><br>
             <!-- 其他問題使用單選框 -->
@@ -116,6 +176,12 @@
         <input type="submit" value="提交">
     </form>
   </div>
+
+  <div id="loading">
+    <img src="{{ url_for('static', filename='image/icon/loading-dog.gif') }}" alt="Loading...">
+    <p>分析生成中，請稍候</p>
+  </div>
+
 <footer class="container-footer">
 
   <script src="{{ url_for('static', filename='js/common.js') }}"></script>

@@ -1,6 +1,5 @@
 import mysql.connector
 import json
-
 def get_rc_data():
     try:
         # 建立資料庫連線
@@ -19,17 +18,6 @@ def get_rc_data():
         query2 = "SELECT * FROM recommend_card"
         cursor.execute(query2)
         recommend_card = cursor.fetchall()
-
-    except mysql.connector.Error as err:
-        print(f"Error: {err}")
-        return None
-
-    finally:
-        # 確保關閉游標和連線
-        if cursor:
-            cursor.close()
-        if cnx:
-            cnx.close()
 
         # 轉換為JSON格式
         cards_all_features = [{
@@ -102,3 +90,14 @@ def get_rc_data():
         } for row in recommend_card]
         
         return cards_features, recommend_card_all
+
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return None
+
+    finally:
+        # 確保關閉游標和連線
+        if cursor:
+            cursor.close()
+        if cnx:
+            cnx.close()

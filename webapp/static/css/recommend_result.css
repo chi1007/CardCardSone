@@ -6,19 +6,28 @@ body {
 }
 h1, h2 {
     text-align: center;
-    color: #333;
+    color: #f25757;
     margin-bottom: 0px;
-    margin-left: 4em;
-}
-.recommendation {
-    color: #ff3c3c;
-    font-weight: bold;
+    margin-left: 1em;
 }
 .title {
-    color: #8B4513;
-    margin-left: 3em;
-    text-align: center;
+  color: #8B4513;
+  margin-left: 0em;
+  text-align: center;
+  font-size: 3em;
 }
+
+.open-ai-container {
+  padding: 4em;
+  margin-top: -4em;
+  margin-bottom: -4em;
+}
+
+.open-ai {
+  font: 20px / 130% Arial, sans-serif;
+  line-height: 1.7;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -70,7 +79,7 @@ table {
   }
   
   table th:nth-child(1) { 
-    width: 5%;
+    width: 7%;
   }
   table th:nth-child(2) { 
     width: 20%;
@@ -83,7 +92,7 @@ table {
     width: 20%;
   }
 
-  button {
+  .website {
     display: inline-block;
     text-align: center;
     white-space: nowrap;
@@ -102,7 +111,7 @@ table {
     text-decoration: none; 
   }
   
-  button:hover {  
+  .website:hover {  
     color: #a8795f;
     background-color: #f8dbb9;
     border-color: rgb(232, 201, 165);
@@ -116,4 +125,5 @@ table {
     justify-content: space-evenly;
     margin-left: 7%;
     flex-direction: row;
+    padding-top: 1em;
 }
