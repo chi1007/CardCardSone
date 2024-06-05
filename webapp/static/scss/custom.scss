@@ -1,0 +1,18 @@
+// scss/custom.scss
+
+// 导入Bootstrap的SCSS文件
+@import 'bootstrap';
+
+// 自定义变量和样式
+$primary: #ff5733; // 修改主颜色
+$body-bg: #f8f9fa; // 修改背景颜色
+
+// 覆盖Bootstrap的样式
+.navbar {
+    background-color: $primary;
+}
+
+.card {
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

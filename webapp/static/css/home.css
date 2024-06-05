@@ -306,14 +306,18 @@ body {
 .card_carousel-track-wrapper, .debitcard_carousel-track-wrapper {
   overflow-x: auto; 
   scroll-behavior: smooth;
+
 }
 
 .card_carousel-track, .debitcard_carousel-track {
   display: flex;
-  overflow: hidden;
-  scroll-behavior: smooth;
   justify-content: center;
-  
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  justify-content: space-between
+
   /* animation: scroll 70s linear infinite; */
 }
 
@@ -355,7 +359,7 @@ body {
 .creditcard {
   display: inline-block;
   min-width: 300px;
-  margin: 0 10px;
+  margin: 0 25px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -364,7 +368,7 @@ body {
 .debitcard {
 display: inline-block;
 min-width: 300px;
-margin: 0 10px;
+margin: 0 25px;
 cursor: pointer;
 position: relative;
 overflow: hidden;
