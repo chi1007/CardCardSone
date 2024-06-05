@@ -1,5 +1,20 @@
 /* 標題&標籤 */
 
+h2 {
+    color: #727272 !important;
+    font: 700 50px/131% Epilogue, sans-serif !important;
+    text-align: center !important;
+    
+  }
+    
+h3 {
+color: #8B4513 !important;
+text-align: center !important;
+font-size: 2em !important;
+margin-top: 2em !important;
+font-weight: bold !important;
+}
+
 .section-abouttitle{
     color: #727272;
     font: 25px/100% Epilogue, sans-serif;
@@ -10,6 +25,7 @@
     margin-top: 100px;
     width: 100%;
     padding: 0px;
+    margin-top: 2em;
 }
 
 
@@ -20,8 +36,6 @@
 
 .about-paragraph {
     text-align: left;
-    padding-left: 150px; /* 添加左側內邊距 */
-    padding-right: 150px;
     line-height: 2; /* 增加行距使文本更易讀 */
     font-size: 20px; /* 設置字體大小 */
     color: #333; /* 設置字體顏色 */

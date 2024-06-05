@@ -45,7 +45,7 @@ let autoScrollIntervalCredit;
 
 function scrollLeftCredit() {
     let track = document.querySelector('.card_carousel-track');
-    let cardWidth = document.querySelector('.card').offsetWidth + 20; // 20px 是邊距
+    let cardWidth = document.querySelector('.creditcard').offsetWidth + 20; // 20px 是邊距
     scrollAmountCredit -= cardWidth;
     if (scrollAmountCredit < 0) {
         scrollAmountCredit = track.scrollWidth - track.clientWidth; // 跳轉到末尾
@@ -59,7 +59,7 @@ function scrollLeftCredit() {
 
 function scrollRightCredit() {
     let track = document.querySelector('.card_carousel-track');
-    let cardWidth = document.querySelector('.card').offsetWidth + 20; // 20px 是邊距
+    let cardWidth = document.querySelector('.debitcard').offsetWidth + 20; // 20px 是邊距
     let maxScroll = track.scrollWidth - track.clientWidth;
     scrollAmountCredit += cardWidth;
     if (scrollAmountCredit > maxScroll) {

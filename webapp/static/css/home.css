@@ -26,6 +26,7 @@ body {
     height: 100%;
     box-sizing: border-box;
     display: none; /* Hide all slides by default */
+    margin-top: -5em;
 }
 
 .carousel-item.active {
@@ -128,11 +129,8 @@ body {
   font-family: sans-serif;
   flex-direction: column;
   text-align: justify;
-  /* margin-top: 100px; */
-  /* width: 100%; */
-  padding: 180px;
+  padding: 75px;
   padding-top: 0px;
-  padding-left: 150px;
   padding-bottom: 10px;
   /* background-image: radial-gradient(circle, #ffffff 15%, transparent 15%); */
   /* 調整斑點的大小和間距 */
@@ -314,6 +312,8 @@ body {
   display: flex;
   overflow: hidden;
   scroll-behavior: smooth;
+  justify-content: center;
+  
   /* animation: scroll 70s linear infinite; */
 }
 
@@ -339,23 +339,23 @@ body {
   right: 0;
 }
 
-.card img, .debitcard img {
+.creditcard img, .debitcard img {
   max-width: 80%;
   display: block;
   margin: 0 auto;
   transition: transform 0.5s ease, filter 0.5s ease; /* Smooth transition for hover effects */
 }
 
-.card:hover img, .debitcard:hover img {
+.creditcard:hover img, .debitcard:hover img {
   transform: scale(1.1); 
   filter:  brightness(1);  
   opacity: 0.8;
   }
 
-.card {
+.creditcard {
   display: inline-block;
   min-width: 300px;
-  margin: 0 20px;
+  margin: 0 10px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -364,13 +364,13 @@ body {
 .debitcard {
 display: inline-block;
 min-width: 300px;
-margin: 0 20px;
+margin: 0 10px;
 cursor: pointer;
 position: relative;
 overflow: hidden;
 }
 
-.card p, .debitcard p {
+.creditcard p, .debitcard p {
   text-align: center;
   font-size: 18px;
   font-weight: bold;

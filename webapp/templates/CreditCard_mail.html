@@ -7,43 +7,51 @@
     <title>卡卡頌 CardCardSone</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/mail.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
     
     <button class="back-to-top" onclick="scrollToTop()"> <b>↑</b> </button>
 
-    <div class="header-container">
-        <header class="header">
-        <div class="logo">
-        <img src="{{ url_for('static', filename='image/icon/Croissant1.png') }}" alt="icon" width="50" height="50">
-        <a href="/">卡卡頌 CardCardSone</a>
-        </div>
-        <nav>
-        <ul class="nav">
-            <li class="nav-item"><a href="/guide" class="nav-link">小白指南</a></li>
-            <li class="nav-item">
-            <a href="#" class="nav-link">卡片介紹▾</a>
-            <ul class="dropdown-menu">
-                <li><a href="/PopularCreditCards">熱門信用卡</a></li>
-                <li><a href="/PopularDebitCards">熱門金融卡</a></li>
-            </ul>
-            </li>
-            <li class="nav-item">
-            <a href="#" class="nav-link">卡片比較▾</a>
-            <ul class="dropdown-menu">
-                <li><a href="/CreditComparison">信用卡比較</a></li>
-                <li><a href="/DebitComparison">金融卡比較</a></li>
-            </ul>
-            </li>
-            <li class="nav-item"><a href="/recommend" class="nav-link">智能推薦</a></li>
-            <li class="nav-item"><a href="/news" class="nav-link">最新消息</a></li>
-            <li class="nav-item">
-                <a href="/contact" class="active-nav-item nav-link">關於我們</a>
-                <div class="active-nav-underline"></div></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/home">
+            <img src="{{ url_for('static', filename='image/icon/Croissant1.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            卡卡頌 CardCardSone
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/guide">小白指南</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  卡片介紹▾
+                </a>
+                <ul class="nav-item dropdown-menu">
+                  <li><a class="dropdown-item" href="/PopularCreditCards">熱門信用卡</a></li>
+                  <li><a class="dropdown-item" href="/PopularDebitCards">熱門金融卡</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  卡片比較▾
+                </a>
+                  <ul class="nav-item dropdown-menu">
+                    <li><a class="dropdown-item" href="/CreditComparison">信用卡比較</a></li>
+                    <li><a class="dropdown-item" href="/DebitComparison">金融卡比較</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a href="/recommend" class="nav-link">智能推薦</a></li>
+                <li class="nav-item"><a href="/news" class="nav-link">最新消息</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">關於我們</a></li>
+              </ul>
             </nav>
-            </header>
+          </header>
         </div>
 
 <section class="section-abouttitle">
@@ -131,6 +139,12 @@
     <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#ffde99;">cardcardsone@gmail.com</p>
 
     </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
         <script src="{{ url_for('static', filename='js/CreditCard_mail.js') }}"></script>
         <script src="{{ url_for('static', filename='js/common.js') }}"></script>
     </body>
