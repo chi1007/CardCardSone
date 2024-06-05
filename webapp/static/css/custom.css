@@ -11902,5 +11902,25 @@ textarea.form-control-lg {
     margin-top: 0;
   }
 }
+/* 調整下拉式選單在行動裝置上的位置 */
+@media (max-width: 576px) {
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: auto;
+    margin-top: 0.5rem;
+  }
+  .dropdown-item {
+    text-align: left; /* 確保下拉式選單項目左對齊 */
+  }
+}
+/* 修改下拉式選單項目 hover 和 active 狀態的背景顏色 */
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item.active {
+  background-color: #ffde99;
+  color: #000;
+}
 
 /*# sourceMappingURL=custom.css.map */

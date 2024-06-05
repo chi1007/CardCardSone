@@ -35,21 +35,41 @@ body {
 
 .carousel-item img {
     width: 100%;
-    height: 600px;
+    height: 45em;
     object-fit: cover; /* Maintain aspect ratio and cover the entire area */
     display: block;
-    margin: auto;
     padding-top: 50px;
-    /* border-radius: 10px; */
 }
+
+@media (max-width: 991.98px) {
+  .carousel-item img {
+    width: 100%;
+    height: 13em;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+    display: block;
+    padding-top: 50px;
+  }
+}
+
 
 .carousel-caption {
     position: absolute;
-    bottom: 40px;
+    bottom: 24px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 10px;
     border-radius: 5px;
+}
+
+@media (max-width: 991.98px) {
+  .carousel-caption {
+    position: absolute;
+    bottom: -30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
 }
 
 .carousel-control {
@@ -106,6 +126,7 @@ body {
 
 
 /* 標題&標籤 */
+
 .section-title {
   color: #727272;
   font: 25px/100% Epilogue, sans-serif;
@@ -138,6 +159,7 @@ body {
 
 
 /* 首頁內文 */
+
 .web-container {
   width: 100%;
   background-color: #fbf3ea;
