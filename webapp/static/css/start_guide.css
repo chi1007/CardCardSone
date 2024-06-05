@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  /* line-height: 1.6; */
+  line-height: 2.5;
   background-color: #f9f9f9;
   color: #333;
 }
@@ -35,7 +35,7 @@ h4 {
 
 }
 
-.content p.reminder {
+.reminder {
   font-size: 18px;
   color: #d9534f;
   text-align: center;
@@ -96,11 +96,6 @@ tr:hover {
   line-height: 1.8;
   margin-bottom: 20px;
   font-size: 20px;
-}
-.reminder {
-  font-size: 18px;
-  color: #d9534f;
-  text-align: right;
 }
 
 .first-column {

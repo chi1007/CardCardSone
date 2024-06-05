@@ -11852,4 +11852,55 @@ textarea.form-control-lg {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: #ffffff !important;
+  font-weight: bold !important;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.navbar-brand img {
+  max-height: 40px;
+  margin-right: 10px;
+}
+.navbar-brand:hover, .navbar-brand:focus {
+  color: #8f5b4c !important;
+  background-color: #ffde99;
+}
+
+:root {
+  --bs-light-rgb: 216, 178, 145;
+  --bs-bg-opacity: 1;
+}
+
+.navbar-collapse {
+  flex-basis: auto;
+  justify-content: flex-end;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    flex-basis: auto;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    left: 0;
+    right: auto;
+  }
+  .navbar-nav .dropdown-menu.show {
+    display: block;
+    margin-top: 0;
+  }
+}
+
 /*# sourceMappingURL=custom.css.map */

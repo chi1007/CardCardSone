@@ -1,6 +1,11 @@
 body {
     background-color: #fbf3ea !important;
   }
+
+.back-to-top {
+    line-height: 1 !important;
+}
+
 /* 載入頁面特效 */
 
 #loading-screen {
@@ -130,6 +135,7 @@ body {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: bold;
 }
 .nav-link:hover{
     color: #8f5b4c;

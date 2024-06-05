@@ -1,11 +1,10 @@
-// scss/custom.scss
-
 // 导入Bootstrap的SCSS文件
 @import 'bootstrap';
 
 // 自定义变量和样式
 $primary: #ff5733; // 修改主颜色
 $body-bg: #f8f9fa; // 修改背景颜色
+$light: #abcdef; // 自定义浅色
 
 // 覆盖Bootstrap的样式
 .navbar {
@@ -15,4 +14,63 @@ $body-bg: #f8f9fa; // 修改背景颜色
 .card {
     border-radius: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// header logo样式
+.navbar-brand {
+    display: flex;
+    align-items: center; // 水平排列，并使内容垂直居中
+    padding-top: var(--#{$prefix}navbar-brand-padding-y);
+    padding-bottom: var(--#{$prefix}navbar-brand-padding-y);
+    margin-right: var(--#{$prefix}navbar-brand-margin-end);
+    @include font-size(var(--#{$prefix}navbar-brand-font-size));
+    color: #ffffff !important; // 设置文字颜色为白色
+    font-weight: bold !important; // 设置字体为粗体
+    text-decoration: if($link-decoration == none, null, none);
+    white-space: nowrap;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    img {
+      max-height: 40px; // 根据需要调整图像的最大高度
+      margin-right: 10px; // 图片与文字之间的间距
+    }
+
+    &:hover,
+    &:focus {
+        color: #8f5b4c !important; // 设置文字颜色为白色
+        background-color: #ffde99;
+    }
+}
+
+// 覆盖Bootstrap的CSS变量
+:root {
+    --bs-light-rgb: 216, 178, 145; // 自定义颜色的RGB值
+    --bs-bg-opacity: 1;
+}
+
+// 修改 .navbar-collapse 樣式
+.navbar-collapse {
+    flex-basis: auto;
+    justify-content: flex-end; 
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        flex-basis: auto;
+        justify-content: flex-end;
+
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+        left: 0; // 确保下拉菜单在左侧对齐
+        right: auto; // 确保下拉菜单在左侧对齐
+    }
+    .navbar-nav .dropdown-menu.show {
+        display: block;
+        margin-top: 0; // 确保下拉菜单直接在导航项下方展开
+    }
 }
