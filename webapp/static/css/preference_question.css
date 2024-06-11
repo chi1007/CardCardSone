@@ -5,12 +5,14 @@
 
 .question h1{
     color: #8f5b4c;
-    font: 700 50px / 131% Epilogue, sans-serif;
+    font: 700 35px / 131% Epilogue, sans-serif !important;
 }
 
 .question h2{
     color: #727272;
+    font-size: 25px;
 }
+
 
 .form-container {
     font-family: 'Arial', sans-serif;

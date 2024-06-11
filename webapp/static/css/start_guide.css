@@ -18,14 +18,14 @@ body {
 
 h2 {
   color: #727272 !important;
-  font: 700 50px/131% Epilogue, sans-serif !important;
+  font: 700 35px/131% Epilogue, sans-serif !important;
   text-align: center !important;
 }
   
 h3 {
   color: #8B4513 !important;
   text-align: center !important;
-  font-size: 2em !important;
+  font-size: 25px !important;
   margin-top: 2em !important;
   font-weight: bold !important;
 }

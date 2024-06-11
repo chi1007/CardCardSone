@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     padding: 0;
-    margin-top: 8em;
 }
 h1, h2 {
     text-align: center;
@@ -11,10 +10,8 @@ h1, h2 {
     margin-left: 1em;
 }
 .title {
-  color: #8B4513;
-  margin-left: 0em;
-  text-align: center;
-  font-size: 3em;
+  color: #8f5b4c;
+  font: 700 35px / 131% Epilogue, sans-serif !important;
 }
 
 .open-ai-container {
@@ -25,7 +22,7 @@ h1, h2 {
 
 .open-ai {
   font: 20px / 130% Arial, sans-serif;
-  line-height: 1.7;
+  line-height: 2.3;
 }
 
 ul {
