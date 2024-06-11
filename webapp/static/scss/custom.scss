@@ -12,8 +12,9 @@ $light: #abcdef; // 自定义浅色
 }
 
 .card {
-    border-radius: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: transparent; // 去掉背景顏色
+    border: none;                 // 去掉邊框
+    box-shadow: none;             // 去掉陰影
 }
 
 // header logo样式
