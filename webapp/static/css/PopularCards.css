@@ -3,14 +3,21 @@
   display: flex;
   flex-direction: column;
   padding: 0 0px;
-  margin-top: 146px;
+  margin-top: 2em;
   width: 100%;
 }
 
 .section-title {
   color: #727272;
-  font: 700 64px/131% Epilogue, sans-serif;
+  font: 700 55px/131% Epilogue, sans-serif;
   margin: 0 30px;
+  padding-top: 1em;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font: 700 33px/131% Epilogue, sans-serif !important;
+  }
 }
 
   .filter-options {
@@ -46,7 +53,6 @@
 .filter-options .btn {
   background-color: #fff;
   border: 1px solid rgba(169, 127, 123, 1);
-  border-radius: 22px;
   font-family: Inter, sans-serif;
   justify-content: center;
   padding: 5px 16px;
@@ -58,7 +64,6 @@
 .filter-options .btn.active {
   background-color: #d8b29161;
   border: 1px solid rgba(169, 127, 123, 1);
-  border-radius: 22px;
   font-family: Inter, sans-serif;
   display: flex;
   justify-content: center;
@@ -178,4 +183,119 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* bootstrap樣式 */
+
+.popular-cards {
+  padding: 0;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.filter-options {
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #a97f7b;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 3px;
+  line-height: 16%;
+  margin-top: 27px;
+  white-space: nowrap;
+}
+
+.filter-options .btn {
+  background-color: #fff;
+  border: 1px solid rgba(169, 127, 123, 1);
+  font-family: Inter, sans-serif;
+  padding: 5px 16px;
+  font-size: 16px;
+  color: #795548;
+}
+
+.filter-options .btn.active {
+  background-color: #d8b29161;
+  border: 1px solid rgba(169, 127, 123, 1);
+  padding: 5px 16px;
+  font-size: 16px;
+}
+
+.card {
+  background-color: #fbf3ea !important;
+}
+
+.card-content {
+  background-color: #fbf3ea;
+  border: 1px solid fbf3ea !important;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 12px 20px 0;
+  padding: 0 1px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card-image:hover {
+  transform: scale(1.05);
+}
+
+.card-description {
+  color: #171a1f;
+  text-transform: uppercase;
+  margin-top: 35px;
+  font: 20px/30px Inter, sans-serif;
+}
+
+.card-title {
+  font-family: Epilogue, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  color: rgba(86, 94, 108, 1);
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  font-size: 20px;
+  margin-bottom: 5px;
+  line-height: 2;
+}
+
+/* 确保在手机设备上标签不会超出屏幕范围 */
+@media (max-width: 576px) {
+  .filter-options {
+    flex-wrap: wrap;
+  }
+
+  .filter-options .btn {
+    flex: 1 1 48%; /* 标签按钮占据48%的宽度，并允许换行 */
+    margin-bottom: 10px; /* 增加底部间距以避免按钮之间过于紧凑 */
+  }
+
+  .card-container {
+    flex-direction: column; /* 在小屏幕上卡片垂直排列 */
+  }
+
+  .card {
+    width: 100%; /* 在小屏幕上卡片占据100%宽度 */
+    margin: 10px 0; /* 增加垂直间距 */
+  }
+
+  .card-image {
+    width: 100%; /* 确保卡片图片在小屏幕上显示正常 */
+  }
+
+  .card-description {
+    width: 90%; /* 调整描述框的宽度以适应小屏幕 */
+    left: 5%; /* 居中描述框 */
+  }
 }

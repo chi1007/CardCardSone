@@ -36,7 +36,7 @@ li.suitable {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 table {
-  width: 90%;
+  width: 100% !important;
   margin: 0 auto;
   border-collapse: collapse;
   margin-top: 2em;
@@ -45,6 +45,20 @@ table {
   border-radius: 10px;
   overflow: hidden;
 }
+
+@media (max-width: 991.98px) {
+  .table {
+    width: 70% !important;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 2em;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+
 th, td {
   border-bottom: 1px solid #795548;
   border-right: 1px solid #795548;
@@ -52,12 +66,12 @@ th, td {
 th {
   color: #fff !important;
   background-color: #a8795fc4 !important;
-  font: 700 20px / 131% Epilogue, sans-serif;
+  font: 700 18px / 131% Epilogue, sans-serif;
   padding: 1em;
   text-align: center;
 }
 td {
-  font: 18px / 130% Arial, sans-serif;
+  font: 15.5px / 130% Arial, sans-serif;
   line-height: 1.5;
   background-color: #ffe4e1;
   padding: 1em;

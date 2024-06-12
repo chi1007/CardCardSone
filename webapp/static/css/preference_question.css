@@ -4,14 +4,29 @@
 }
 
 .question h1{
-    color: #8f5b4c;
-    font: 700 35px / 131% Epilogue, sans-serif !important;
+    color: #727272;
+    font: 700 55px/131% Epilogue, sans-serif;
+    margin: 0 30px;
 }
 
 .question h2{
-    color: #727272;
+    color: #ab4e1ad9;
     font-size: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
+@media (max-width: 768px) {
+    .question h2 {
+        color: #ab4e1ad9;
+        font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      font: 700 33px/131% Epilogue, sans-serif !important;
+    }
+  }
 
 
 .form-container {

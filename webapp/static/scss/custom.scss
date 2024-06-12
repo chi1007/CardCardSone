@@ -1,10 +1,10 @@
-// 导入Bootstrap的SCSS文件
+// 導入Bootstrap的SCSS文件
 @import 'bootstrap';
 
-// 自定义变量和样式
+// 自定義變量和樣式
 $primary: #ff5733; // 修改主颜色
 $body-bg: #f8f9fa; // 修改背景颜色
-$light: #abcdef; // 自定义浅色
+$light: #abcdef; // 
 
 // 覆盖Bootstrap的样式
 .navbar {
@@ -17,7 +17,7 @@ $light: #abcdef; // 自定义浅色
     box-shadow: none;             // 去掉陰影
 }
 
-// header logo样式
+// header logo樣式
 .navbar-brand {
     display: flex;
     align-items: center; // 水平排列，并使内容垂直居中
@@ -25,27 +25,27 @@ $light: #abcdef; // 自定义浅色
     padding-bottom: var(--#{$prefix}navbar-brand-padding-y);
     margin-right: var(--#{$prefix}navbar-brand-margin-end);
     @include font-size(var(--#{$prefix}navbar-brand-font-size));
-    color: #ffffff !important; // 设置文字颜色为白色
-    font-weight: bold !important; // 设置字体为粗体
+    color: #ffffff !important;
+    font-weight: bold !important; 
     text-decoration: if($link-decoration == none, null, none);
     white-space: nowrap;
     transition: background-color 0.5s ease, color 0.5s ease;
 
     img {
-      max-height: 40px; // 根据需要调整图像的最大高度
-      margin-right: 10px; // 图片与文字之间的间距
+      max-height: 40px; // 根據需要調整圖像的最大高度
+      margin-right: 10px; // 圖片與文字之間的間距
     }
 
     &:hover,
     &:focus {
-        color: #8f5b4c !important; // 设置文字颜色为白色
+        color: #8f5b4c !important; 
         background-color: #ffde99;
     }
 }
 
 // 覆盖Bootstrap的CSS变量
 :root {
-    --bs-light-rgb: 216, 178, 145; // 自定义颜色的RGB值
+    --bs-light-rgb: 216, 178, 145;
     --bs-bg-opacity: 1;
 }
 
@@ -67,13 +67,12 @@ $light: #abcdef; // 自定义浅色
     .navbar-nav .dropdown-menu {
         position: static;
         float: none;
-        left: 0; // 确保下拉菜单在左侧对齐
-        right: auto; // 确保下拉菜单在左侧对齐
+        left: 0; // 確保下拉菜單在左側對齊
+        right: auto; // 確保下拉菜單在左側對齊
     }
     .navbar-nav .dropdown-menu.show {
         display: block;
-        margin-top: 0; // 确保下拉菜单直接在导航项下方展开
-    }
+        margin-top: 0; // 確保下拉菜單直接在導航項下方展開    }
 }
 
 

@@ -17,7 +17,7 @@
     {% include 'header.html' %}
 
 <section class="section-abouttitle">
-    <h2>關於我們</h2>
+    <h1 class="section-title text-center">關於我們</h1>
 </section>
     
 <section class="section-about-content">
@@ -27,38 +27,32 @@
 </section>
 
 <section class="logo-container">
-<div class="section-logo-content">
-    <div class="section-logo">
-        <div class="logo-image-section">
-        <img class="small-img" src="{{ url_for('static', filename='image/icon/卡片圖案/卡卡頌logo(2).png') }}" alt="圖片描述">
-        </div>
-        <div class="logo-text-section align-left">
-        <!-- <h3>「卡卡頌」</a></h3> -->
-        <p> <b>🥐中文名字義：</b><br>
-            「卡卡頌」名稱取義於一款非常經典且容易上手的桌遊。希望藉由本比較網站讓年輕小白在認識與申辦信用卡與簽帳金融卡上也能「容易上手」！
-            <br>
-            <br>
-            <b>🥐英文名由來：</b><br>
-            1. 本網站以信用卡(Credit 「Card」)與簽帳金融卡(Debit 「Card」)作為主要比較標的，提供用戶篩選比較各家銀行卡片差異。<br>
-            2.「Sone」為人耳判別聲音響度的主觀衡量單位，決定於聲音的頻率和波形。希望藉由本比較網站，對接上年輕小白辦卡開戶的頻率，了解用戶的需求協助作出卡片申辦決策。
-            <br>
-            <br>
-            <b>🥐Logo設計：</b><br> 
-            「卡卡頌」中文讀音近似於「可頌」（Croissant），故以可頌麵包作為本網站的主視覺設計，其中在LOGO設計當中可以發現蘊藏中文字的「卡」與「可頌」圖像相作結合的設計發想。
-        
-        </p> 
-            
-
+    <div class="section-logo-content row">
+        <div class="section-logo col-md-6 order-md-2">
+            <div class="logo-image-section">
+                <img class="small-img" src="{{ url_for('static', filename='image/icon/卡片圖案/卡卡頌logo(2).png') }}" alt="圖片描述">
+            </div>
+            <div class="logo-text-section align-left">
+                <p>
+                    <b>🥐中文名字義：</b><br>
+                    「卡卡頌」名稱取義於一款非常經典且容易上手的桌遊。希望藉由本比較網站讓年輕小白在認識與申辦信用卡與簽帳金融卡上也能「容易上手」！
+                    <br><br>
+                    <b>🥐英文名由來：</b><br>
+                    1. 本網站以信用卡(Credit 「Card」)與簽帳金融卡(Debit 「Card」)作為主要比較標的，提供用戶篩選比較各家銀行卡片差異。<br>
+                    2.「Sone」為人耳判別聲音響度的主觀衡量單位，決定於聲音的頻率和波形。希望藉由本比較網站，對接上年輕小白辦卡開戶的頻率，了解用戶的需求協助作出卡片申辦決策。
+                    <br><br>
+                    <b>🥐Logo設計：</b><br> 
+                    「卡卡頌」中文讀音近似於「可頌」（Croissant），故以可頌麵包作為本網站的主視覺設計，其中在LOGO設計當中可以發現蘊藏中文字的「卡」與「可頌」圖像相作結合的設計發想。
+                </p> 
+            </div>
         </div>
     </div>
 </section>
-
 
 <hr class="hr1"> 
 
 <section class="section-mailtitle">
     <h2>意見信箱</h2>  
-    
 </section>   
 <section class="section-mail-content">
     <!-- <p>mailmailmail</p> -->
@@ -67,17 +61,16 @@
 <div class="mail-container">
     <h3>歡迎留下您寶貴的意見：</h3>
     <form id="feedbackForm" action="/contact/contact" method="POST"> <!-- 修改表單的提交地址和方法 -->
-        <label class=mail-label for="name" >姓名／稱呼：</label>
-        <input class=mail-input type="text" id="name" name="name" required><br>
-        <label class=mail-label for="email">電子郵件：</label>
-        <input class=mail-input type="email" id="email" name="email" required><br>
-        <label class=mail-label for="message">任何意見或想對我們說的話：</label><br>
-        <textarea class=mail-textarea id="message" name="message" rows="4" required></textarea><br>
-        <button class=mail-button type="submit" >提交</button>
+        <label class="mail-label" for="name">姓名／稱呼：</label>
+        <input class="mail-input" type="text" id="name" name="name" required><br>
+        <label class="mail-label" for="email">電子郵件：</label>
+        <input class="mail-input" type="email" id="email" name="email" required><br>
+        <label class="mail-label" for="message">任何意見或想對我們說的話：</label><br>
+        <textarea class="mail-textarea" id="message" name="message" rows="4" required></textarea><br>
+        <button class="mail-button" type="submit">提交</button>
     </form>
     <div id="mail-response"></div>
 </div>
-
 
 <hr class="hr1">
         
@@ -86,20 +79,17 @@
         <h3>聯絡資訊</h3>
         <p>地址：台北市和平東路一段155號三樓</p>
         <p>電話：(02) 1234-5678 ／ 傳真：(02) 1234-5679</p>
-        <p>電子郵件：<a href="cardcardsone@gmail.com" style="color:#66a1e4;">cardcardsone@gmail.com</a></p>
+        <p>電子郵件：<a href="mailto:cardcardsone@gmail.com" style="color:#66a1e4;">cardcardsone@gmail.com</a></p>
     </div>
     <div class="map-container">
-        <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.2196665937113!2d121.53114180000001!3d25.0266183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a984299be84d%3A0x548dd76d8f031c04!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5ZKM5bmz5p2x6Lev5LiA5q61MTU16Jmf5LiJ!5e0!3m2!1szh-TW!2stw!4v1714894577817!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.2196665937113!2d121.53114180000001!3d25.0266183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a984299be84d%3A0x548dd76d8f031c04!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5ZKM5bmz5p2x6Lev5LiA5q61MTU16Jmf5LiJ!5e0!3m2!1szh-TW!2stw!4v1714894577817!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    </article>
+</article>
 <br>
 
-  {% include 'footer.html' %}
+{% include 'footer.html' %}
 
-    <script src="{{ url_for('static', filename='js/CreditCard_mail.js') }}"></script>
+<script src="{{ url_for('static', filename='js/CreditCard_mail.js') }}"></script>
 
 </body>
-
 </html>
-    
-    
