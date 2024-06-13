@@ -26,7 +26,7 @@
 }
 
 .card-introduction {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -36,16 +36,31 @@
 
 .card-image {
     display: block;
-    margin: 70px auto;
-    width: 25%;
+    margin: 20px auto;
+    width: 30%;
     height: auto;
     border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .card-image {
+    margin: 20px auto;
+    width: 50%;
+  }
 }
 
 .card-details td {
     width: 50%; 
     border-bottom: 1px solid #ccc; 
-    font-size: 20px; 
+    font-size: 18px; 
+}
+
+@media (max-width: 768px) {
+  .card-details td {
+    width: 50%; 
+    border-bottom: 1px solid #ccc; 
+    font-size: 16px; 
+  }
 }
 
 .card-details th, .card-details td {

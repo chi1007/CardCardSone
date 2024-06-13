@@ -73,7 +73,7 @@ function hideLoadingScreen() {
     }
   }
 
-function createCardElement(card, cardDesc) {
+  function createCardElement(card, cardDesc) {
     const wrapper = document.createElement('div');
     wrapper.className = 'card-introduction';
 
@@ -86,8 +86,8 @@ function createCardElement(card, cardDesc) {
 
     const cardName = document.createElement('h3');
     cardName.textContent = card.name;
-    cardName.style.textAlign = 'center';  
-    header.appendChild(cardName); 
+    cardName.style.textAlign = 'center';
+    header.appendChild(cardName);
 
     const details = document.createElement('div');
     details.className = 'card-details';
@@ -99,7 +99,6 @@ function createCardElement(card, cardDesc) {
     const leftColumn = document.createElement('td');
     const rightColumn = document.createElement('td');
 
-    // 定義特徵顯示順序
     const displayOrder = [
         'features', 'basic_rewards', 'additional_benefits', 'overseas_spending',
         'cross_bank_offers', 'online_shopping_discounts', 'mobile_payment', 'commute_expenses',
@@ -107,7 +106,6 @@ function createCardElement(card, cardDesc) {
         'department_stores', 'new_user_offer', 'revolving_interest_rate', 'right', 'Website'
     ];
 
-    // 過濾出需要顯示的特徵
     displayOrder.forEach((feature, index) => {
         if (card[feature] !== null && card[feature] !== undefined) {
             const featureRow = document.createElement('tr');
@@ -118,7 +116,7 @@ function createCardElement(card, cardDesc) {
             if (feature === 'Website') {
                 const websiteButton = document.createElement('button');
                 websiteButton.textContent = 'Link';
-                websiteButton.className = 'btn btn-primary'; // 添加Bootstrap樣式
+                websiteButton.className = 'btn btn-primary';
                 websiteButton.onclick = function() { window.open(card[feature], '_blank'); };
                 td.appendChild(websiteButton);
             } else {
@@ -128,9 +126,9 @@ function createCardElement(card, cardDesc) {
             featureRow.appendChild(th);
             featureRow.appendChild(td);
 
-            if (index % 2 === 0) { // 偶數特徵放左邊
+            if (index % 2 === 0) {
                 leftColumn.appendChild(featureRow);
-            } else { // 奇數特徵放右邊
+            } else {
                 rightColumn.appendChild(featureRow);
             }
         }
@@ -146,7 +144,7 @@ function createCardElement(card, cardDesc) {
     const descHeader = document.createElement('h2');
     descHeader.textContent = '卡片詳細描述';
     const descParagraph = document.createElement('p');
-    descParagraph.innerHTML = cardDesc.description.replace(/\r/g, '<br>');  // 使用 innerHTML 和 <br> 替換 \n
+    descParagraph.innerHTML = cardDesc.description.replace(/\r/g, '<br>');
     description.appendChild(descHeader);
     description.appendChild(descParagraph);
 

@@ -4,15 +4,21 @@
     display: flex;
     flex-direction: column;
     padding: 0 0px;
-    margin-top: 146px;
     width: 100%;
     align-items: center
   }
   
   .section-title {
     color: #727272;
-    font: 700 64px/131% Epilogue, sans-serif;
+    font: 700 55px/131% Epilogue, sans-serif;
     margin: 0 30px;
+    padding-top: 1em;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      font: 700 33px/131% Epilogue, sans-serif !important;
+    }
   }
   
   /* 圖片 */
@@ -24,8 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 5%;
-    flex-direction: row; 
+      flex-direction: row; 
   }
   
   .row-reverse {
@@ -48,6 +53,12 @@
     margin-bottom: 0px;
     border-radius: 13px;
   }
+
+  @media (max-width: 768px) {
+    .card-image {
+      width: calc( 60% - 20px); 
+    }
+  }
   
   .card-title {
     color: #565e6c;
@@ -68,9 +79,9 @@
     font-weight: bold;
     transition: all 0.3s ease;
     padding: 0px 3px;
-    margin: 0 12px 12px 0;
+    margin: 0 auto 12px auto; /* 改為 center 置中 */
     text-align: center;
-    display: inline-block;
+    display: block; /* 改為 block 置中 */
     text-decoration: none;
     overflow: hidden;
     position: relative;
@@ -87,22 +98,23 @@
   /* 表格 */
   
   table {
-    width: 90%;
     margin: 0 auto;
     border-collapse: collapse;
-    border: 2px solid #795548 
+    border: 2px solid #795548 !important;
+    max-width: 100%; 
+    width: 120% !important;
   }
   th, td {
-    border-bottom: 1px solid #795548;
-    border-right: 1px solid #795548
+    border-bottom: 1px solid #795548 !important;
+    border-right: 1px solid #795548 !important;
   }
   th {
-    color: #fff;
-    background-color: #a8795fc4;
-    font: 700 20px/131% Epilogue, sans-serif
+    color: #fff !important;
+    background-color: #a8795fc4 !important;
+    font: 700 18px/131% Epilogue, sans-serif !important;
   }
   td {
-    font:  18px/130% Arial, sans-serif;
+    font:  16px/130% Arial, sans-serif;
     line-height: 1.5;
     background-color: #ffffffba;
 
@@ -110,7 +122,7 @@
 
   td.introduction {
     text-align: left !important;
-    font:  18px/130% Arial, sans-serif;
+    font:  16px/130% Arial, sans-serif;
     line-height: 1.5;
   }
 
@@ -120,8 +132,9 @@
   
   #comparison-table th,
   #comparison-table td {
-    padding: 7px;
-    text-align: center; 
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
   }
   
   #comparison-table th:nth-child(2) { 
@@ -144,20 +157,24 @@
   .card-icon {
     flex-direction: column;
     line-height: normal;
-    width: calc(50%);
+    width: calc(60%);
     margin-bottom: 0px;
   }
 
   .select-button {
-    padding: 5px 7px;
     background-color: #a8795f;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
     border: none;
-    border-radius: 13px;
-    font-size: 18px;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    border-radius: 0.25rem;
+    width: 100%; /* 使按钮在移动设备上占满整个单元格宽度 */
+    box-sizing: border-box; /* 确保内边距和边框包含在宽度内 */
   }
   
   .select-button:hover {  
@@ -171,4 +188,37 @@
     height: 15px;
     cursor: pointer;
     transform: scale(1.5);
+}
+
+/* 加入Media Queries來控制橫屏時的表格顯示 */
+
+@media screen and (max-width: 767px) {
+  #comparison-table thead {
+      display: none;
+  }
+  
+  #comparison-table tbody, #comparison-table tr, #comparison-table td {
+      display: block;
+      width: 100%;
+  }
+  
+  #comparison-table tr {
+      margin-bottom: 1rem;
+  }
+  
+  #comparison-table td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+  }
+  
+  #comparison-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 1rem;
+      font-weight: bold;
+      text-align: left;
+  }
 }

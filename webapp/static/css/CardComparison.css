@@ -4,15 +4,21 @@
   display: flex;
   flex-direction: column;
   padding: 0 0px;
-  margin-top: 146px;
   width: 100%;
   align-items: center
 }
 
 .section-title {
   color: #727272;
-  font: 700 64px/131% Epilogue, sans-serif;
+  font: 700 55px/131% Epilogue, sans-serif;
   margin: 0 30px;
+  padding-top: 1em;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font: 700 33px/131% Epilogue, sans-serif !important;
+  }
 }
 
 /* 圖片 & 下拉選單  */

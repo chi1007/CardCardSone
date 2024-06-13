@@ -70,39 +70,30 @@ function hideLoadingScreen() {
     }
   }
 
-function createCardElements(cards) {
+  function createCardElements(cards) {
     const tableBody = document.getElementById('comparison-body');
     tableBody.innerHTML = '';
 
     cards.forEach((card, index) => {
-        const row = tableBody.insertRow();
+        const row = document.createElement('tr');
 
-        row.insertCell(0).innerText = index + 1;
-        row.insertCell(1).innerHTML = `<img src="${card.img}" alt="${card.name}" class="card-icon">`;
-        row.insertCell(2).innerHTML = `${card.bankname}<br>${card.name}`;
-        const introCell = row.insertCell(3);
-        introCell.classList.add('introduction');
+        row.innerHTML = `
+            <td data-label="編號">${index + 1}</td>
+            <td data-label="金融卡一覽"><img src="${card.img}" alt="${card.name}" class="card-icon"></td>
+            <td data-label="發卡銀行/卡片名稱">${card.bankname}<br>${card.name}</td>
+            <td data-label="簡介" class="introduction">${formatFeatures(card.features)}</td>
+            <td data-label="我要當卡奴"><a href="${card.Website}" class="select-button" target="_blank">我要辦卡</a></td>
+            <td data-label="選取"><input type="checkbox" class="select-checkbox" data-name="${card.name}" onchange="handleCheckboxChange(this)"></td>
+        `;
 
-        // 將 features 字段從字符串轉換為數組
-        const featuresArray = card.features.split(', ').map(feature => feature.trim());
-
-        introCell.innerHTML = (featuresArray.length > 0)
-            ? '◍ ' + featuresArray.join('<br>◍ ')
-            : '☑ 無詳細介紹';
-
-        row.insertCell(4).innerHTML = `<a href="${card.Website}" class="select-button" target="_blank">我要辦卡</a>`;
-        
-        const checkboxCell = row.insertCell(5);
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'select-checkbox';
-        checkbox.dataset.name = card.name;
-        checkbox.addEventListener('change', function () {
-            handleCheckboxChange(this);
-        });
-        checkboxCell.appendChild(checkbox);
+        tableBody.appendChild(row);
     });
-    updateSelectedImages(); 
+    updateSelectedImages();
+}
+
+function formatFeatures(features) {
+    const featuresArray = features.split(', ').map(feature => feature.trim());
+    return (featuresArray.length > 0) ? '◍ ' + featuresArray.join('<br>◍ ') : '☑ 無詳細介紹';
 }
 
 function handleCheckboxChange(checkbox) {
