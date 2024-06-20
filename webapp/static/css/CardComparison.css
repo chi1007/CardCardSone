@@ -39,14 +39,75 @@
 }
 
 .card {
-  margin: 10px; 
+  margin-bottom: 10px;
+  position: relative
 }
+
+
+
+@media (min-width: 768px) {
+  #card-container .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+  }
+
+  #card-container .content-wrapper .col-md-4 {
+      display: flex;
+      justify-content: center;
+  }
+
+  #card-container .content-wrapper .card {
+      flex: 1;
+      margin: 0 10px;
+  }
+
+  #toggle-button {
+      display: block;
+      margin: 20px auto 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #card-container .content-wrapper {
+      display: block;
+  }
+
+  #card-container .content-wrapper .col-12 {
+      display: flex;
+      justify-content: center;
+  }
+
+  #card-container .content-wrapper .card {
+      margin: 10px 0;
+  }
+
+  #toggle-button {
+      display: block;
+      margin: 20px auto;
+  }
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2em;
+  position: relative
+}
+
+@media (max-width: 767.98px) {
+  .content-wrapper {
+    margin-left: 0em;
+    margin-right: 4em;
+  }
+}
+
 
 .card-image {
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: calc( 65% - 20px);
+  width: calc( 80% - 20px);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0px;
@@ -56,8 +117,14 @@
   color: #565e6c;
   text-transform: uppercase;
   margin-top: 5px;
-  font: 600 30px/48px Epilogue, sans-serif;
+  font: 600 17px/48px Epilogue, sans-serif;
   text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .card-title {
+    font: 600 22px/48px Epilogue, sans-serif;
+  }
 }
 
 .card-select {
@@ -126,25 +193,32 @@ table {
 }
 th, td {
   border-bottom: 1px solid #795548;
-  border-right: 1px solid #795548
 }
 th {
-  color: #fff;
-  background-color: #654327b0;
-  font: 700 20px/131% Epilogue, sans-serif
+  color: #fff !important;
+  background-color: #a8795fc4 !important;
+  font: 700 20px/131% Epilogue, sans-serif !important;
 }
 td {
   font:  18px/110% Arial, sans-serif; 
   background-color: #ffffffba;
 } 
 tr:hover {
-  background-color: rgb(224, 207, 203)
+  background-color: rgb(224, 207, 203);
 }
+td:hover {
+  background-color: rgb(255, 248, 246);
+} 
 
 #comparison-table {
   table-layout: fixed;
-  width: 90%; 
+  width: 70%; 
   max-height: 300px; 
+}
+@media (max-width: 767.98px) {
+  #comparison-table {
+    width: 98%;
+  }
 }
 
 #comparison-table th,
@@ -154,7 +228,7 @@ tr:hover {
 
 #comparison-table th:first-child,
 #comparison-table td:first-child {
-  width: 8%; /* 第一列的寬度 */
+  width: 10%; /* 第一列的寬度 */
 }
 
 #comparison-table th:nth-child(2),

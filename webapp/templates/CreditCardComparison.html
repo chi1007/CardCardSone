@@ -20,37 +20,54 @@
 
   {% include 'header.html' %}
 
-<section class="cards">
+  <section class="cards container">
     <h2 class="section-title hidden">信用卡比較</h2>
 </section>
-
-<section id="card-container" class="card-container hidden">
-  <div class="content-wrapper">
-    <div class="card">
-      <img src="#" alt="Card 1" class="card-image" id="cardImage1">
-      <h3 class="card-title" id="cardTitle1"></h3>
-      <div class="dropdown-container">
-        <select class="card-select" id="cardSelect1"></select>
+<section id="card-container" class="card-container hidden container">
+  <div class="content-wrapper row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 mb-4">
+          <div class="card">
+            <div class="card-img-container">
+              <img src="#" alt="Card 1" class="card-image" id="cardImage1">
+            </div>
+            <h3 class="card-title" id="cardTitle1"></h3>
+            <div class="dropdown-container">
+              <select class="card-select form-control" id="cardSelect1"></select>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div class="card">
+            <div class="card-img-container">
+              <img src="#" alt="Card 2" class="card-image" id="cardImage2">
+            </div>
+            <h3 class="card-title" id="cardTitle2"></h3>
+            <div class="dropdown-container">
+              <select class="card-select form-control" id="cardSelect2"></select>
+            </div>
+          </div>
+        </div>
+        <div id="card-column-3" class="col-12 col-md-4 mb-4">
+          <div class="card">
+            <div class="card-img-container">
+              <img src="#" alt="Card 3" class="card-image" id="cardImage3">
+            </div>
+            <h3 class="card-title" id="cardTitle3"></h3>
+            <div class="dropdown-container">
+              <select class="card-select form-control" id="cardSelect3"></select>
+            </div>
+          </div>
+        </div>
+      <div class="col-12 text-center mt-3">
+        <button id="toggle-button" class="decorative-icon" onclick="toggleCardDisplay()">↷</button>
       </div>
     </div>
-    <div class="card">
-      <img src="#" alt="Card 2" class="card-image" id="cardImage2">
-      <h3 class="card-title" id="cardTitle2"></h3>
-      <div class="dropdown-container">
-        <select class="card-select" id="cardSelect2"></select>
-      </div>
-    </div>
-    <div id="card-column-3" class="card">
-      <img src="#" alt="Card 3" class="card-image" id="cardImage3">
-      <h3 class="card-title" id="cardTitle3"></h3>
-      <div class="dropdown-container">
-        <select class="card-select" id="cardSelect3"></select>
-      </div>
-    </div>
-    <button id="toggle-button" class="decorative-icon" onclick="toggleCardDisplay()">↷</button>
+  </div>
   </div>
 </section>
-<table id="comparison-table" class="hidden">
+<table id="comparison-table" class="hidden table table-responsive table-bordered">
   <thead id="comparison-thead">
       <tr>
           <th>銀行名稱</th>

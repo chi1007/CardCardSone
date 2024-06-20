@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(hideLoadingScreen, 1000)
 });
 
-
-
 function getCookie(name) {
     const cookies = document.cookie.split(';');
     return cookies.reduce((acc, cookie) => {
@@ -16,7 +14,6 @@ function getCookie(name) {
         return acc;
     }, '');
 }
-
 
 function loadBankData() {
     fetch('/database/debitcard')
@@ -36,41 +33,39 @@ function loadBankData() {
         updatePageWithSelectedCards(selectedCardNames);
         toggleCardDisplayOnInit(selectedCardNames.split(',').length);
 
-        // 確保所有目標元素存在後再移除隱藏類別並新增動畫類
         const footerElement = document.getElementById('footer-content');
         const titleElement = document.querySelector('.section-title');
         const comparisonTableElement = document.getElementById('comparison-table');
         const cardContainerElement = document.getElementById('card-container');
-        
+
         if (footerElement) {
             footerElement.classList.remove('hidden');
             footerElement.classList.add('fadeInContent');
         } else {
             console.error('Error: footer element not found');
         }
-        
+
         if (titleElement) {
             titleElement.classList.remove('hidden');
             titleElement.classList.add('fadeInTitle');
         } else {
             console.error('Error: title element not found');
         }
-        
+
         if (comparisonTableElement) {
             comparisonTableElement.classList.remove('hidden');
             comparisonTableElement.classList.add('fadeInContent');
         } else {
             console.error('Error: comparison table element not found');
         }
-        
+
         if (cardContainerElement) {
             cardContainerElement.classList.remove('hidden');
             cardContainerElement.classList.add('fadeInContent');
         } else {
             console.error('Error: card container element not found');
         }
-        
-        // 調整最後一行的文字居中
+
         adjustLastRowAlignment();
     })
     .catch(error => {
@@ -83,13 +78,13 @@ function hideLoadingScreen() {
     if (loadingScreen) {
         loadingScreen.style.display = 'none';
     }
-  }
+}
 
 function toggleCardDisplayOnInit(numSelectedCards) {
     const cardColumn3 = document.getElementById('card-column-3');
     const bankNameHeader3 = document.getElementById('bankName3');
     const rows = document.getElementById('comparison-body').querySelectorAll('tr');
-    const cardImage3 = document.getElementById('cardImage3'); // 確保此 ID 正確對應到第三張卡的圖片元素
+    const cardImage3 = document.getElementById('cardImage3');
 
     if (numSelectedCards < 3) {
         cardColumn3.style.display = 'none';
@@ -98,9 +93,8 @@ function toggleCardDisplayOnInit(numSelectedCards) {
             const thirdCell = row.querySelector('td:nth-child(4)');
             thirdCell.style.display = 'none';
         });
-        cardImage3.src = '../static/image/icon/none.png'; // 更新圖片路徑為 "none" 圖標
+        cardImage3.src = '../static/image/icon/none.png';
     } else {
-        // 確保在顯示第三張卡片時圖片路徑恢復或更新為正確的卡片圖像
         const selectedCard = cardData.find(card => card.name === cardImage3.getAttribute('data-card-name'));
         if (selectedCard) {
             cardImage3.src = selectedCard.imagePath;
@@ -108,15 +102,13 @@ function toggleCardDisplayOnInit(numSelectedCards) {
     }
 }
 
-
-
 function initializeDropdown() {
     const cardSelects = document.querySelectorAll('.card-select');
     if (!cardData || !Array.isArray(cardData)) {
         console.error('No card data available or card data is not an array');
         return;
     }
-    
+
     cardSelects.forEach((select, index) => {
         select.innerHTML = '';
         cardData.forEach(card => {
@@ -132,12 +124,10 @@ function initializeDropdown() {
 }
 
 function updateCard(cardIndex, cardName) {
-    // 在cardData數組中查找匹配的信用卡對象
     const selectedCard = cardData.find(card => card.name === cardName);
     if (selectedCard) {
-        // 更新卡片圖片
         const cardImage = document.getElementById(`cardImage${cardIndex}`);
-        cardImage.src = selectedCard.img; // 使用圖片URL更新圖片來源
+        cardImage.src = selectedCard.img;
         const cardTitle = document.getElementById(`cardTitle${cardIndex}`);
         cardTitle.textContent = selectedCard.name;
 
@@ -156,15 +146,15 @@ function updateCard(cardIndex, cardName) {
         updateTableCell(`traveBooking${cardIndex}`, selectedCard.travel_booking);
         updateTableCell(`departmentStores${cardIndex}`, selectedCard.department_stores);
         updateTableCell(`interestRate${cardIndex}`, selectedCard.savings_account_interest_rate);
-        // 創建連接按鈕
+
         const websiteLinkContainer = document.getElementById(`websiteLink${cardIndex}`);
-        websiteLinkContainer.innerHTML = ''; // 清除之前的内容
-        const linkButton = document.createElement('a'); // 創建一个連接元素
-        linkButton.href = selectedCard.Website; // 設置link
-        linkButton.textContent = '官方申辦'; 
-        linkButton.className = 'btn btn-primary'; // 可以添加一些Bootstrap样式
-        linkButton.target = '_blank'; 
-        websiteLinkContainer.appendChild(linkButton); // 將連接添加到單元格中
+        websiteLinkContainer.innerHTML = '';
+        const linkButton = document.createElement('a');
+        linkButton.href = selectedCard.Website;
+        linkButton.textContent = '官方申辦';
+        linkButton.className = 'btn btn-primary';
+        linkButton.target = '_blank';
+        websiteLinkContainer.appendChild(linkButton);
     } else {
         console.error('Selected card not found:', cardName);
     }
@@ -173,7 +163,7 @@ function updateCard(cardIndex, cardName) {
 function updateTableCell(cellId, content) {
     const cell = document.getElementById(cellId);
     cell.innerHTML = content;
-    cell.className = 'card-detail'; // 設置class
+    cell.className = 'card-detail';
 }
 
 function updatePageWithSelectedCards(selectedCardNames) {
@@ -201,7 +191,7 @@ function adjustLastRowAlignment() {
         }
     }
 }
-  
+
 function toggleCardDisplay() {
     const cardColumn3 = document.getElementById('card-column-3');
     const bankNameHeader3 = document.getElementById('bankName3');
@@ -211,7 +201,7 @@ function toggleCardDisplay() {
     if (cardColumn3.style.display === 'none' || cardColumn3.style.display === '') {
         cardColumn3.style.display = 'block';
         bankNameHeader3.style.display = '';
-        toggleButton.textContent = '\u2212'; // 減號 -
+        toggleButton.textContent = '\u2212';
         rows.forEach(row => {
             const thirdCell = row.querySelector('td:nth-child(4)');
             thirdCell.style.display = '';
@@ -219,14 +209,10 @@ function toggleCardDisplay() {
     } else {
         cardColumn3.style.display = 'none';
         bankNameHeader3.style.display = 'none';
-        toggleButton.textContent = '\u002B'; // 加號 +
+        toggleButton.textContent = '\u002B';
         rows.forEach(row => {
             const thirdCell = row.querySelector('td:nth-child(4)');
             thirdCell.style.display = 'none';
         });
     }
 }
-
-
-
-

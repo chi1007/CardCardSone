@@ -126,6 +126,10 @@
     line-height: 1.5;
   }
 
+  td:hover {
+    background-color: #ffffffba;
+  } 
+
   tr:hover {
     background-color: rgb(224, 207, 203)
   }

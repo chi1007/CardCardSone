@@ -20,138 +20,156 @@
 
   {% include 'header.html' %}
 
-<section class="cards">
+<section class="cards container">
     <h2 class="section-title hidden">金融卡比較</h2>
 </section>
-
-<section id="card-container" class="card-container hidden">
-  <div class="content-wrapper">
-    <div class="card">
-      <img src="#" alt="Card 1" class="card-image" id="cardImage1">
-      <h3 class="card-title" id="cardTitle1"></h3>
-      <div class="dropdown-container">
-        <select class="card-select" id="cardSelect1"></select>
+<section id="card-container" class="card-container hidden container">
+  <div class="content-wrapper row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 mb-4">
+          <div class="card">
+            <div class="card-img-container">
+              <img src="#" alt="Card 1" class="card-image" id="cardImage1">
+            </div>
+            <h3 class="card-title" id="cardTitle1"></h3>
+            <div class="dropdown-container">
+              <select class="card-select form-control" id="cardSelect1"></select>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div class="card">
+            <div class="card-img-container">
+              <img src="#" alt="Card 2" class="card-image" id="cardImage2">
+            </div>
+            <h3 class="card-title" id="cardTitle2"></h3>
+            <div class="dropdown-container">
+              <select class="card-select form-control" id="cardSelect2"></select>
+            </div>
+          </div>
+        </div>
+        <div id="card-column-3" class="col-12 col-md-4 mb-4">
+          <div class="card">
+            <div class="card-img-container">
+              <img src="#" alt="Card 3" class="card-image" id="cardImage3">
+            </div>
+            <h3 class="card-title" id="cardTitle3"></h3>
+            <div class="dropdown-container">
+              <select class="card-select form-control" id="cardSelect3"></select>
+            </div>
+          </div>
+        </div>
+      <div class="col-12 text-center mt-3">
+        <button id="toggle-button" class="decorative-icon" onclick="toggleCardDisplay()">↷</button>
       </div>
     </div>
-    <div class="card">
-      <img src="#" alt="Card 2" class="card-image" id="cardImage2">
-      <h3 class="card-title" id="cardTitle2"></h3>
-      <div class="dropdown-container">
-        <select class="card-select" id="cardSelect2"></select>
-      </div>
-    </div>
-    <div id="card-column-3" class="card">
-      <img src="#" alt="Card 3" class="card-image" id="cardImage3">
-      <h3 class="card-title" id="cardTitle3"></h3>
-      <div class="dropdown-container">
-        <select class="card-select" id="cardSelect3"></select>
-      </div>
-    </div>
-    <button id="toggle-button" class="decorative-icon" onclick="toggleCardDisplay()">↷</button>
+  </div>
   </div>
 </section>
-<table id="comparison-table" class="hidden">
-  <thead id="comparison-thead">
-      <tr>
-          <th>銀行名稱</th>
-          <th id="bankName1"></th>
-          <th id="bankName2"></th>
-          <th id="bankName3"></th>
-      </tr>
-  </thead>
-  <tbody id="comparison-body">
-      <tr>
-          <th>基本回饋</th>
-          <td id="basicReward1"></td>
-          <td id="basicReward2"></td>
-          <td id="basicReward3"></td>
-      </tr>
-      <tr>
-          <th>加碼回饋</th>
-          <td id="additionalReward1"></td>
-          <td id="additionalReward2"></td>
-          <td id="additionalReward3"></td>
-      </tr>
-      <tr>
-          <th>海外消費</th>
-          <td id="overseasSpending1"></td>
-          <td id="overseasSpending2"></td>
-          <td id="overseasSpending3"></td>
-      </tr>
-      <tr>
-        <th>跨行優惠</th>
-        <td id="crossBankOffers1"></td>
-        <td id="crossBankOffers2"></td>
-        <td id="crossBankOffers3"></td>
-      </tr>
-      <tr>
-          <th>卡片特色</th>
-          <td id="cardFeatures1"></td>
-          <td id="cardFeatures2"></td>
-          <td id="cardFeatures3"></td>
-      </tr>
-      <tr>
-        <th>活存利率</th>
-        <td id="interestRate1"></td>
-        <td id="interestRate2"></td>
-        <td id="interestRate3"></td>
-      </tr>
-      <tr>
-          <th>網購優惠</th>
-          <td id="onlineShoppingDiscounts1"></td>
-          <td id="onlineShoppingDiscounts2"></td>
-          <td id="onlineShoppingDiscounts3"></td>
-      </tr>
-      <tr>
-          <th>行動支付</th>
-          <td id="mobilePayment1"></td>
-          <td id="mobilePayment2"></td>
-          <td id="mobilePayment3"></td>
-      </tr>
-      <tr>
-          <th>通勤交通</th>
-          <td id="commuteExpenses1"></td>
-          <td id="commuteExpenses2"></td>
-          <td id="commuteExpenses3"></td>
-      </tr>
-      <tr>
-          <th>生活繳費</th>
-          <td id="utilitiesPayment1"></td>
-          <td id="utilitiesPayment2"></td>
-          <td id="utilitiesPayment3"></td>
-      </tr>
-      <tr>
-          <th>餐飲外送</th>
-          <td id="foodDelivery1"></td>
-          <td id="foodDelivery2"></td>
-          <td id="foodDelivery3"></td>
-      </tr>
-      <tr>
-          <th>影音娛樂</th>
-          <td id="entertainment1"></td>
-          <td id="entertainment2"></td>
-          <td id="entertainment3"></td>
-      </tr>
-      <tr>
-          <th>旅遊訂房</th>
-          <td id="traveBooking1"></td>
-          <td id="traveBooking2"></td>
-          <td id="traveBooking3"></td>
-      </tr>
-      <tr>
-          <th>量販百貨</th>
-          <td id="departmentStores1"></td>
-          <td id="departmentStores2"></td>
-          <td id="departmentStores3"></td>
-      </tr>
 
-      <tr>
-        <th>官方連結</th>
-        <td id="websiteLink1"></td>
-        <td id="websiteLink2"></td>
-        <td id="websiteLink3"></td>
-      </tr>
-  </tbody>
+
+<table id="comparison-table" class="hidden table table-responsive table-bordered">
+    <thead id="comparison-thead">
+        <tr>
+            <th>銀行名稱</th>
+            <th id="bankName1"></th>
+            <th id="bankName2"></th>
+            <th id="bankName3"></th>
+        </tr>
+    </thead>
+    <tbody id="comparison-body">
+        <tr>
+            <th>基本回饋</th>
+            <td id="basicReward1"></td>
+            <td id="basicReward2"></td>
+            <td id="basicReward3"></td>
+        </tr>
+        <tr>
+            <th>加碼回饋</th>
+            <td id="additionalReward1"></td>
+            <td id="additionalReward2"></td>
+            <td id="additionalReward3"></td>
+        </tr>
+        <tr>
+            <th>海外消費</th>
+            <td id="overseasSpending1"></td>
+            <td id="overseasSpending2"></td>
+            <td id="overseasSpending3"></td>
+        </tr>
+        <tr>
+            <th>跨行優惠</th>
+            <td id="crossBankOffers1"></td>
+            <td id="crossBankOffers2"></td>
+            <td id="crossBankOffers3"></td>
+        </tr>
+        <tr>
+            <th>卡片特色</th>
+            <td id="cardFeatures1"></td>
+            <td id="cardFeatures2"></td>
+            <td id="cardFeatures3"></td>
+        </tr>
+        <tr>
+            <th>活存利率</th>
+            <td id="interestRate1"></td>
+            <td id="interestRate2"></td>
+            <td id="interestRate3"></td>
+        </tr>
+        <tr>
+            <th>網購優惠</th>
+            <td id="onlineShoppingDiscounts1"></td>
+            <td id="onlineShoppingDiscounts2"></td>
+            <td id="onlineShoppingDiscounts3"></td>
+        </tr>
+        <tr>
+            <th>行動支付</th>
+            <td id="mobilePayment1"></td>
+            <td id="mobilePayment2"></td>
+            <td id="mobilePayment3"></td>
+        </tr>
+        <tr>
+            <th>通勤交通</th>
+            <td id="commuteExpenses1"></td>
+            <td id="commuteExpenses2"></td>
+            <td id="commuteExpenses3"></td>
+        </tr>
+        <tr>
+            <th>生活繳費</th>
+            <td id="utilitiesPayment1"></td>
+            <td id="utilitiesPayment2"></td>
+            <td id="utilitiesPayment3"></td>
+        </tr>
+        <tr>
+            <th>餐飲外送</th>
+            <td id="foodDelivery1"></td>
+            <td id="foodDelivery2"></td>
+            <td id="foodDelivery3"></td>
+        </tr>
+        <tr>
+            <th>影音娛樂</th>
+            <td id="entertainment1"></td>
+            <td id="entertainment2"></td>
+            <td id="entertainment3"></td>
+        </tr>
+        <tr>
+            <th>旅遊訂房</th>
+            <td id="traveBooking1"></td>
+            <td id="traveBooking2"></td>
+            <td id="traveBooking3"></td>
+        </tr>
+        <tr>
+            <th>量販百貨</th>
+            <td id="departmentStores1"></td>
+            <td id="departmentStores2"></td>
+            <td id="departmentStores3"></td>
+        </tr>
+        <tr>
+            <th>官方連結</th>
+            <td id="websiteLink1"></td>
+            <td id="websiteLink2"></td>
+            <td id="websiteLink3"></td>
+        </tr>
+    </tbody>
 </table>
 
 
