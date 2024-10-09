@@ -5,7 +5,7 @@ import pymysql
 database_blueprint = Blueprint('database', __name__)
 
 def get_db_connection():
-    connection = pymysql.connect(host='184.73.84.91',
+    connection = pymysql.connect(host='54.160.176.92',
                                  user='cardcardsone',
                                  password='cardsone2024',
                                  db='cardsoneDB',

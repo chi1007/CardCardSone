@@ -5,7 +5,7 @@ def get_rc_data():
         # 建立資料庫連線
         cnx = mysql.connector.connect(user='cardcardsone',
                                       password='cardsone2024',
-                                      host='184.73.84.91',
+                                      host='54.160.176.92',
                                       database='cardsoneDB',
                                       collation='utf8mb4_unicode_ci')
         cursor = cnx.cursor()

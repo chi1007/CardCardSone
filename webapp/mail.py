@@ -8,7 +8,7 @@ mail_blueprint = Blueprint('mail', __name__)
 
 # MySQL連接配置
 db_config = {
-    'host': '184.73.84.91',
+    'host': '54.160.176.92',
     'user': 'cardcardsone',
     'password': 'cardsone2024',
     'database': 'cardsoneDB',
